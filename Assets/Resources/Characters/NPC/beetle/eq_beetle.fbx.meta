@@ -1,0 +1,146 @@
+fileFormatVersion: 2
+guid: 322faecd2da78104da9dd5dd1e84ffa8
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: AB
+    100002: BO1L
+    100004: BO1R
+    100006: BO2L
+    100008: BO2R
+    100010: BO3L
+    100012: BO3R
+    100014: BO4L
+    100016: BO4R
+    100018: CA1L
+    100020: CA1R
+    100022: CA2L
+    100024: CA2R
+    100026: CA3L
+    100028: CA3R
+    100030: CA4L
+    100032: CA4R
+    100034: //RootNode
+    100036: HEAD_POINT
+    100038: MA_L
+    100040: MA_R
+    100042: PE
+    100044: Root
+    100046: TH1L
+    100048: TH1R
+    100050: TH2L
+    100052: TH2R
+    100054: TH3L
+    100056: TH3R
+    100058: TH4L
+    100060: TH4R
+    100062: TO1L
+    100064: TO1R
+    100066: TO2L
+    100068: TO2R
+    100070: TO3L
+    100072: TO3R
+    100074: TO4L
+    100076: TO4R
+    100078: U3DMesh
+    400000: AB
+    400002: BO1L
+    400004: BO1R
+    400006: BO2L
+    400008: BO2R
+    400010: BO3L
+    400012: BO3R
+    400014: BO4L
+    400016: BO4R
+    400018: CA1L
+    400020: CA1R
+    400022: CA2L
+    400024: CA2R
+    400026: CA3L
+    400028: CA3R
+    400030: CA4L
+    400032: CA4R
+    400034: //RootNode
+    400036: HEAD_POINT
+    400038: MA_L
+    400040: MA_R
+    400042: PE
+    400044: Root
+    400046: TH1L
+    400048: TH1R
+    400050: TH2L
+    400052: TH2R
+    400054: TH3L
+    400056: TH3R
+    400058: TH4L
+    400060: TH4R
+    400062: TO1L
+    400064: TO1R
+    400066: TO2L
+    400068: TO2R
+    400070: TO3L
+    400072: TO3R
+    400074: TO4L
+    400076: TO4R
+    400078: U3DMesh
+    4300000: U3DMesh
+    9500000: //RootNode
+    13700000: U3DMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

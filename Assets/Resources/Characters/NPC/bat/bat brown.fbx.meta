@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 1938f9d24edd31b47b6634cbd783410d
+timeCreated: 1462239475
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BAT
+    100002: //RootNode
+    100004: BAT_ACTORDEF
+    100006: BO_L
+    100008: BO_R
+    100010: CA_L
+    100012: CA_R
+    100014: CH
+    100016: DMSPRITEDEF
+    100018: HE
+    100020: HEAD_POINT
+    100022: JA
+    100024: NE
+    100026: PE
+    100028: TH_L
+    100030: TH_R
+    100032: U3DMesh
+    100034: W01L
+    100036: W01R
+    100038: W02L
+    100040: W02R
+    100042: W03L
+    100044: W03R
+    100046: W04L
+    100048: W04R
+    100050: W05L
+    100052: W05R
+    100054: W06L
+    100056: W06R
+    100058: W07L
+    100060: W07R
+    100062: W08L
+    100064: W08R
+    100066: ZX_BAT_ACTORDEF_T0
+    400000: BAT
+    400002: //RootNode
+    400004: BAT_ACTORDEF
+    400006: BO_L
+    400008: BO_R
+    400010: CA_L
+    400012: CA_R
+    400014: CH
+    400016: DMSPRITEDEF
+    400018: HE
+    400020: HEAD_POINT
+    400022: JA
+    400024: NE
+    400026: PE
+    400028: TH_L
+    400030: TH_R
+    400032: U3DMesh
+    400034: W01L
+    400036: W01R
+    400038: W02L
+    400040: W02R
+    400042: W03L
+    400044: W03R
+    400046: W04L
+    400048: W04R
+    400050: W05L
+    400052: W05R
+    400054: W06L
+    400056: W06R
+    400058: W07L
+    400060: W07R
+    400062: W08L
+    400064: W08R
+    400066: ZX_BAT_ACTORDEF_T0
+    4300000: U3DMesh
+    7400000: Melee1H
+    7400002: Hurt_01
+    7400004: Dead
+    7400006: Run
+    7400008: Idle_01
+    7400010: Idle
+    9500000: //RootNode
+    13700000: U3DMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

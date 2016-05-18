@@ -1,0 +1,162 @@
+fileFormatVersion: 2
+guid: a6da8f83f92e30a48a261b4cc91b6f6c
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SecretFromRogueGuild
+    100004: SecretToQeynosCatacombs
+    100006: SecretToRogueGuild
+    100008: TeleportFromTemple
+    100010: TeleportToTemple
+    100012: TrapInRogueGuild
+    100014: WaterCatacombs
+    100016: WaterCatacombs2
+    100018: Waterfalls
+    100020: WaterLake
+    100022: WaterLakeAtCrows
+    100024: WaterLakeAtTemple
+    100026: WaterTemple
+    100028: WaterZone
+    100030: WaterZonelineToQeynosCatacombs
+    100032: ZonelineToQeynosHills
+    100034: ZonelineToSouthQeynosAtCobbler
+    100036: ZonelineToSouthQeynosAtCrows
+    100038: zoneNorthQeynos
+    400000: //RootNode
+    400002: SecretFromRogueGuild
+    400004: SecretToQeynosCatacombs
+    400006: SecretToRogueGuild
+    400008: TeleportFromTemple
+    400010: TeleportToTemple
+    400012: TrapInRogueGuild
+    400014: WaterCatacombs
+    400016: WaterCatacombs2
+    400018: Waterfalls
+    400020: WaterLake
+    400022: WaterLakeAtCrows
+    400024: WaterLakeAtTemple
+    400026: WaterTemple
+    400028: WaterZone
+    400030: WaterZonelineToQeynosCatacombs
+    400032: ZonelineToQeynosHills
+    400034: ZonelineToSouthQeynosAtCobbler
+    400036: ZonelineToSouthQeynosAtCrows
+    400038: zoneNorthQeynos
+    2300000: SecretFromRogueGuild
+    2300002: SecretToQeynosCatacombs
+    2300004: SecretToRogueGuild
+    2300006: TeleportFromTemple
+    2300008: TeleportToTemple
+    2300010: TrapInRogueGuild
+    2300012: WaterCatacombs
+    2300014: WaterCatacombs2
+    2300016: Waterfalls
+    2300018: WaterLake
+    2300020: WaterLakeAtCrows
+    2300022: WaterLakeAtTemple
+    2300024: WaterTemple
+    2300026: WaterZone
+    2300028: WaterZonelineToQeynosCatacombs
+    2300030: ZonelineToQeynosHills
+    2300032: ZonelineToSouthQeynosAtCobbler
+    2300034: ZonelineToSouthQeynosAtCrows
+    2300036: zoneNorthQeynos
+    3300000: SecretFromRogueGuild
+    3300002: SecretToQeynosCatacombs
+    3300004: SecretToRogueGuild
+    3300006: TeleportFromTemple
+    3300008: TeleportToTemple
+    3300010: TrapInRogueGuild
+    3300012: WaterCatacombs
+    3300014: WaterCatacombs2
+    3300016: Waterfalls
+    3300018: WaterLake
+    3300020: WaterLakeAtCrows
+    3300022: WaterLakeAtTemple
+    3300024: WaterTemple
+    3300026: WaterZone
+    3300028: WaterZonelineToQeynosCatacombs
+    3300030: ZonelineToQeynosHills
+    3300032: ZonelineToSouthQeynosAtCobbler
+    3300034: ZonelineToSouthQeynosAtCrows
+    3300036: zoneNorthQeynos
+    4300000: TrapInRogueGuild
+    4300002: WaterCatacombs2
+    4300004: WaterCatacombs
+    4300006: WaterTemple
+    4300008: WaterLake
+    4300010: WaterZone
+    4300012: SecretFromRogueGuild
+    4300014: SecretToRogueGuild
+    4300016: Waterfalls
+    4300018: SecretToQeynosCatacombs
+    4300020: ZonelineToSouthQeynosAtCrows
+    4300022: ZonelineToSouthQeynosAtCobbler
+    4300024: WaterLakeAtTemple
+    4300026: TeleportFromTemple
+    4300028: TeleportToTemple
+    4300030: WaterZonelineToQeynosCatacombs
+    4300032: WaterLakeAtCrows
+    4300034: ZonelineToQeynosHills
+    4300036: zoneNorthQeynos
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

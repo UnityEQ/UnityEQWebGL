@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: dabde0f0e6aa93d45a6faaf1b6dc83d4
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WaterUnderwaterAreas
+    100004: ZonelineToNorthQeynosOnMainWall
+    100006: ZonelineToSouthQeynosUnderTheArena
+    100008: zoneQeynosCatacombs
+    100010: extra
+    100012: zone
+    100014: SecretWall1
+    100016: SecretWall2
+    100018: SecretWall3
+    100020: SecretWall4
+    100022: SecretWall5
+    100024: SecretWall6
+    100026: SecretWall7
+    100028: SecretWall8
+    100030: TrapFallToSharks
+    400000: //RootNode
+    400002: WaterUnderwaterAreas
+    400004: ZonelineToNorthQeynosOnMainWall
+    400006: ZonelineToSouthQeynosUnderTheArena
+    400008: zoneQeynosCatacombs
+    400010: extra
+    400012: zone
+    400014: SecretWall1
+    400016: SecretWall2
+    400018: SecretWall3
+    400020: SecretWall4
+    400022: SecretWall5
+    400024: SecretWall6
+    400026: SecretWall7
+    400028: SecretWall8
+    400030: TrapFallToSharks
+    2300000: WaterUnderwaterAreas
+    2300002: ZonelineToNorthQeynosOnMainWall
+    2300004: ZonelineToSouthQeynosUnderTheArena
+    2300006: zoneQeynosCatacombs
+    2300008: extra
+    2300010: zone
+    2300012: SecretWall1
+    2300014: SecretWall2
+    2300016: SecretWall3
+    2300018: SecretWall4
+    2300020: SecretWall5
+    2300022: SecretWall6
+    2300024: SecretWall7
+    2300026: SecretWall8
+    2300028: TrapFallToSharks
+    3300000: WaterUnderwaterAreas
+    3300002: ZonelineToNorthQeynosOnMainWall
+    3300004: ZonelineToSouthQeynosUnderTheArena
+    3300006: zoneQeynosCatacombs
+    3300008: extra
+    3300010: zone
+    3300012: SecretWall1
+    3300014: SecretWall2
+    3300016: SecretWall3
+    3300018: SecretWall4
+    3300020: SecretWall5
+    3300022: SecretWall6
+    3300024: SecretWall7
+    3300026: SecretWall8
+    3300028: TrapFallToSharks
+    4300000: ZonelineToSouthQeynosUnderTheArena
+    4300002: ZonelineToNorthQeynosOnMainWall
+    4300004: zoneQeynosCatacombs
+    4300006: WaterUnderwaterAreas
+    4300008: zone
+    4300010: extra
+    4300012: SecretWall8
+    4300014: SecretWall7
+    4300016: SecretWall6
+    4300018: TrapFallToSharks
+    4300020: SecretWall5
+    4300022: SecretWall4
+    4300024: SecretWall3
+    4300026: SecretWall2
+    4300028: SecretWall1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

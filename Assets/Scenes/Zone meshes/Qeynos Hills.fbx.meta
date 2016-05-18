@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 86b3517a59e5848419651f787fab21ec
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: WaterLake
+    100004: WaterSurfaceLake
+    100006: ZonelineToBlackburrow
+    100008: ZonelineToNorthQeynos
+    100010: ZonelineToSFG
+    100012: ZonelineToWestKarana
+    100014: zoneQeynosHills
+    400000: //RootNode
+    400002: WaterLake
+    400004: WaterSurfaceLake
+    400006: ZonelineToBlackburrow
+    400008: ZonelineToNorthQeynos
+    400010: ZonelineToSFG
+    400012: ZonelineToWestKarana
+    400014: zoneQeynosHills
+    2300000: WaterLake
+    2300002: WaterSurfaceLake
+    2300004: ZonelineToBlackburrow
+    2300006: ZonelineToNorthQeynos
+    2300008: ZonelineToSFG
+    2300010: ZonelineToWestKarana
+    2300012: zoneQeynosHills
+    3300000: WaterLake
+    3300002: WaterSurfaceLake
+    3300004: ZonelineToBlackburrow
+    3300006: ZonelineToNorthQeynos
+    3300008: ZonelineToSFG
+    3300010: ZonelineToWestKarana
+    3300012: zoneQeynosHills
+    4300000: WaterSurfaceLake
+    4300002: ZonelineToSFG
+    4300004: ZonelineToBlackburrow
+    4300006: ZonelineToNorthQeynos
+    4300008: ZonelineToWestKarana
+    4300010: zoneQeynosHills
+    4300012: WaterLake
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

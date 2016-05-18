@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: eb06d3a3e05c3594994a115d0374805f
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BI_L
+    100002: BI_R
+    100004: BO_L
+    100006: BO_R
+    100008: CA_L
+    100010: CA_R
+    100012: CH
+    100014: EA_L
+    100016: EA_R
+    100018: //RootNode
+    100020: FI_L
+    100022: FI_R
+    100024: FO_L
+    100026: FO_R
+    100028: HE
+    100030: HEAD_POINT
+    100032: JA
+    100034: NE
+    100036: NO
+    100038: PE
+    100040: Root
+    100042: SH
+    100044: TA1
+    100046: TA2
+    100048: TA3
+    100050: TA4
+    100052: TH_L
+    100054: TH_R
+    100056: TO_L
+    100058: TO_R
+    100060: U3DMesh
+    400000: BI_L
+    400002: BI_R
+    400004: BO_L
+    400006: BO_R
+    400008: CA_L
+    400010: CA_R
+    400012: CH
+    400014: EA_L
+    400016: EA_R
+    400018: //RootNode
+    400020: FI_L
+    400022: FI_R
+    400024: FO_L
+    400026: FO_R
+    400028: HE
+    400030: HEAD_POINT
+    400032: JA
+    400034: NE
+    400036: NO
+    400038: PE
+    400040: Root
+    400042: SH
+    400044: TA1
+    400046: TA2
+    400048: TA3
+    400050: TA4
+    400052: TH_L
+    400054: TH_R
+    400056: TO_L
+    400058: TO_R
+    400060: U3DMesh
+    4300000: U3DMesh
+    7400000: Melee1H
+    7400002: Hurt_01
+    7400004: Dead
+    7400006: Walk
+    7400008: Run
+    7400010: Idle_01
+    7400012: Idle
+    7400014: Turn
+    7400016: Swim
+    9500000: //RootNode
+    13700000: U3DMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

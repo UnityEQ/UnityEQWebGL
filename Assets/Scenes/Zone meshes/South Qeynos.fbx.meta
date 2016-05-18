@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 455c48ff434a95746825eb08bd18d9d5
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: PVPArena
+    100002: //RootNode
+    100004: WaterAtClock
+    100006: WaterSurfaceAtBank
+    100008: WaterTempleRainkeepers
+    100010: WaterZonelineToQeynosCatacombs_Bank
+    100012: WaterZonelineToQeynosCatacombs_Mages
+    100014: WaterZonelineToQeynosCatacombs_Ocean
+    100016: ZonelineToNorthQeynos_Bards
+    100018: ZonelineToNorthQeynos_Clock
+    100020: ZonelineToQeynosCatacombs_Arena
+    100022: zoneSouthQeynos
+    400000: PVPArena
+    400002: //RootNode
+    400004: WaterAtClock
+    400006: WaterSurfaceAtBank
+    400008: WaterTempleRainkeepers
+    400010: WaterZonelineToQeynosCatacombs_Bank
+    400012: WaterZonelineToQeynosCatacombs_Mages
+    400014: WaterZonelineToQeynosCatacombs_Ocean
+    400016: ZonelineToNorthQeynos_Bards
+    400018: ZonelineToNorthQeynos_Clock
+    400020: ZonelineToQeynosCatacombs_Arena
+    400022: zoneSouthQeynos
+    2300000: PVPArena
+    2300002: WaterAtClock
+    2300004: WaterSurfaceAtBank
+    2300006: WaterTempleRainkeepers
+    2300008: WaterZonelineToQeynosCatacombs_Bank
+    2300010: WaterZonelineToQeynosCatacombs_Mages
+    2300012: WaterZonelineToQeynosCatacombs_Ocean
+    2300014: ZonelineToNorthQeynos_Bards
+    2300016: ZonelineToNorthQeynos_Clock
+    2300018: ZonelineToQeynosCatacombs_Arena
+    2300020: zoneSouthQeynos
+    3300000: PVPArena
+    3300002: WaterAtClock
+    3300004: WaterSurfaceAtBank
+    3300006: WaterTempleRainkeepers
+    3300008: WaterZonelineToQeynosCatacombs_Bank
+    3300010: WaterZonelineToQeynosCatacombs_Mages
+    3300012: WaterZonelineToQeynosCatacombs_Ocean
+    3300014: ZonelineToNorthQeynos_Bards
+    3300016: ZonelineToNorthQeynos_Clock
+    3300018: ZonelineToQeynosCatacombs_Arena
+    3300020: zoneSouthQeynos
+    4300000: WaterTempleRainkeepers
+    4300002: ZonelineToNorthQeynos_Clock
+    4300004: ZonelineToNorthQeynos_Bards
+    4300006: WaterZonelineToQeynosCatacombs_Ocean
+    4300008: PVPArena
+    4300010: WaterZonelineToQeynosCatacombs_Mages
+    4300012: WaterAtClock
+    4300014: WaterZonelineToQeynosCatacombs_Bank
+    4300016: WaterSurfaceAtBank
+    4300018: zoneSouthQeynos
+    4300020: ZonelineToQeynosCatacombs_Arena
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
