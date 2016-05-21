@@ -42,12 +42,20 @@ namespace EQBrowser
 		private bool chatting = false;
 		public WorldConnect WorldConnection;
 		public GameObject ChatInputField;
+		
+		public float distanceTravelled = 0;
+		public Vector3 lastPosition;
 
+		public float rotationTravelled = 0;
+		public Vector3 lastRotation;
 		
 		
 		void Start () 
 		{ 
 			anim = gameObject.GetComponent<Animator>();
+			lastPosition = transform.position;
+			lastRotation = transform.eulerAngles;
+
 		}
 
 		public void ToggleChatOn()
@@ -75,6 +83,7 @@ namespace EQBrowser
 			inputField.text = string.Empty;
 			WorldConnection.isTyping = false;
 		}
+		
 
 		//Every Frame 
 		void Update () 
@@ -245,7 +254,27 @@ namespace EQBrowser
 				}   
 				
 				//transform direction 
-				moveDirection = transform.TransformDirection(moveDirection);         
+				moveDirection = transform.TransformDirection(moveDirection);
+				
+				//clientupdate
+				
+				distanceTravelled += Vector3.Distance(transform.position, lastPosition);
+				lastPosition = transform.position;
+				
+				rotationTravelled += Vector3.Distance(transform.eulerAngles, lastRotation);
+				lastRotation = transform.eulerAngles;
+				
+				if(distanceTravelled > 3)
+				{
+					distanceTravelled = 0;
+					WorldConnection.DoClientUpdate();
+				}
+				
+				if(rotationTravelled > 10)
+				{
+					rotationTravelled = 0;
+					WorldConnection.DoClientUpdate();
+				}
 				
 			} 
 			// Allow turning at anytime. Keep the character facing in the same direction as the Camera if the right mouse button is down. 
