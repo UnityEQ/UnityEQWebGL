@@ -206,6 +206,7 @@ namespace EQBrowser
 						UIScripts.CastButton = false;
 						moveStatus = isWalking ? "sidewalking_r" : "siderunning_r";
 						GetComponent<Animator>().Play("Walk");
+
 					}
 					if (moveDirection.x < 0)
 					{

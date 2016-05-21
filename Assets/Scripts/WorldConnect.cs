@@ -164,6 +164,8 @@ namespace EQBrowser {
 			opcodeDict.Add ("69", HandleWorldMessage_ChannelMessage);
 			opcodeDict.Add ("87", HandleWorldMessage_ClientUpdate);
 			opcodeDict.Add ("458", HandleWorldMessage_SimpleMessage);
+			opcodeDict.Add ("168", HandleWorldMessage_FormattedMessage);
+			opcodeDict.Add ("109", HandleWorldMessage_Damage);
 
 
 			//Auto-Connect to Salty Server
@@ -278,7 +280,7 @@ namespace EQBrowser {
 		{
 			string serialized = GenerateWorldPacket(pktsize, opcode, zoneid, instanceid, list);
 			ws_.SendString(serialized);
-			//Debug.Log("SendPacket" + serialized);
+//			Debug.Log("SendPacket" + serialized);
 		}
 
 		// Update is called once per frame

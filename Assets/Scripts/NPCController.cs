@@ -23,11 +23,19 @@ using EQBrowser;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
 		private bool grounded = false;
+
+//-x,z,y 		
+		public float movetoX;// x coord
+		public float movetoY;// y coord
+		public float movetoZ;// z coord
+		public float movetoH;// z coord
+//-x,z,y 		
+		public float deltaX;// x coord
+		public float deltaY;// y coord
+		public float deltaZ;// z coord
+		public float deltaH;// z coord
 		
-		public float movetoX = 0;// x coord
-		public float movetoY = 0;// y coord
-		public float movetoZ = 0;// z coord
-		public float movetoH = 0;// z coord
+		public float stepFinal;
 
 		void Update () 
 		{ 
@@ -45,13 +53,17 @@ using EQBrowser;
 			grounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
 			
 			//wander
-			if ((movetoX != 0) && (movetoY != 0) && (movetoZ != 0) && (movetoH != 0))
+			if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
 			{
-				
-				Vector3 targetPosition = new Vector3 (-movetoX,movetoZ,movetoY);
-				
-				float step = Time.deltaTime * 5.0f;
-				transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
+		 		Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
+								
+				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+				if (deltaF.magnitude != 0) {
+					//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
+					float step = deltaF.magnitude * Time.deltaTime;
+					transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
+				}
+
 				//heading
 				transform.rotation = Quaternion.Euler(0, movetoH, 0);
 			}

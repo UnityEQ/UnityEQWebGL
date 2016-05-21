@@ -84,7 +84,7 @@ namespace EQBrowser
 			WriteInt8(toggle, ref DeleteSpawnRequest, ref position); 
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 43 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
 			Debug.Log("attack1");
-			DoAttack2(1);
+//			DoAttack2(1);
 		}
 		public void DoAttack2(byte toggle)
 		{
@@ -127,12 +127,13 @@ namespace EQBrowser
 			float x = -us.transform.position.x;
 			float y = us.transform.position.z;
 			float z = us.transform.position.y;
-			float h = us.transform.rotation.y;
+			float h = (us.transform.eulerAngles.y - 60);
 			//float x = 234;
 			//float y = 11;
 			//float z = 2;
 			//float h = 122;
-						
+			Debug.Log("MOOO: " + h);
+
 			byte[] PositionUpdateRequest = new byte[38];
 			Int32 position = 0;
 				
@@ -247,6 +248,41 @@ namespace EQBrowser
 		
 		
 		/* Incoming packet handlers below */
+		public void HandleWorldMessage_FormattedMessage(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int32 unk = ReadInt32(data, ref position);
+			Int32 stringID = ReadInt32(data, ref position);
+			Int32 type = ReadInt32(data, ref position);
+			Int32 ChannelVarLength = datasize - position;
+			string ChannelMessage = ReadFixedLengthString(data, ref position, ChannelVarLength);
+			Debug.Log("formatmessagestring: " + stringID);
+			Debug.Log("formatmessagetype: " + type);
+			Debug.Log("formatmessagetype: " + ChannelMessage);
+		}
+		
+		public void HandleWorldMessage_Damage(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			
+			Int16 target = ReadInt16(data, ref position);
+			Int16 source = ReadInt16(data, ref position);
+			byte type = ReadInt8(data, ref position); //slashing, etc. 231 (0xE7) for spells
+			Int16 spellId = ReadInt16(data, ref position);
+			Int32 damage = ReadInt32(data, ref position);
+			float force = ReadInt32(data, ref position);
+			float meleepush_xy = ReadInt32(data, ref position);
+			float meleepush_z = ReadInt32(data, ref position);
+			Int32 special = ReadInt32(data, ref position); // 2 = Rampage, 1 = Wild Rampage
+			
+			if(target == OurEntityID || source == OurEntityID)
+			{
+				Debug.Log("target: " + target);
+				Debug.Log("source: " + source);
+				Debug.Log("type: " + type);
+				Debug.Log("damage: " + damage);
+			}
+		}
 		
 		public void HandleWorldMessage_SimpleMessage(byte[] data, int datasize)
 		{
@@ -342,10 +378,17 @@ namespace EQBrowser
 			float rotation = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
-			temp.GetComponent<NPCController>().movetoX = x;// Player's Name
-			temp.GetComponent<NPCController>().movetoY = y;// Player's Name
-			temp.GetComponent<NPCController>().movetoZ = z;// Player's Name
+			temp.GetComponent<NPCController>().movetoX = -x;// Player's Name
+			temp.GetComponent<NPCController>().movetoY = z;// Player's Name
+			temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
 			temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
+			
+			
+			temp.GetComponent<NPCController>().deltaX = -deltaX;// Player's Name
+			temp.GetComponent<NPCController>().deltaY = deltaZ;// Player's Name
+			temp.GetComponent<NPCController>().deltaZ = deltaY;// Player's Name
+			temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
+			
 			
 		}
 
@@ -660,11 +703,13 @@ namespace EQBrowser
 		//551
 		public void HandleWorldMessage_EmuRequestClose(byte[] data, int datasize)
 		{
+			Debug.Log("CLOSE");
 			string ActiveScene = SceneManager.GetActiveScene().name;
 			if (ActiveScene == "2 North Qeynos")
 			{
+				Debug.Log("CLOSEIF");
 				SceneManager.LoadScene("1 Character creation");
-			Destroy (WorldConnectObject);
+				Destroy (WorldConnectObject);
 			}
 			else
 			{
@@ -908,7 +953,7 @@ namespace EQBrowser
 				Int32 DestructibleUnk9 = ReadInt32(data, ref position);
 				byte targetable_with_hotkey = ReadInt8(data, ref position);
 
-			ObjectPool.instance.GetObjectForType("BeetlePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+			ObjectPool.instance.GetObjectForType("HumanMalePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
 //			ObjectPool.instance.GetObjectForType("0",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
 
 
