@@ -56,16 +56,19 @@ using EQBrowser;
 			if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
 			{
 		 		Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
-								
+
 				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
-				if (deltaF.magnitude != 0) {
+//				if (deltaF.magnitude != 0) {
 					//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
-					float step = deltaF.magnitude * Time.deltaTime;
-					transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
-				}
+//					float step = deltaF.magnitude * Time.deltaTime;
+					transform.Translate(deltaF * Time.deltaTime, Space.World);
+//					transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
+//					stepFinal = step;
+//				}
 
 				//heading
-				transform.rotation = Quaternion.Euler(0, movetoH, 0);
+//				float h = Mathf.Lerp(360,0,movetoH/255f);
+//				transform.localEulerAngles = new Vector3(0,h,0);
 			}
 		}
 			

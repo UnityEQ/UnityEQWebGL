@@ -101,6 +101,10 @@ public class ObjectPool : MonoBehaviour
                     pooledObject.SetActiveRecursively(true);
 					Vector3 pos = new Vector3(x,y,z);
 					pooledObject.transform.position = pos;
+					//heading
+					float h = Mathf.Lerp(360,0,heading/255f);
+//					pooledObject.transform.eulerAngles.y = h;
+					pooledObject.transform.localEulerAngles = new Vector3(0,h,0);
 //					pooledObject.transform.localScale = new Vector3(1, 1, 1);
 					pooledObject.name = spawnId.ToString();
 					pooledObject.GetComponent<NPCController>().RaceID = race;

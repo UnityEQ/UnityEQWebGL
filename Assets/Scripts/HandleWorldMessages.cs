@@ -127,12 +127,13 @@ namespace EQBrowser
 			float x = -us.transform.position.x;
 			float y = us.transform.position.z;
 			float z = us.transform.position.y;
-			float h = (us.transform.eulerAngles.y - 60);
+
+			float h = Mathf.Lerp(255,0,us.transform.eulerAngles.y/360f);
 			//float x = 234;
 			//float y = 11;
 			//float z = 2;
 			//float h = 122;
-			Debug.Log("MOOO: " + h);
+
 
 			byte[] PositionUpdateRequest = new byte[38];
 			Int32 position = 0;

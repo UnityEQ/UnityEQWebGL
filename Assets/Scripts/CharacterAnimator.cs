@@ -270,7 +270,7 @@ namespace EQBrowser
 					WorldConnection.DoClientUpdate();
 				}
 				
-				if(rotationTravelled > 10)
+				if(rotationTravelled > 3)
 				{
 					rotationTravelled = 0;
 					WorldConnection.DoClientUpdate();
