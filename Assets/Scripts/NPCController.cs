@@ -36,40 +36,68 @@ using EQBrowser;
 		public float deltaH;// z coord
 		
 		public float stepFinal;
+		public int isWalking;
+		public int isIdle;
 
 		void Update () 
 		{ 
-			CharacterController controller = GetComponent<CharacterController>();
-			Vector3 speedv = controller.velocity;
-//			Debug.Log(speedv);
-			
-//			GetComponent<Animator>().Play("Walk");
-
-			//Apply gravity 
-			moveDirection.y -= gravity * Time.deltaTime; 
-			//Get CharacterController 
-			controller = GetComponent<CharacterController>(); 
-			//Move Charactercontroller and check if grounded 
-			grounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
-			
-			//wander
-			if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
+			if(NPC == 2)
 			{
-		 		Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
-
-				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
-//				if (deltaF.magnitude != 0) {
-					//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
-//					float step = deltaF.magnitude * Time.deltaTime;
-					transform.Translate(deltaF * Time.deltaTime, Space.World);
-//					transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
-//					stepFinal = step;
-//				}
-
-				//heading
-//				float h = Mathf.Lerp(360,0,movetoH/255f);
-//				transform.localEulerAngles = new Vector3(0,h,0);
+				GetComponent<Animator>().Play("Dead");
 			}
+			else
+			{
+				CharacterController controller = GetComponent<CharacterController>();
+				//Apply gravity 
+				moveDirection.y -= gravity * Time.deltaTime; 
+				//Get CharacterController 
+				controller = GetComponent<CharacterController>(); 
+				//Move Charactercontroller and check if grounded 
+				grounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
+				
+				//wander
+				if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
+				{
+					if(isWalking == 0)
+					{
+						walkNow();
+					}
+					
+					Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
+	
+					Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+					if (deltaF.magnitude != 0) {
+						//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
+						float step = deltaF.magnitude * Time.deltaTime;
+//						transform.Translate(deltaF * Time.deltaTime, Space.World);
+						transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
+//						stepFinal = step;
+					}
+					//heading
+//					float h = Mathf.Lerp(360,0,movetoH/255f);
+//					transform.localEulerAngles = new Vector3(0,h,0);
+				}
+				else
+				{
+					if(isIdle == 0)
+					{
+						idleNow();
+					}
+				}
+			}
+		}
+
+		public void walkNow()
+		{
+			isWalking = 1;
+			isIdle = 0;
+			GetComponent<Animator>().Play("Walk");
+		}
+		public void idleNow()
+		{
+			isWalking = 0;
+			isIdle = 1;
+			GetComponent<Animator>().Play("Idle");
 		}
 			
 	}

@@ -83,7 +83,9 @@ namespace EQBrowser
 			int position = 0;
 			WriteInt8(toggle, ref DeleteSpawnRequest, ref position); 
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 43 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
-			Debug.Log("attack1");
+			if(toggle == 1){isAttacking = 1;ChatText2.text += (Environment.NewLine + "Auto attack is on");};
+			if(toggle == 0){isAttacking = 0;ChatText2.text += (Environment.NewLine + "Auto attack is off");};
+			
 //			DoAttack2(1);
 		}
 		public void DoAttack2(byte toggle)
@@ -114,11 +116,9 @@ namespace EQBrowser
 			string ChatText3 = (ChannelMessage);
 			ChatText3 = ChatText3.Substring(0, ChatText3.Length - 1);
 
-			string ChatText4 = ourPlayerName;
 			char[] emptySpace = {'\0'};
-			ChatText4 = ourPlayerName.TrimEnd(emptySpace);
-			ChatText2.text += (Environment.NewLine + ChatText4 + " says in ooc, '" + ChatText3 + "'");
-			Debug.Log("LENGTH: " + ChatText4.Length);
+			string trimmedName = ourPlayerName.TrimEnd(emptySpace);
+			ChatText2.text += (Environment.NewLine + trimmedName + " says in ooc, '" + ChatText3 + "'");
 		}
 		
 		public void DoClientUpdate()
@@ -275,13 +275,23 @@ namespace EQBrowser
 			float meleepush_xy = ReadInt32(data, ref position);
 			float meleepush_z = ReadInt32(data, ref position);
 			Int32 special = ReadInt32(data, ref position); // 2 = Rampage, 1 = Wild Rampage
-			
-			if(target == OurEntityID || source == OurEntityID)
+		
+			if(target == OurEntityID)
 			{
-				Debug.Log("target: " + target);
-				Debug.Log("source: " + source);
-				Debug.Log("type: " + type);
-				Debug.Log("damage: " + damage);
+				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
+				string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
+//replace 69 with 4 when done w/ name trim
+				if(type == 69){ChatText2.text += (Environment.NewLine + sourceName + "hits" + " YOU for " + damage + " points of damage.");}
+				else{ChatText2.text += (Environment.NewLine + sourceName + " " + type + " YOU for " + damage + " points of damage.");}
+			}
+			
+			if(source == OurEntityID)
+			{
+				GameObject temp2 = ObjectPool.instance.spawnlist.Where(obj => obj.name == target.ToString()).SingleOrDefault();
+				string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
+//replace 69 with 4 when done w/ name trim				
+				if(type == 69){ChatText2.text += (Environment.NewLine + "You hit " + target + " for " + damage + " points of damage.");}
+				else{ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName + " for " + damage + " points of damage.");}
 			}
 		}
 		
@@ -954,10 +964,28 @@ namespace EQBrowser
 				Int32 DestructibleUnk9 = ReadInt32(data, ref position);
 				byte targetable_with_hotkey = ReadInt8(data, ref position);
 
-			ObjectPool.instance.GetObjectForType("HumanMalePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
-//			ObjectPool.instance.GetObjectForType("0",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+				switch (race)
+				{
+					case 22:
+						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;
+					case 34:
+						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;						
+					case 36:
+						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;						
+					case 39:
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;
+					case 60:
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;
 
-
+					default:
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						break;
+				}
 			}
 		}
 //end		

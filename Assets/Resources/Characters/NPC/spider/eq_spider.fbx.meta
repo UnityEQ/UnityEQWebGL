@@ -117,7 +117,777 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Melee1H
+      takeName: Melee1H
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hurt_01
+      takeName: Hurt_01
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: 0
+      lastFrame: 52
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_01
+      takeName: Idle_01
+      firstFrame: 0
+      lastFrame: 58
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 38
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Turn
+      takeName: Turn
+      firstFrame: 0
+      lastFrame: 58
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/AB
+        weight: 1
+      - path: U3DRoot/Root/PE/AB/HEAD_POINT
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/MA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1L/CA1L/BO1L/TO1L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH1R/CA1R/BO1R/TO1R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2L/CA2L/BO2L/TO2L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH2R/CA2R/BO2R/TO2R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3L/CA3L/BO3L/TO3L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH3R/CA3R/BO3R/TO3R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4L/CA4L/BO4L/TO4L
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R
+        weight: 1
+      - path: U3DRoot/Root/PE/TH4R/CA4R/BO4R/TO4R
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -135,7 +905,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0

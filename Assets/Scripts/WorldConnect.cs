@@ -28,6 +28,7 @@ namespace EQBrowser {
 		public CharacterSelect CSel;
 		public Text ChatText2;
 		public GameObject NullGameObject;
+		public int isAttacking;
 		public static WorldConnect Instance
 		{
 			get
