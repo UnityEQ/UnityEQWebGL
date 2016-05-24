@@ -147,8 +147,19 @@ public class UIScripts : MonoBehaviour {
 	public void AttackClick(string param2)
 	{
 		Debug.Log("poop");
-		if(WorldConnection2.isAttacking == 0){WorldConnection2.DoAttack(1);}
-		if(WorldConnection2.isAttacking == 1){WorldConnection2.DoAttack(0);}
+		switch(WorldConnection2.isAttacking)
+		{
+			case 0:
+				WorldConnection2.DoAttack(1);
+				break;
+			case 1:
+				WorldConnection2.DoAttack(0);
+				break;
+			default:
+				break;
+		}
+//		if(WorldConnection2.isAttacking == 0){WorldConnection2.DoAttack(1);}
+//		if(WorldConnection2.isAttacking == 1){WorldConnection2.DoAttack(0);}
 	}
 
 	public void InventoryClick2(string param2)

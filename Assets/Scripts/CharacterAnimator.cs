@@ -122,8 +122,10 @@ namespace EQBrowser
 			{ 
 
 				//movedirection 
-
+				if(WorldConnection.isTyping == false)
+				{
 					moveDirection = new Vector3((Input.GetMouseButton(1) ? Input.GetAxis("Horizontal") : 0),0,Input.GetAxis("Vertical")); 
+				}
 				//pushbuffer to avoid on/off flipping 
 				if(pbuffer>0) 
 					pbuffer -=Time.deltaTime; 
