@@ -7,6 +7,7 @@ using System.IO;
 using System;
 using System.Linq;
 using UnityEngine.UI;
+using System.Text.RegularExpressions;
 
 
 namespace EQBrowser
@@ -62,15 +63,29 @@ namespace EQBrowser
 		
 		public void DoTarget(string targetID)
 		{
+			Debug.Log("targetID: " + targetID);
+			
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == targetID).SingleOrDefault();
-			string x = temp.GetComponent<NPCController>().name;
-			Debug.Log(targetID);
-			UIScript.TargetName.text = x;
-			int targetInt = int.Parse(targetID);
+			string targetName = temp.GetComponent<NPCController>().name;
+			int curhp = temp.GetComponent<NPCController>().curHp;
+			int maxhp = temp.GetComponent<NPCController>().maxHp;
 
+			
+			float hpPercent = ((float)curhp/(float)maxhp)*100;
+			//>_<
+			UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+			UIScript.TargetHPText.text = ((int)hpPercent + "%");
+	
+			string targetClean = Regex.Replace(targetName, "[0-9]", "");
+			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+			UIScript.TargetBox.SetActive(true);
+			UIScript.TargetName.text = targetName3;
+		
+			
+			int targetInt = int.Parse(targetID);
 			byte[] DeleteSpawnRequest = new byte[4];
 			Int32 position = 0;
-			
 			WriteInt8((byte)targetInt, ref DeleteSpawnRequest, ref position);
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 478 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
 
@@ -79,13 +94,25 @@ namespace EQBrowser
 		
 		public void DoAttack(byte toggle)
 		{
+			switch(toggle)
+			{
+				case 0:
+					isAttacking = 0;
+//					if(toggle == 1){isAttacking = 1;ChatText2.text += (Environment.NewLine + "Auto attack is on");};
+					ChatText2.text += (Environment.NewLine + "Auto attack is off");
+					break;
+				case 1:
+					isAttacking = 1;
+					ChatText2.text += (Environment.NewLine + "Auto attack is on");
+					break;
+				default:
+					break;
+
+			}
 			byte[] DeleteSpawnRequest = new byte[4];
 			int position = 0;
 			WriteInt8(toggle, ref DeleteSpawnRequest, ref position); 
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 43 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
-			if(toggle == 1){isAttacking = 1;ChatText2.text += (Environment.NewLine + "Auto attack is on");};
-			if(toggle == 0){isAttacking = 0;ChatText2.text += (Environment.NewLine + "Auto attack is off");};
-			
 //			DoAttack2(1);
 		}
 		public void DoAttack2(byte toggle)
@@ -149,7 +176,7 @@ namespace EQBrowser
 			WriteInt32(0, ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(h), 0), ref PositionUpdateRequest, ref position);
 
-			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
+//			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
 		}
 		
 		/* UI Events Below */
@@ -262,6 +289,24 @@ namespace EQBrowser
 			Debug.Log("formatmessagetype: " + ChannelMessage);
 		}
 		
+		public void HandleWorldMessage_HPUpdate(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int32 curhp = ReadInt32(data, ref position);
+			Int32 maxhp = ReadInt32(data, ref position);
+			Int16 spawnId = ReadInt16(data, ref position);
+			
+			if(spawnId == OurEntityID)
+			{
+				
+				float hpPercent = ((float)curhp/(float)maxhp)*100;
+				//>_<
+				UIScript.OurHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+				UIScript.HPText.text = ((int)hpPercent + "%");
+			}
+
+		}
+		
 		public void HandleWorldMessage_Damage(byte[] data, int datasize)
 		{
 			Int32 position = 0;
@@ -280,18 +325,46 @@ namespace EQBrowser
 			{
 				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
 				string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
-//replace 69 with 4 when done w/ name trim
-				if(type == 69){ChatText2.text += (Environment.NewLine + sourceName + "hits" + " YOU for " + damage + " points of damage.");}
-				else{ChatText2.text += (Environment.NewLine + sourceName + " " + type + " YOU for " + damage + " points of damage.");}
+				string sourceClean = Regex.Replace(sourceName, "[0-9]", "");
+				string sourceName2 = Regex.Replace(sourceClean, "[_]", " ");
+				string sourceName3 = Regex.Replace(sourceName2, "[\0]", "");
+
+				switch(type)
+				{
+					case 4:
+						ChatText2.text += (Environment.NewLine + sourceName3 + " hits" + " YOU for " + damage + " points of damage.");
+						break;
+					case 30:
+						ChatText2.text += (Environment.NewLine + sourceName3 + " kicks" + " YOU for " + damage + " points of damage.");
+						break;
+
+					default:
+						ChatText2.text += (Environment.NewLine + sourceName3 + " " + type + " YOU for " + damage + " points of damage.");
+						break;
+				}
+//				if(type == 4){ChatText2.text += (Environment.NewLine + sourceName3 + " hits" + " YOU for " + damage + " points of damage.");}
+//				else{ChatText2.text += (Environment.NewLine + sourceName3 + " " + type + " YOU for " + damage + " points of damage.");}
 			}
 			
 			if(source == OurEntityID)
 			{
 				GameObject temp2 = ObjectPool.instance.spawnlist.Where(obj => obj.name == target.ToString()).SingleOrDefault();
 				string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
-//replace 69 with 4 when done w/ name trim				
-				if(type == 69){ChatText2.text += (Environment.NewLine + "You hit " + target + " for " + damage + " points of damage.");}
-				else{ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName + " for " + damage + " points of damage.");}
+				string targetClean = Regex.Replace(targetName, "[0-9]", "");
+				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+				string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+				
+				switch(type)
+				{
+					case 4:
+						ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
+						break;
+					default:
+						ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");
+						break;
+				}
+//				if(type == 4){ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");}
+//				else{ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");}
 			}
 		}
 		
@@ -301,7 +374,7 @@ namespace EQBrowser
 			Int32 stringId = ReadInt32(data, ref position);
 			if(stringId == 124)
 			{
-				Debug.Log("Your target is too far away, get closer!");
+				ChatText2.text += (Environment.NewLine + "Your target is too far away, get closer!");
 			}
 		}
 		//545
@@ -967,23 +1040,26 @@ namespace EQBrowser
 				switch (race)
 				{
 					case 22:
-						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					case 34:
-						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;						
 					case 36:
-						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
-						break;						
+						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						break;
+					case 37:
+						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						break;							
 					case 39:
-						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					case 60:
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 
 					default:
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 				}
 			}

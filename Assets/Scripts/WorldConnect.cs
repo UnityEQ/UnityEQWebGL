@@ -167,6 +167,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("458", HandleWorldMessage_SimpleMessage);
 			opcodeDict.Add ("168", HandleWorldMessage_FormattedMessage);
 			opcodeDict.Add ("109", HandleWorldMessage_Damage);
+			opcodeDict.Add ("242", HandleWorldMessage_HPUpdate);
 
 
 			//Auto-Connect to Salty Server

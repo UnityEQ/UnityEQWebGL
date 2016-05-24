@@ -16,6 +16,7 @@ using EQBrowser;
 		public float size = 0;// Model size
 		public byte NPC = 0;// 0=player,1=npc,2=pc corpse,3=npc corpse,a
 		public byte curHp = 0;// Current hp %%% wrong
+		public byte maxHp = 0;// Current hp %%% wrong
 		public byte level = 0;// Spawn Level
 		public byte gender = 0;// Gender (0=male, 1=female)
 

@@ -15,7 +15,10 @@ public class UIScripts : MonoBehaviour {
 	public Text InventoryText;
 
 	public Text TargetName;
+	public RectTransform TargetHP;
+	public Text TargetHPText;
 
+	public GameObject TargetBox;
 	public GameObject Main;
 	public GameObject Abilities;
 	public GameObject Combat;
@@ -38,8 +41,14 @@ public class UIScripts : MonoBehaviour {
 	public GameObject SpellGem7;
 	public GameObject SpellGem8;
 	
+	public GameObject Attack;
+	
 	public GameObject ChatText;
 	public GameObject ChatTextInput;
+	
+	public Text profileName;
+	public RectTransform OurHP;
+	public Text HPText;
 	
 	public WorldConnect WorldConnection2;
 	
@@ -55,6 +64,8 @@ public class UIScripts : MonoBehaviour {
 		CombatPanel.SetActive(false);
 		SocialPanel.SetActive(false);
 
+		Attack.GetComponent<Button>().onClick.AddListener(delegate { AttackClick(param2); });
+		
 		Main.GetComponent<Button>().onClick.AddListener(delegate { MainClick(param2); });
 		Abilities.GetComponent<Button>().onClick.AddListener(delegate { AbilitiesClick(param2); });
 		Combat.GetComponent<Button>().onClick.AddListener(delegate { CombatClick(param2); });
@@ -133,6 +144,13 @@ public class UIScripts : MonoBehaviour {
 //		WorldConnection2.DoLogOut();
 		WorldConnection2.DoAttack(1);
 	}
+	public void AttackClick(string param2)
+	{
+		Debug.Log("poop");
+		if(WorldConnection2.isAttacking == 0){WorldConnection2.DoAttack(1);}
+		if(WorldConnection2.isAttacking == 1){WorldConnection2.DoAttack(0);}
+	}
+
 	public void InventoryClick2(string param2)
 	{
 		InventoryWindow.SetActive (false);	
@@ -193,6 +211,8 @@ public class UIScripts : MonoBehaviour {
 		setupBtn2 ();
 		MainText.color = Color.green;
 		InventoryWindow.SetActive (false);
+		profileName.text = WorldConnection2.ourPlayerName;
+		TargetBox.SetActive(false);
 	}
 	
 	// Update is called once per frame

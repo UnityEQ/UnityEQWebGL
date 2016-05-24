@@ -85,7 +85,7 @@ public class ObjectPool : MonoBehaviour
     /// <param name='onlyPooled'>
     /// If true, it will only return an object if there is one currently pooled.
     /// </param>
-    public GameObject GetObjectForType ( string objectType , bool onlyPooled, float x, float y, float z, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte level, byte gender )
+    public GameObject GetObjectForType ( string objectType , bool onlyPooled, float x, float y, float z, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte maxHp, byte level, byte gender )
     {
         for(int i=0; i<objectPrefabs.Length; i++)
         {
@@ -105,7 +105,7 @@ public class ObjectPool : MonoBehaviour
 					float h = Mathf.Lerp(360,0,heading/255f);
 //					pooledObject.transform.eulerAngles.y = h;
 					pooledObject.transform.localEulerAngles = new Vector3(0,h,0);
-//					pooledObject.transform.localScale = new Vector3(1, 1, 1);
+					pooledObject.transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
 					pooledObject.name = spawnId.ToString();
 					pooledObject.GetComponent<NPCController>().RaceID = race;
 					pooledObject.GetComponent<NPCController>().spawnId = spawnId;
@@ -118,6 +118,7 @@ public class ObjectPool : MonoBehaviour
 					pooledObject.GetComponent<NPCController>().size = size;// Model size
 					pooledObject.GetComponent<NPCController>().NPC = NPC;// 0=player,1=npc,2=pc corpse,3=npc corpse,a
 					pooledObject.GetComponent<NPCController>().curHp = curHp;// Current hp %%% wrong
+					pooledObject.GetComponent<NPCController>().maxHp = maxHp;// Current hp %%% wrong
 					pooledObject.GetComponent<NPCController>().level = level;// Spawn Level
 					pooledObject.GetComponent<NPCController>().gender = gender;// Gender (0=male, 1=female)
 					

@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 6bc919948f6ebbc46843591a3c30ae0e
 ModelImporter:
-  serializedVersion: 18
+  serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
     100002: FA_L
@@ -58,15 +58,596 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleRotations: 1
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Kick
+      takeName: Kick
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Melee1HP
+      takeName: Melee1HP
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Melee1H
+      takeName: Melee1H
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hurt_01
+      takeName: Hurt_01
+      firstFrame: 0
+      lastFrame: 26
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_01
+      takeName: Idle_01
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Turn
+      takeName: Turn
+      firstFrame: 0
+      lastFrame: 42
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DRoot
+        weight: 1
+      - path: U3DRoot/Root
+        weight: 1
+      - path: U3DRoot/Root/PE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_L
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/HE/FA_R
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2
+        weight: 1
+      - path: U3DRoot/Root/PE/JA/TN1/TN2/TN3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5
+        weight: 1
+      - path: U3DRoot/Root/PE/TA1/TA2/TA3/TA4/TA5/TA6
+        weight: 1
+      - path: U3DRoot/U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -87,24 +668,25 @@ ModelImporter:
     useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
