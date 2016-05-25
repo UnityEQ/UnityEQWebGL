@@ -8,6 +8,7 @@ using EQBrowser;
 		public int RaceID = 0;
 		public int spawnId = 0;
 		public string name = "";// Player's Name
+		public string prefabName = "";// Player's prefab Name
 		public float x = 0;// x coord
 		public float y = 0;// y coord
 		public float z = 0;// z coord

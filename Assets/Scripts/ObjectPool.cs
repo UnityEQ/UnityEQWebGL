@@ -110,6 +110,7 @@ public class ObjectPool : MonoBehaviour
 					pooledObject.GetComponent<NPCController>().RaceID = race;
 					pooledObject.GetComponent<NPCController>().spawnId = spawnId;
 					pooledObject.GetComponent<NPCController>().name = name;// Player's Name
+					pooledObject.GetComponent<NPCController>().prefabName = prefab.name;
 					pooledObject.GetComponent<NPCController>().x = x;// x coord
 					pooledObject.GetComponent<NPCController>().y = y;// y coord
 					pooledObject.GetComponent<NPCController>().z = z;// z coord

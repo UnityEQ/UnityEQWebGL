@@ -17,7 +17,7 @@ namespace EQBrowser {
 	{  
 		private static WorldConnect instance;
 		public GameObject WorldConnectObject;
-		public GameObject[] SpawnRaceId;
+//		public GameObject[] SpawnRaceId;
 		public GameObject CharSelect;
 		public GameObject CharSelectCamera;
 		public GameObject UIScriptsObject;
@@ -56,6 +56,7 @@ namespace EQBrowser {
 		public Int32 curZoneId = -1;
 		public Int32 curInstanceId = -1;
 		public Int32 OurEntityID = 0;
+		public Int32 OurTargetID;
 		public WebSocket ws_;
 
 		delegate void OpcodeFunc (byte[] data, int datasize);

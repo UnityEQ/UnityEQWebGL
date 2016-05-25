@@ -70,20 +70,18 @@ namespace EQBrowser
 			int curhp = temp.GetComponent<NPCController>().curHp;
 			int maxhp = temp.GetComponent<NPCController>().maxHp;
 
-			
-			float hpPercent = ((float)curhp/(float)maxhp)*100;
-			//>_<
-			UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
-			UIScript.TargetHPText.text = ((int)hpPercent + "%");
-	
 			string targetClean = Regex.Replace(targetName, "[0-9]", "");
 			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
 			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 			UIScript.TargetBox.SetActive(true);
 			UIScript.TargetName.text = targetName3;
-		
+
+			float hpPercent = ((float)curhp/(float)maxhp)*100;
+			UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+			UIScript.TargetHPText.text = ((int)hpPercent + "%");
 			
 			int targetInt = int.Parse(targetID);
+			OurTargetID = targetInt;
 			byte[] DeleteSpawnRequest = new byte[4];
 			Int32 position = 0;
 			WriteInt8((byte)targetInt, ref DeleteSpawnRequest, ref position);
@@ -176,7 +174,7 @@ namespace EQBrowser
 			WriteInt32(0, ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(h), 0), ref PositionUpdateRequest, ref position);
 
-//			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
+			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
 		}
 		
 		/* UI Events Below */
@@ -300,11 +298,18 @@ namespace EQBrowser
 			{
 				
 				float hpPercent = ((float)curhp/(float)maxhp)*100;
-				//>_<
+//				Debug.Log("HP: " + curhp + " / " + maxhp + " = " + hpPercent);
 				UIScript.OurHP.sizeDelta = new Vector2( (int)hpPercent, 10);
 				UIScript.HPText.text = ((int)hpPercent + "%");
 			}
 
+			if(spawnId == OurTargetID)
+			{
+				float hpPercent = ((float)curhp/(float)maxhp)*100;
+				Debug.Log("Enemy HP: " + curhp + " / " + maxhp + " = " + hpPercent);
+				UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+				UIScript.TargetHPText.text = ((int)hpPercent + "%");
+			}
 		}
 		
 		public void HandleWorldMessage_Damage(byte[] data, int datasize)
@@ -408,14 +413,16 @@ namespace EQBrowser
 			Int32 position = 0;
 			Int32 spawn_id = ReadInt32(data, ref position);
 			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
-			
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
-			Debug.Log("spawnid: " + spawn_id);
-			Debug.Log("temp: " + temp);
-			ObjectPool.instance.PoolObject(temp);
-//			Destroy(temp);
-			ObjectPool.instance.spawnlist.Remove(temp); 
-
+			if(temp != null)
+			{
+				string PrefabName = temp.GetComponent<NPCController>().prefabName;			
+				temp.name = PrefabName;
+				Debug.Log("spawnid: " + spawn_id);
+				Debug.Log("temp: " + temp);
+				ObjectPool.instance.PoolObject(temp);
+				ObjectPool.instance.spawnlist.Remove(temp); 
+			}
     
 		}
 		
@@ -521,9 +528,9 @@ namespace EQBrowser
 			Int32 agility = ReadInt32(data, ref position);
 			Int32 wisdom = ReadInt32(data, ref position);
 			Int32 level = ReadInt32(data, ref position);
-			float x = -BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
-			float y = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float y	= BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			float z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float x = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			Int32 diety = ReadInt32(data, ref position);
 			Int32 guildid = ReadInt32(data, ref position);
 			int j = 0;
@@ -656,8 +663,18 @@ namespace EQBrowser
 			}
 			Int32 entityid = ReadInt32(data, ref position);
 			OurEntityID = entityid;
+
+			GameObject us = EqemuConnectObject;
+			us.transform.position = new Vector3(-x,(y+4),-z);
+			Debug.Log("x" + x);
+			Debug.Log("y" + y);
+			Debug.Log("z" + z);
+			float h = Mathf.Lerp(360,0,heading/255f);
+			us.transform.localEulerAngles = new Vector3(0,h,0);
 			
 			GenerateAndSendWorldPacket (0, 403 /* OP_ReqNewZone */, curZoneId, curInstanceId, NewZoneRequest);
+			
+			
 		}
 		//338
 		public void HandleWorldMessage_NewZone(byte[] data, int datasize)
@@ -1057,7 +1074,6 @@ namespace EQBrowser
 					case 60:
 						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
-
 					default:
 						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
