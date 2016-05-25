@@ -133,16 +133,15 @@ public class UIScripts : MonoBehaviour {
 
 	public void HelpClick(string param2)
 	{
-		Debug.Log("UPDATEPOSITION");
-		WorldConnection2.DoClientUpdate();
+//		Debug.Log("UPDATEPOSITION");
+//		WorldConnection2.DoClientUpdate();
 //		WorldConnection2.curZoneId = 4;
 //		WorldConnection2.DoZoneChange(WorldConnection2.ourPlayerName);
 	}
 	public void CampClick(string param2)
 	{
 //		Debug.Log("CLACK");
-//		WorldConnection2.DoLogOut();
-		WorldConnection2.DoAttack(1);
+		WorldConnection2.DoLogOut();
 	}
 	public void AttackClick(string param2)
 	{

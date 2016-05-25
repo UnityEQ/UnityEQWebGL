@@ -665,7 +665,8 @@ namespace EQBrowser
 			OurEntityID = entityid;
 
 			GameObject us = EqemuConnectObject;
-			us.transform.position = new Vector3(-x,(y+4),-z);
+//			us.transform.position = new Vector3(-x,(y+4),-z);
+			us.transform.position = new Vector3(-z,x,y);
 			Debug.Log("x" + x);
 			Debug.Log("y" + y);
 			Debug.Log("z" + z);
