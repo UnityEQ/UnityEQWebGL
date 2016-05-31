@@ -351,6 +351,7 @@ public class CharacterSelect : MonoBehaviour {
 		LoginStatus.text = "Connecting to " + HostNameInput.text + "...";
 		if (UserNameInput.text.Length > 0 && PasswordInput.text.Length > 0 && HostNameInput.text.Length > 0) {
 		string token = "aksdjlka23ij3l1j23lk1j23j123jkjql";
+//		string token = "1234";
 			StartCoroutine(WorldConnection.ConnectToWebSocketServer (HostNameInput.text, token, UserNameInput.text, PasswordInput.text));
 		}
 		else {

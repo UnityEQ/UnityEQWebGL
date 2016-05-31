@@ -102,7 +102,583 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Melee1H
+      takeName: Melee1H
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hurt_01
+      takeName: Hurt_01
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_01
+      takeName: Idle_01
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/NE/HE/JA
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W03L/W04L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W05L/W06L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01L/W02L/W07L/W08L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W03R/W04R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W05R/W06R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/CH/W01R/W02R/W07R/W08R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_BAT_ACTORDEF_T0/BAT_ACTORDEF/DMSPRITEDEF/BAT/PE/TH_R/CA_R/BO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
