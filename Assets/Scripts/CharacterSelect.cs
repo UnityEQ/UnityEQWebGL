@@ -350,8 +350,8 @@ public class CharacterSelect : MonoBehaviour {
 	{
 		LoginStatus.text = "Connecting to " + HostNameInput.text + "...";
 		if (UserNameInput.text.Length > 0 && PasswordInput.text.Length > 0 && HostNameInput.text.Length > 0) {
-		string token = "aksdjlka23ij3l1j23lk1j23j123jkjql";
-//		string token = "1234";
+//		string token = "aksdjlka23ij3l1j23lk1j23j123jkjql";
+		string token = UserNameInput.text;
 			StartCoroutine(WorldConnection.ConnectToWebSocketServer (HostNameInput.text, token, UserNameInput.text, PasswordInput.text));
 		}
 		else {
@@ -366,8 +366,8 @@ public class CharacterSelect : MonoBehaviour {
 		Server2ServerText.color = Color.black;
 		HostNameInput.text = "158.69.221.200:80";
 //for dev quick login
-		UserNameInput.text = "saltyx";
-		PasswordInput.text = "saltyx";
+//		UserNameInput.text = "saltyx";
+//		PasswordInput.text = "saltyx";
 	}
 	
 	public void Server2Clicked(string param)

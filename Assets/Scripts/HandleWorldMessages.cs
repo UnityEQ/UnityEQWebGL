@@ -133,7 +133,7 @@ namespace EQBrowser
 			
 		}
 		
-		public void DoChatDisplay(string ChannelMessage)
+		public void DoChatDisplay(string ChannelSender, string ChannelMessage)
 		{
 			Int32 position = 0;
 			ChatText2 = ChatText.GetComponent<Text>();
@@ -142,7 +142,7 @@ namespace EQBrowser
 			ChatText3 = ChatText3.Substring(0, ChatText3.Length - 1);
 
 			char[] emptySpace = {'\0'};
-			string trimmedName = ourPlayerName.TrimEnd(emptySpace);
+			string trimmedName = ChannelSender.TrimEnd(emptySpace);
 			ChatText2.text += (Environment.NewLine + trimmedName + " says in ooc, '" + ChatText3 + "'");
 		}
 		
@@ -449,7 +449,7 @@ namespace EQBrowser
 			Int32 ChannelSkill = ReadInt32(data, ref position);
 			Int32 ChannelVarLength = datasize - position;
 			string ChannelMessage = ReadFixedLengthString(data, ref position, ChannelVarLength);
-			DoChatDisplay(ChannelMessage);
+			DoChatDisplay(ChannelSender,ChannelMessage);
 		}
 
 	
