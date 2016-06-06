@@ -17,7 +17,6 @@ namespace EQBrowser {
 	{  
 		private static WorldConnect instance;
 		public GameObject WorldConnectObject;
-//		public GameObject[] SpawnRaceId;
 		public GameObject CharSelect;
 		public GameObject CharSelectCamera;
 		public GameObject UIScriptsObject;
@@ -29,23 +28,17 @@ namespace EQBrowser {
 		public Text ChatText2;
 		public GameObject NullGameObject;
 		public int isAttacking;
-		public static WorldConnect Instance
-		{
-			get
-			{
-				
-				if (instance == null)
-				{
-					instance = new WorldConnect();
-				}
-				
-				return instance;
-			}
-		}
 
 		
-		public void Awake() {
-			DontDestroyOnLoad(this);
+		public void Awake() 
+		{
+			if(instance)
+			DestroyImmediate(WorldConnectObject);
+			else
+			{
+				DontDestroyOnLoad(WorldConnectObject);
+				instance = this;
+			}
 		}
 
 		

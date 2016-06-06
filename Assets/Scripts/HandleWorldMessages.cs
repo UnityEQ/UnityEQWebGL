@@ -469,16 +469,18 @@ namespace EQBrowser
 			float rotation = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
-			temp.GetComponent<NPCController>().movetoX = -x;// Player's Name
-			temp.GetComponent<NPCController>().movetoY = z;// Player's Name
-			temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
-			temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
+			if(temp != null)
+			{
+				temp.GetComponent<NPCController>().movetoX = -x;// Player's Name
+				temp.GetComponent<NPCController>().movetoY = z;// Player's Name
+				temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
+				temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
 			
-			
-			temp.GetComponent<NPCController>().deltaX = -deltaX;// Player's Name
-			temp.GetComponent<NPCController>().deltaY = deltaZ;// Player's Name
-			temp.GetComponent<NPCController>().deltaZ = deltaY;// Player's Name
-			temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
+				temp.GetComponent<NPCController>().deltaX = -deltaX;// Player's Name
+				temp.GetComponent<NPCController>().deltaY = deltaZ;// Player's Name
+				temp.GetComponent<NPCController>().deltaZ = deltaY;// Player's Name
+				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
+			}
 			
 			
 		}
@@ -799,6 +801,7 @@ namespace EQBrowser
 			SceneManager.LoadScene("1 Character creation");
 			ws_.Close ();
 			CSel.BackToLogin ();
+//			Destroy (WorldConnectObject);
 			CSel.LoginStatus.text = "You have been disconnected.";
 		}
 		
