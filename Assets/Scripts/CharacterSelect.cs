@@ -366,8 +366,8 @@ public class CharacterSelect : MonoBehaviour {
 		Server2ServerText.color = Color.black;
 		HostNameInput.text = "158.69.221.200:80";
 //for dev quick login
-//		UserNameInput.text = "saltyx";
-//		PasswordInput.text = "saltyx";
+		UserNameInput.text = "saltyx";
+		PasswordInput.text = "saltyx";
 	}
 	
 	public void Server2Clicked(string param)

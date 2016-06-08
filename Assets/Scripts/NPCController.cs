@@ -20,6 +20,7 @@ using EQBrowser;
 		public byte maxHp = 0;// Current hp %%% wrong
 		public byte level = 0;// Spawn Level
 		public byte gender = 0;// Gender (0=male, 1=female)
+		public int animationState = 0;//animation
 
 		private CharacterController controller;
 		private float gravity = 20.0f;
@@ -38,14 +39,16 @@ using EQBrowser;
 		public float deltaH;// z coord
 		
 		public float stepFinal;
-		public int isWalking;
+		public int isWalk;
 		public int isIdle;
-
+		public int isDead;
+		public int isPunch;
+		
 		void Update () 
 		{ 
 			if(NPC == 2)
 			{
-				GetComponent<Animator>().Play("Dead");
+				deadNow();
 			}
 			else
 			{
@@ -60,7 +63,7 @@ using EQBrowser;
 				//wander
 				if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
 				{
-					if(isWalking == 0)
+					if(isWalk == 0)
 					{
 						walkNow();
 					}
@@ -71,9 +74,10 @@ using EQBrowser;
 					if (deltaF.magnitude != 0) {
 						//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
 						float step = deltaF.magnitude * Time.deltaTime;
-//						transform.Translate(deltaF * Time.deltaTime, Space.World);
-						transform.position = Vector3.MoveTowards(this.transform.position, targetPosition, step);
-//						stepFinal = step;
+						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
+
+//						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
+						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
 					}
 					//heading
 //					float h = Mathf.Lerp(360,0,movetoH/255f);
@@ -89,17 +93,38 @@ using EQBrowser;
 			}
 		}
 
+//trigger animations
 		public void walkNow()
 		{
-			isWalking = 1;
+			isWalk = 1;
 			isIdle = 0;
+			isPunch = 0;
+			isDead = 0;
 			GetComponent<Animator>().Play("Walk");
 		}
 		public void idleNow()
 		{
-			isWalking = 0;
+			isWalk = 0;
 			isIdle = 1;
+			isPunch = 0;
+			isDead = 0;
 			GetComponent<Animator>().Play("Idle");
+		}
+		public void punchNow()
+		{
+			isWalk = 0;
+			isIdle = 0;
+			isPunch = 1;
+			isDead = 0;
+			GetComponent<Animator>().Play("Punch");
+		}
+		public void deadNow()
+		{
+			isWalk = 0;
+			isIdle = 0;
+			isPunch = 0;
+			isDead = 1;
+			GetComponent<Animator>().Play("Dead");
 		}
 			
 	}

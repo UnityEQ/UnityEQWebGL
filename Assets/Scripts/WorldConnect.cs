@@ -45,6 +45,7 @@ namespace EQBrowser {
 		public bool Connected;
 		public bool AttemptingZoneConnect;
 		public bool isTyping;
+		public bool playerLock = true;
 		public string ourPlayerName;
 		public Int32 curZoneId = -1;
 		public Int32 curInstanceId = -1;
@@ -162,6 +163,10 @@ namespace EQBrowser {
 			opcodeDict.Add ("168", HandleWorldMessage_FormattedMessage);
 			opcodeDict.Add ("109", HandleWorldMessage_Damage);
 			opcodeDict.Add ("242", HandleWorldMessage_HPUpdate);
+			opcodeDict.Add ("541", HandleWorldMessage_ZoneEntryInfo);
+			opcodeDict.Add ("366", HandleWorldMessage_PlayerStateAdd);
+			opcodeDict.Add ("367", HandleWorldMessage_PlayerStateRemove);
+			
 
 
 			//Auto-Connect to Salty Server

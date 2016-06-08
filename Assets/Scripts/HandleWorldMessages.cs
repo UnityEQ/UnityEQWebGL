@@ -174,7 +174,10 @@ namespace EQBrowser
 			WriteInt32(0, ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(h), 0), ref PositionUpdateRequest, ref position);
 
-			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
+			if(playerLock == false)
+			{
+				GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
+			}
 		}
 		
 		/* UI Events Below */
@@ -282,9 +285,9 @@ namespace EQBrowser
 			Int32 type = ReadInt32(data, ref position);
 			Int32 ChannelVarLength = datasize - position;
 			string ChannelMessage = ReadFixedLengthString(data, ref position, ChannelVarLength);
-			Debug.Log("formatmessagestring: " + stringID);
-			Debug.Log("formatmessagetype: " + type);
-			Debug.Log("formatmessagetype: " + ChannelMessage);
+//			Debug.Log("formatmessagestring: " + stringID);
+//			Debug.Log("formatmessagetype: " + type);
+//			Debug.Log("formatmessagetype: " + ChannelMessage);
 		}
 		
 		public void HandleWorldMessage_HPUpdate(byte[] data, int datasize)
@@ -480,11 +483,36 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().deltaY = deltaZ;// Player's Name
 				temp.GetComponent<NPCController>().deltaZ = deltaY;// Player's Name
 				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
+//				if(spawn_id == OurTargetID)
+//				Debug.Log("Client Update: spawnid: " + spawn_id + " x: " + x + " y: " + y + " z: " + z + " dx: " + deltaX + " dy: " + deltaY + " dz: " + deltaZ);
 			}
 			
 			
 		}
 
+		public void HandleWorldMessage_PlayerStateAdd(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			
+			Int32 spawnId = ReadInt32(data, ref position);
+			Int32 state = ReadInt32(data, ref position);
+			Debug.Log("StateAdd: Spawnid: " + spawnId + " state: " + state);
+
+			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			if(temp != null)
+			{
+				temp.GetComponent<NPCController>().animationState = state;// Player's Name
+			}
+			
+		}
+		public void HandleWorldMessage_PlayerStateRemove(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			
+			Int32 spawnId = ReadInt32(data, ref position);
+			Int32 state = ReadInt32(data, ref position);
+			Debug.Log("StateRemove: Spawnid: " + spawnId + " state: " + state);
+		}
 		public void HandleWorldMessage_ZoneEntryInfo(byte[] data, int datasize)
 		{
 
@@ -493,10 +521,11 @@ namespace EQBrowser
 
 //			SceneManagerObj.elfid = (UInt32)id;
 			string CharName = ReadFixedLengthString(data, ref position, 64);
-			float x = -BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float x = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			float y = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			float z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
-//			SceneManagerObj.elfpal.transform.position = new Vector3(x, z, y);
+			EqemuConnectObject.transform.position = new Vector3(-x, z, y);
+			playerLock = false;
 			
 		}
 
@@ -668,10 +697,8 @@ namespace EQBrowser
 
 			GameObject us = EqemuConnectObject;
 //			us.transform.position = new Vector3(-x,(y+4),-z);
-			us.transform.position = new Vector3(-z,x,y);
-			Debug.Log("x" + x);
-			Debug.Log("y" + y);
-			Debug.Log("z" + z);
+//			us.transform.position = new Vector3(-z,x,y);
+
 			float h = Mathf.Lerp(360,0,heading/255f);
 			us.transform.localEulerAngles = new Vector3(0,h,0);
 			
@@ -1079,7 +1106,7 @@ namespace EQBrowser
 						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					default:
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 				}
 			}
