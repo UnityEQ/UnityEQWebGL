@@ -293,7 +293,7 @@ namespace EQBrowser {
 				string reply = ws_.RecvString ();
 				if (reply != null) {
 					
-					//Debug.Log("reply" + reply);
+					Debug.Log("reply" + reply);
 					OpcodeFromServerClass IdChecker1 = JsonUtility.FromJson<OpcodeFromServerClass> (reply);
 
 					if (IdChecker1.id != null && IdChecker1.id == "token_auth_id") {

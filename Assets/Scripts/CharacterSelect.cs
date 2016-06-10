@@ -365,9 +365,12 @@ public class CharacterSelect : MonoBehaviour {
 		SaltyServerText.color = Color.red;
 		Server2ServerText.color = Color.black;
 		HostNameInput.text = "158.69.221.200:80";
-//for dev quick login
-		UserNameInput.text = "saltyx";
-		PasswordInput.text = "saltyx";
+
+		#if UNITY_EDITOR
+			//for dev quick login
+			UserNameInput.text = "saltyx";
+			PasswordInput.text = "saltyx";
+		#endif
 	}
 	
 	public void Server2Clicked(string param)
