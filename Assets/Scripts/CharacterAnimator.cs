@@ -88,7 +88,6 @@ namespace EQBrowser
 		//Every Frame 
 		void Update () 
 		{ 
-		
 		if (Input.GetKeyDown("return"))
 		{
 			if (chatting == true)

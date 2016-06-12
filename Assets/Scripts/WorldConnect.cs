@@ -166,6 +166,9 @@ namespace EQBrowser {
 			opcodeDict.Add ("541", HandleWorldMessage_ZoneEntryInfo);
 			opcodeDict.Add ("366", HandleWorldMessage_PlayerStateAdd);
 			opcodeDict.Add ("367", HandleWorldMessage_PlayerStateRemove);
+			opcodeDict.Add ("323", HandleWorldMessage_MobHealth);
+			opcodeDict.Add ("154", HandleWorldMessage_ExpUpdate);
+			opcodeDict.Add ("110", HandleWorldMessage_Death);
 			
 
 
@@ -293,7 +296,7 @@ namespace EQBrowser {
 				string reply = ws_.RecvString ();
 				if (reply != null) {
 					
-					Debug.Log("reply" + reply);
+//					Debug.Log("reply" + reply);
 					OpcodeFromServerClass IdChecker1 = JsonUtility.FromJson<OpcodeFromServerClass> (reply);
 
 					if (IdChecker1.id != null && IdChecker1.id == "token_auth_id") {

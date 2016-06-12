@@ -17,7 +17,7 @@ using EQBrowser;
 		public float size = 0;// Model size
 		public byte NPC = 0;// 0=player,1=npc,2=pc corpse,3=npc corpse,a
 		public byte curHp = 0;// Current hp %%% wrong
-		public byte maxHp = 0;// Current hp %%% wrong
+		public int maxHp = 0;// Current hp %%% wrong
 		public byte level = 0;// Spawn Level
 		public byte gender = 0;// Gender (0=male, 1=female)
 		public int animationState = 0;//animation
@@ -43,10 +43,11 @@ using EQBrowser;
 		public int isIdle;
 		public int isDead;
 		public int isPunch;
+		public int isHurt;
 		
 		void Update () 
 		{ 
-			if(NPC == 2)
+			if(NPC == 2 || isDead == 1)
 			{
 				deadNow();
 			}
@@ -100,6 +101,7 @@ using EQBrowser;
 			isIdle = 0;
 			isPunch = 0;
 			isDead = 0;
+			isHurt = 0;
 			GetComponent<Animator>().Play("Walk");
 		}
 		public void idleNow()
@@ -108,6 +110,7 @@ using EQBrowser;
 			isIdle = 1;
 			isPunch = 0;
 			isDead = 0;
+			isHurt = 0;
 			GetComponent<Animator>().Play("Idle");
 		}
 		public void punchNow()
@@ -116,7 +119,17 @@ using EQBrowser;
 			isIdle = 0;
 			isPunch = 1;
 			isDead = 0;
+			isHurt = 0;
 			GetComponent<Animator>().Play("Punch");
+		}
+		public void hurtNow()
+		{
+			isWalk = 0;
+			isIdle = 0;
+			isPunch = 0;
+			isDead = 0;
+			isHurt = 1;
+			GetComponent<Animator>().Play("Hurt");
 		}
 		public void deadNow()
 		{
@@ -124,6 +137,7 @@ using EQBrowser;
 			isIdle = 0;
 			isPunch = 0;
 			isDead = 1;
+			isHurt = 0;
 			GetComponent<Animator>().Play("Dead");
 		}
 			

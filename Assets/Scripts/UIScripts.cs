@@ -50,6 +50,27 @@ public class UIScripts : MonoBehaviour {
 	public RectTransform OurHP;
 	public Text HPText;
 	
+	public Text inventoryName;
+	public Text inventoryLevel;
+	public Text inventoryClass;
+	public Text inventoryExp;
+	public Text inventoryAc;
+	public Text inventoryAtk;
+	public Text inventoryStrength;
+	public Text inventoryStamina;
+	public Text inventoryCharisma;
+	public Text inventoryDexterity;
+	public Text inventoryIntellect;
+	public Text inventoryAgility;
+	public Text inventoryWisdom;
+	public Text inventoryCurHp;
+	public Text inventoryMaxHp;
+	public Text inventoryPlatinum;
+	public Text inventoryGold;
+	public Text inventorySilver;
+	public Text inventoryCopper;
+	
+	
 	public WorldConnect WorldConnection2;
 	
 	public static bool CastButton = false;
@@ -134,15 +155,16 @@ public class UIScripts : MonoBehaviour {
 	public void HelpClick(string param2)
 	{
 //		Debug.Log("UPDATEPOSITION");
-//		WorldConnection2.DoClientUpdate();
 //		WorldConnection2.curZoneId = 4;
 //		WorldConnection2.DoZoneChange(WorldConnection2.ourPlayerName);
+		WorldConnection2.DoClientUpdate();
 	}
 	public void CampClick(string param2)
 	{
 //		Debug.Log("CLACK");
 		WorldConnection2.DoLogOut();
 	}
+	
 	public void AttackClick(string param2)
 	{
 		Debug.Log("poop");
@@ -226,7 +248,10 @@ public class UIScripts : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
+		if (Input.GetKeyDown("1"))
+		AttackClick("hotkey1");
 	}
 }
 }

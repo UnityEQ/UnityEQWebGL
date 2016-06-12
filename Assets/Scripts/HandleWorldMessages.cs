@@ -64,24 +64,31 @@ namespace EQBrowser
 		public void DoTarget(string targetID)
 		{
 			Debug.Log("targetID: " + targetID);
-			
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == targetID).SingleOrDefault();
-			string targetName = temp.GetComponent<NPCController>().name;
-			int curhp = temp.GetComponent<NPCController>().curHp;
-			int maxhp = temp.GetComponent<NPCController>().maxHp;
-
-			string targetClean = Regex.Replace(targetName, "[0-9]", "");
-			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
-			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
-			UIScript.TargetBox.SetActive(true);
-			UIScript.TargetName.text = targetName3;
-
-			float hpPercent = ((float)curhp/(float)maxhp)*100;
-			UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
-			UIScript.TargetHPText.text = ((int)hpPercent + "%");
-			
 			int targetInt = int.Parse(targetID);
 			OurTargetID = targetInt;
+				
+			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == targetID).SingleOrDefault();
+			if(temp != null)
+			{
+				string targetName = temp.GetComponent<NPCController>().name;
+				int curhp = temp.GetComponent<NPCController>().curHp;
+				int maxhp = temp.GetComponent<NPCController>().maxHp;
+	
+				string targetClean = Regex.Replace(targetName, "[0-9]", "");
+				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+				string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+				UIScript.TargetBox.SetActive(true);
+				UIScript.TargetName.text = targetName3;
+	
+				float hpPercent = ((float)curhp/(float)maxhp)*100;
+				UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+				UIScript.TargetHPText.text = ((int)hpPercent + "%");
+				
+			}
+			else
+			{
+				UIScript.TargetBox.SetActive(false);
+			}
 			byte[] DeleteSpawnRequest = new byte[4];
 			Int32 position = 0;
 			WriteInt8((byte)targetInt, ref DeleteSpawnRequest, ref position);
@@ -290,28 +297,91 @@ namespace EQBrowser
 //			Debug.Log("formatmessagetype: " + ChannelMessage);
 		}
 		
+		public void HandleWorldMessage_ExpUpdate(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int32 exp = ReadInt32(data, ref position);
+			Int32 aaxp = ReadInt32(data, ref position);
+			
+			if(exp > 0)
+			{
+				ChatText2.text += (Environment.NewLine + "You gained " + exp + " experience points!");
+			}
+			else
+			{
+				ChatText2.text += (Environment.NewLine + "You lost " + exp + " experience points!");				
+			}
+		}
+
+		public void HandleWorldMessage_Death(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int32 spawnId = ReadInt32(data, ref position);
+			Int32 killerId = ReadInt32(data, ref position);
+			Int32 corpseId = ReadInt32(data, ref position);
+			Int32 bindzoneId = ReadInt32(data, ref position);
+			Int32 spellId = ReadInt32(data, ref position);
+			Int32 attackskillId = ReadInt32(data, ref position);
+			Int32 damage = ReadInt32(data, ref position);
+			
+			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			if(temp != null)
+			{
+				temp.GetComponent<NPCController>().isDead = 1;
+			}
+			
+			if(spawnId == OurTargetID)
+			{
+				DoTarget("0");
+				DoAttack(0);
+			}
+			if(killerId == OurEntityID)
+			{
+				if(temp != null)
+				{
+					string targetName = temp.GetComponent<NPCController>().name;// Player's Name
+					string targetClean = Regex.Replace(targetName, "[0-9]", "");
+					string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+					string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+					ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
+				}
+			}
+			
+		}
+			
 		public void HandleWorldMessage_HPUpdate(byte[] data, int datasize)
 		{
 			Int32 position = 0;
 			Int32 curhp = ReadInt32(data, ref position);
 			Int32 maxhp = ReadInt32(data, ref position);
 			Int16 spawnId = ReadInt16(data, ref position);
-			
+
+		
 			if(spawnId == OurEntityID)
 			{
 				
 				float hpPercent = ((float)curhp/(float)maxhp)*100;
-//				Debug.Log("HP: " + curhp + " / " + maxhp + " = " + hpPercent);
 				UIScript.OurHP.sizeDelta = new Vector2( (int)hpPercent, 10);
 				UIScript.HPText.text = ((int)hpPercent + "%");
+				UIScript.inventoryCurHp.text = curhp.ToString();
+				UIScript.inventoryMaxHp.text = maxhp.ToString();
 			}
+		}
+		
+		public void HandleWorldMessage_MobHealth(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int16 spawnId = ReadInt16(data, ref position); //hp percent
+			byte hp = ReadInt8(data, ref position);
 
-			if(spawnId == OurTargetID)
+			Debug.Log("hp: " + hp);
+			Debug.Log("spawnId: " + spawnId);
+			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			if(temp != null)
 			{
-				float hpPercent = ((float)curhp/(float)maxhp)*100;
-				Debug.Log("Enemy HP: " + curhp + " / " + maxhp + " = " + hpPercent);
-				UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
-				UIScript.TargetHPText.text = ((int)hpPercent + "%");
+				temp.GetComponent<NPCController>().curHp = hp;// Player's Name
+				UIScript.TargetHP.sizeDelta = new Vector2( (int)hp, 10);
+				UIScript.TargetHPText.text = ((int)hp + "%");
 			}
 		}
 		
@@ -694,6 +764,26 @@ namespace EQBrowser
 			}
 			Int32 entityid = ReadInt32(data, ref position);
 			OurEntityID = entityid;
+			
+			UIScript.inventoryName.text = CharName;
+			UIScript.inventoryLevel.text = level.ToString();
+//			UIScript.inventoryClass.text = eqclass.ToString();
+			UIScript.inventoryClass.text = "Warrior";
+			UIScript.inventoryExp.text = exp.ToString();
+//			UIScript.inventoryRace.text = race.ToString();
+//			UIScript.inventoryAc.text =
+//			UIScript.inventoryAtk.text =
+			UIScript.inventoryStrength.text = strength.ToString();
+			UIScript.inventoryStamina.text = stamina.ToString();
+			UIScript.inventoryCharisma.text = charisma.ToString();
+			UIScript.inventoryDexterity.text = dexterity.ToString();
+			UIScript.inventoryIntellect.text = intellect.ToString();
+			UIScript.inventoryAgility.text = agility.ToString();
+			UIScript.inventoryWisdom.text = wisdom.ToString();
+			UIScript.inventoryPlatinum.text = platinum.ToString();
+			UIScript.inventoryGold.text = gold.ToString();
+			UIScript.inventorySilver.text = silver.ToString();
+			UIScript.inventoryCopper.text = copper.ToString();
 
 			GameObject us = EqemuConnectObject;
 //			us.transform.position = new Vector3(-x,(y+4),-z);
