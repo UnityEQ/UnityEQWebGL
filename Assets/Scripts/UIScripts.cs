@@ -29,6 +29,8 @@ public class UIScripts : MonoBehaviour {
 	public GameObject SocialPanel;
 
 	public GameObject Inventory;
+	public GameObject Sit;
+	public GameObject Stand;
 	public GameObject Help;
 	public GameObject Camp;
 	public GameObject InventoryWindow;
@@ -93,6 +95,8 @@ public class UIScripts : MonoBehaviour {
 		@Social.GetComponent<Button>().onClick.AddListener(delegate { SocialClick (param2); });
 
 		Inventory.GetComponent<Button>().onClick.AddListener(delegate { InventoryClick (param2); });
+		Sit.GetComponent<Button>().onClick.AddListener(delegate { SitClick (param2); });
+		Stand.GetComponent<Button>().onClick.AddListener(delegate { StandClick (param2); });
 		Help.GetComponent<Button>().onClick.AddListener(delegate { HelpClick (param2); });
 		Camp.GetComponent<Button>().onClick.AddListener(delegate { CampClick (param2); });
 		SpellGem1.GetComponent<Button>().onClick.AddListener(delegate { SpellGem1Click (param2); });
@@ -152,16 +156,27 @@ public class UIScripts : MonoBehaviour {
 		}
 	}
 
+	public void SitClick(string param2)
+	{
+		WorldConnection2.DoSit();
+		Stand.SetActive(true);
+		Sit.SetActive(false);
+	}
+
+	public void StandClick(string param2)
+	{
+		WorldConnection2.DoStand();
+		Stand.SetActive(false);
+		Sit.SetActive(true);
+	}
+
 	public void HelpClick(string param2)
 	{
-//		Debug.Log("UPDATEPOSITION");
-//		WorldConnection2.curZoneId = 4;
-//		WorldConnection2.DoZoneChange(WorldConnection2.ourPlayerName);
 		WorldConnection2.DoClientUpdate();
 	}
+
 	public void CampClick(string param2)
 	{
-//		Debug.Log("CLACK");
 		WorldConnection2.DoLogOut();
 	}
 	

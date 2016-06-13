@@ -279,6 +279,28 @@ namespace EQBrowser
 			AttemptingZoneConnect = false;
 			GenerateAndSendWorldPacket (ZoneEntryRequest.Length, 541, curZoneId, curInstanceId, ZoneEntryRequest);
 		}
+		
+		//op_spawnappearance
+		public void DoSit()
+		{
+			byte[] SpawnRequest = new byte[8];
+			Int32 position = 0;	
+			WriteInt16 ((short)OurEntityID, ref SpawnRequest, ref position);
+			WriteInt16 (14, ref SpawnRequest, ref position);
+			WriteInt32 (110, ref SpawnRequest, ref position);
+			GenerateAndSendWorldPacket (SpawnRequest.Length, 465, curZoneId, curInstanceId, SpawnRequest);
+		}
+		
+		//op_spawnappearance
+		public void DoStand()
+		{
+			byte[] SpawnRequest = new byte[8];
+			Int32 position = 0;	
+			WriteInt16 ((short)OurEntityID, ref SpawnRequest, ref position);
+			WriteInt16 (14, ref SpawnRequest, ref position);
+			WriteInt32 (100, ref SpawnRequest, ref position);
+			GenerateAndSendWorldPacket (SpawnRequest.Length, 465, curZoneId, curInstanceId, SpawnRequest);
+		}
 
 		
 		
@@ -297,6 +319,16 @@ namespace EQBrowser
 //			Debug.Log("formatmessagetype: " + ChannelMessage);
 		}
 		
+		public void HandleWorldMessage_SpawnAppearance(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int16 spawnId = ReadInt16(data, ref position);
+			Int16 type = ReadInt16(data, ref position);
+			Int32 parameter = ReadInt32(data, ref position);
+			
+			Debug.Log("spawnid: " + spawnId + " type: " + type + " parameter: " + parameter);
+		}
+		
 		public void HandleWorldMessage_ExpUpdate(byte[] data, int datasize)
 		{
 			Int32 position = 0;
@@ -305,11 +337,11 @@ namespace EQBrowser
 			
 			if(exp > 0)
 			{
-				ChatText2.text += (Environment.NewLine + "You gained " + exp + " experience points!");
+				ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You gained experience!</b></color>");
 			}
 			else
 			{
-				ChatText2.text += (Environment.NewLine + "You lost " + exp + " experience points!");				
+				ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You lost experience!</b></color>");
 			}
 		}
 
@@ -410,18 +442,16 @@ namespace EQBrowser
 				switch(type)
 				{
 					case 4:
-						ChatText2.text += (Environment.NewLine + sourceName3 + " hits" + " YOU for " + damage + " points of damage.");
+						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " hits" + " YOU for " + damage + " points of damage.</b></color>");
 						break;
 					case 30:
-						ChatText2.text += (Environment.NewLine + sourceName3 + " kicks" + " YOU for " + damage + " points of damage.");
+						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " kicks" + " YOU for " + damage + " points of damage.</b></color>");
 						break;
 
 					default:
-						ChatText2.text += (Environment.NewLine + sourceName3 + " " + type + " YOU for " + damage + " points of damage.");
+						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " " + type + " YOU for " + damage + " points of damage.</b></color>");
 						break;
 				}
-//				if(type == 4){ChatText2.text += (Environment.NewLine + sourceName3 + " hits" + " YOU for " + damage + " points of damage.");}
-//				else{ChatText2.text += (Environment.NewLine + sourceName3 + " " + type + " YOU for " + damage + " points of damage.");}
 			}
 			
 			if(source == OurEntityID)
@@ -438,11 +468,10 @@ namespace EQBrowser
 						ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
 						break;
 					default:
-						ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");
+//						ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");
+						ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
 						break;
 				}
-//				if(type == 4){ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");}
-//				else{ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");}
 			}
 		}
 		
@@ -474,6 +503,7 @@ namespace EQBrowser
 			UIScriptsObject.SetActive(true);
 			GameCamera.SetActive(true);
 			isTyping = false;
+			AttemptingZoneConnect = true;
 			//WorldConnectObject.AddComponent<EQBrowser>("UIScripts");
 //			WorldConnectObject.AddComponent<UIScripts>();
 		}
@@ -596,6 +626,7 @@ namespace EQBrowser
 			float z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			EqemuConnectObject.transform.position = new Vector3(-x, z, y);
 			playerLock = false;
+			AttemptingZoneConnect = false;
 			
 		}
 
@@ -925,20 +956,22 @@ namespace EQBrowser
 		//551
 		public void HandleWorldMessage_EmuRequestClose(byte[] data, int datasize)
 		{
-			Debug.Log("CLOSE");
-			string ActiveScene = SceneManager.GetActiveScene().name;
-			if (ActiveScene == "2 North Qeynos")
+			if(AttemptingZoneConnect == false)
 			{
-				Debug.Log("CLOSEIF");
-				SceneManager.LoadScene("1 Character creation");
-				Destroy (WorldConnectObject);
-			}
-			else
-			{
-//comment destroy out when using op_zonechange
-				ws_.Close ();
-				CSel.BackToLogin ();
-				CSel.LoginStatus.text = "You have been disconnected.";
+				Debug.Log("CLOSE");
+				string ActiveScene = SceneManager.GetActiveScene().name;
+				if (ActiveScene == "2 North Qeynos")
+				{
+					Debug.Log("CLOSEIF");
+					SceneManager.LoadScene("1 Character creation");
+					Destroy (WorldConnectObject);
+				}
+				else
+				{
+					ws_.Close ();
+					CSel.BackToLogin ();
+					CSel.LoginStatus.text = "You have been disconnected.";
+				}
 			}
 		}
 		

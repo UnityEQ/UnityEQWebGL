@@ -88,6 +88,13 @@ namespace EQBrowser
 		//Every Frame 
 		void Update () 
 		{ 
+		
+		if(Input.GetKeyDown(KeyCode.F10))
+		{
+			Debug.Log("OIMG");
+			Screen.fullScreen = !Screen.fullScreen;
+		}
+		
 		if (Input.GetKeyDown("return"))
 		{
 			if (chatting == true)

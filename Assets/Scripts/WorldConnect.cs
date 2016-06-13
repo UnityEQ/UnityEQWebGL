@@ -169,6 +169,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("323", HandleWorldMessage_MobHealth);
 			opcodeDict.Add ("154", HandleWorldMessage_ExpUpdate);
 			opcodeDict.Add ("110", HandleWorldMessage_Death);
+			opcodeDict.Add ("465", HandleWorldMessage_SpawnAppearance);
 			
 
 
