@@ -8,6 +8,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using EQBrowser;
 using UnityEngine.EventSystems;
 
@@ -42,9 +43,9 @@ public class ThirdPersonCamera : MonoBehaviour
 	
 	public float minimumY = -60F;
 	public float maximumY = 60F;
-
 	float x = 0.0f;
 	float y = 0.0f;
+	int vDir;
 
 	float targetLastRot;
 
@@ -68,6 +69,19 @@ public class ThirdPersonCamera : MonoBehaviour
 
 	void Update()
 	{
+		if (Input.GetKey(KeyCode.PageUp))
+		{
+			y += -1;
+		}
+		if (Input.GetKey(KeyCode.PageDown))
+		{
+			y += 1;
+		}
+		if (Input.GetKey(KeyCode.Home))
+		{
+			y = 0;
+		}
+	
 		if (Input.GetMouseButtonDown(0))
 		{
 			Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
@@ -80,7 +94,33 @@ public class ThirdPersonCamera : MonoBehaviour
 
 				}
 			}
-		}		
+		}
+		
+		if (Input.GetMouseButtonDown(1))
+		{
+			Ray ray = GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			if (Physics.Raycast(ray, out hit))
+			{
+				if ((!EventSystem.current.IsPointerOverGameObject()) && (hit.collider.tag=="Targetable"))
+				{
+					string target = hit.collider.name;
+					GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == target).SingleOrDefault();
+					if(temp != null)
+					{
+						if(temp.GetComponent<NPCController>().isDead == 1)
+						{
+							Debug.Log("ISDEADLOOT");
+							WorldConnection.DoLootRequest(target);
+						}
+						else
+						{
+							Debug.Log("ISNOTDEADCONSIDER");
+						}
+					}
+				}
+			}
+		}
 	}
 
 	// zer0sum: mouserightdown
@@ -124,12 +164,12 @@ public class ThirdPersonCamera : MonoBehaviour
 		}
 
 		//Now update the camera position
-		y -= yDelta;
+//		y -= yDelta;
 
-		y = ClampAngle(y, yMinLimit, yMaxLimit);
+//		y = ClampAngle(y, yMinLimit, yMaxLimit);
 
 		Quaternion rotation = Quaternion.Euler(y, m_curCharacterTarget.transform.rotation.eulerAngles.y, 0f);
-
+		
 		distance = Mathf.Clamp(distance - distDelta * 5, distanceMin, distanceMax);
 		RaycastHit hit;
 		if (Physics.Linecast(target.position, transform.position, out hit, 1 << LayerMask.NameToLayer("Terrain")))
@@ -141,10 +181,10 @@ public class ThirdPersonCamera : MonoBehaviour
 
 		if (!Input.GetMouseButton (1)) {
 			transform.rotation = rotation;
-			x = m_curCharacterTarget.transform.rotation.eulerAngles.y;
-			y = m_curCharacterTarget.transform.rotation.eulerAngles.x;
+//			x = m_curCharacterTarget.transform.rotation.eulerAngles.y;
+//			y = m_curCharacterTarget.transform.rotation.eulerAngles.x;
 		}
-		transform.position = position;
+			transform.position = position;
 	}
 	
 	public static Transform GetChildTransformByTag(Transform rootTransform, string tag)

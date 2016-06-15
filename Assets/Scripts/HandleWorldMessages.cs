@@ -97,6 +97,15 @@ namespace EQBrowser
 
 		}
 		
+		public void DoLootRequest(string targetID)
+		{
+			int targetInt = int.Parse(targetID);
+			byte[] DoLootRequest = new byte[4];
+			Int32 position = 0;
+			WriteInt32(targetInt, ref DoLootRequest, ref position);
+			GenerateAndSendWorldPacket (DoLootRequest.Length, 300 /* OP_DeleteSpawn */, 2, curInstanceId, DoLootRequest);
+		}
+		
 		public void DoAttack(byte toggle)
 		{
 			switch(toggle)
@@ -345,6 +354,10 @@ namespace EQBrowser
 			}
 		}
 
+		public void HandleWorldMessage_BecomeCorpse(byte[] data, int datasize)
+		{
+			Debug.Log("BECOMECORPSE");
+		}
 		public void HandleWorldMessage_Death(byte[] data, int datasize)
 		{
 			Int32 position = 0;
@@ -519,12 +532,11 @@ namespace EQBrowser
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
 			if(temp != null)
 			{
-				string PrefabName = temp.GetComponent<NPCController>().prefabName;			
-				temp.name = PrefabName;
-				Debug.Log("spawnid: " + spawn_id);
-				Debug.Log("temp: " + temp);
-				ObjectPool.instance.PoolObject(temp);
-				ObjectPool.instance.spawnlist.Remove(temp); 
+					string PrefabName = temp.GetComponent<NPCController>().prefabName;			
+					temp.name = PrefabName;
+					Debug.Log("DELETESPAWN: " + spawn_id);
+					ObjectPool.instance.PoolObject(temp);
+					ObjectPool.instance.spawnlist.Remove(temp); 
 			}
     
 		}
