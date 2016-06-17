@@ -17,6 +17,11 @@ public class UIScripts : MonoBehaviour {
 	public Text TargetName;
 	public RectTransform TargetHP;
 	public Text TargetHPText;
+	
+	public GameObject LosePanel;
+	public GameObject LeftPanel;
+	public GameObject CenterPanel;
+	public GameObject RightPanel;
 
 	public GameObject TargetBox;
 	public GameObject Main;
@@ -172,7 +177,7 @@ public class UIScripts : MonoBehaviour {
 
 	public void HelpClick(string param2)
 	{
-		WorldConnection2.DoClientUpdate();
+		
 	}
 
 	public void CampClick(string param2)

@@ -22,7 +22,7 @@ public class CharacterSelect : MonoBehaviour {
 	public GameObject CButton6;
 	public GameObject CButton7;
 	public GameObject CButton8;
-
+	
 	public GameObject SaltyServer;
 	public GameObject Server2Server;
 	public Text SaltyServerText;
@@ -349,12 +349,14 @@ public class CharacterSelect : MonoBehaviour {
 	public void LoginButtonClicked(string param)
 	{
 		LoginStatus.text = "Connecting to " + HostNameInput.text + "...";
-		if (UserNameInput.text.Length > 0 && PasswordInput.text.Length > 0 && HostNameInput.text.Length > 0) {
-//		string token = "aksdjlka23ij3l1j23lk1j23j123jkjql";
-		string token = UserNameInput.text;
+		if (UserNameInput.text.Length > 0 && PasswordInput.text.Length > 0 && HostNameInput.text.Length > 0)
+		{
+//			string token = "aksdjlka23ij3l1j23lk1j23j123jkjql";
+			string token = UserNameInput.text;
 			StartCoroutine(WorldConnection.ConnectToWebSocketServer (HostNameInput.text, token, UserNameInput.text, PasswordInput.text));
 		}
-		else {
+		else
+		{
 			LoginStatus.text = "Please enter credentials.";
 		}
 	}

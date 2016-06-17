@@ -17,7 +17,12 @@ namespace EQBrowser
 		public void DoEmuKeepAlive()
 		{
 			byte[] KeepAlive = null;
-			GenerateAndSendWorldPacket (1, 550 /* OP_EmuKeepAlive */, 4, curInstanceId, KeepAlive);
+			GenerateAndSendWorldPacket (0, 550 /* OP_EmuKeepAlive */, 2, curInstanceId, KeepAlive);
+		}
+		public void DoEmuRequestClose()
+		{
+			byte[] EmuRequestClose = null;
+			GenerateAndSendWorldPacket (0, 551 /* OP_EmuRequestClose */, 2, curInstanceId, EmuRequestClose);
 		}
 		
 		public void DoChannelMessage(string name, int channel, string message)
@@ -43,7 +48,8 @@ namespace EQBrowser
         //This is a coroutine
          yield return new WaitForSeconds(duration);   //Wait
     }
-		
+
+//work in progress	
 		public void DoZoneChange(string name)
 		{
 
@@ -51,7 +57,7 @@ namespace EQBrowser
 			int position = 0;
 			
 			WriteFixedLengthString(name, ref ZoneChangeRequest, ref position,  64); //charname
-			WriteInt16(4, ref ZoneChangeRequest, ref position);//zoneID
+			WriteInt16(2, ref ZoneChangeRequest, ref position);//zoneID
 //			WriteInt16(0, ref ZoneChangeRequest, ref position);//instanceId
 			WriteInt32(0, ref ZoneChangeRequest, ref position); //y
 			WriteInt32(0, ref ZoneChangeRequest, ref position); //x
@@ -73,6 +79,7 @@ namespace EQBrowser
 				string targetName = temp.GetComponent<NPCController>().name;
 				int curhp = temp.GetComponent<NPCController>().curHp;
 				int maxhp = temp.GetComponent<NPCController>().maxHp;
+				temp.GetComponent<NPCController>().isTarget = true;
 	
 				string targetClean = Regex.Replace(targetName, "[0-9]", "");
 				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
@@ -111,11 +118,12 @@ namespace EQBrowser
 			switch(toggle)
 			{
 				case 0:
+					DoClientUpdate();
 					isAttacking = 0;
-//					if(toggle == 1){isAttacking = 1;ChatText2.text += (Environment.NewLine + "Auto attack is on");};
 					ChatText2.text += (Environment.NewLine + "Auto attack is off");
 					break;
 				case 1:
+					DoClientUpdate();
 					isAttacking = 1;
 					ChatText2.text += (Environment.NewLine + "Auto attack is on");
 					break;
@@ -127,7 +135,7 @@ namespace EQBrowser
 			int position = 0;
 			WriteInt8(toggle, ref DeleteSpawnRequest, ref position); 
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 43 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
-//			DoAttack2(1);
+			DoAttack2(toggle);
 		}
 		public void DoAttack2(byte toggle)
 		{
@@ -135,7 +143,6 @@ namespace EQBrowser
 			int position = 0;
 			WriteInt8(toggle, ref DeleteSpawnRequest, ref position); 
 			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 44 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
-			Debug.Log("attack2");
 		}
 		
 		public void DoDeleteSpawn(int spawnid)
@@ -356,7 +363,13 @@ namespace EQBrowser
 
 		public void HandleWorldMessage_BecomeCorpse(byte[] data, int datasize)
 		{
+//			DoEmuRequestClose();
+			UIScript.LosePanel.SetActive(true);
+			UIScript.LeftPanel.SetActive(false);
+			UIScript.CenterPanel.SetActive(false);
+			UIScript.RightPanel.SetActive(false);
 			Debug.Log("BECOMECORPSE");
+			isDead = true;
 		}
 		public void HandleWorldMessage_Death(byte[] data, int datasize)
 		{
@@ -521,14 +534,38 @@ namespace EQBrowser
 //			WorldConnectObject.AddComponent<UIScripts>();
 		}
 
+//work in progress
+		public void HandleWorldMessage_ZonePlayerToBind(byte[] data, int datasize)
+		{
+//			AttemptingZoneConnect = true;
+			Int32 position = 0;
+			Int16 bindZoneid = ReadInt16(data, ref position);
+			Int16 bindInstanceid = ReadInt16(data, ref position);
+			float x = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float y = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float h = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+//			string zoneName = ReadFixedLengthString(data, ref position, 1);
 
-   
+			
+			byte[] ZoneChangeRequest = new byte[88];
+			Int32 pos = 0;
+			WriteFixedLengthString(ourPlayerName, ref ZoneChangeRequest, ref pos, 64);
+			WriteInt16 (2, ref ZoneChangeRequest, ref pos);
+			WriteInt16 (0, ref ZoneChangeRequest, ref pos);
+			WriteInt32 (0, ref ZoneChangeRequest, ref pos);
+			WriteInt32 (0, ref ZoneChangeRequest, ref pos);
+			WriteInt32 (0, ref ZoneChangeRequest, ref pos);
+			WriteInt32 (10, ref ZoneChangeRequest, ref pos);
+			WriteInt32 (0, ref ZoneChangeRequest, ref pos);
+			GenerateAndSendWorldPacket (ZoneChangeRequest.Length, 539, 2, bindInstanceid, ZoneChangeRequest);
+		}
 		public void HandleWorldMessage_DeleteSpawn(byte[] data, int datasize)
 		{
 
 			Int32 position = 0;
 			Int32 spawn_id = ReadInt32(data, ref position);
-			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
+//			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
 			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
 			if(temp != null)
 			{
@@ -540,16 +577,13 @@ namespace EQBrowser
 			}
     
 		}
-		
+
+//work in progress		
 		public void HandleWorldMessage_ZoneChange(byte[] data, int datasize)
 		{
 			
-				byte[] ZoneChangeRequest = new byte[88];
-				int position = 0;
-				string charname = ReadFixedLengthString(data, ref position, 64);
-				byte zoneid = ReadInt8(data, ref position);
-				DoDeleteSpawn(OurEntityID);
-//				curZoneId = -1;
+			DoDeleteSpawn(OurEntityID);
+			Debug.Log("ZONECHANGE");
 		}
 		
 		
@@ -591,9 +625,9 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
 				temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
 			
-				temp.GetComponent<NPCController>().deltaX = -deltaX;// Player's Name
-				temp.GetComponent<NPCController>().deltaY = deltaZ;// Player's Name
-				temp.GetComponent<NPCController>().deltaZ = deltaY;// Player's Name
+				if(deltaX != 0){temp.GetComponent<NPCController>().deltaX = -deltaX;};
+				if(deltaY != 0){temp.GetComponent<NPCController>().deltaY = deltaZ;};
+				if(deltaZ != 0){temp.GetComponent<NPCController>().deltaZ = deltaY;};
 				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
 //				if(spawn_id == OurTargetID)
 //				Debug.Log("Client Update: spawnid: " + spawn_id + " x: " + x + " y: " + y + " z: " + z + " dx: " + deltaX + " dy: " + deltaY + " dz: " + deltaZ);
@@ -957,12 +991,15 @@ namespace EQBrowser
 		//296
 		public void HandleWorldMessage_LogOutReply(byte[] data, int datasize)
 		{
-			Destroy (WorldConnectObject);
-			SceneManager.LoadScene("1 Character creation");
-			ws_.Close ();
-			CSel.BackToLogin ();
-//			Destroy (WorldConnectObject);
-			CSel.LoginStatus.text = "You have been disconnected.";
+			if(AttemptingZoneConnect == false)
+			{
+				Destroy (WorldConnectObject);
+				SceneManager.LoadScene("1 Character creation");
+				ws_.Close ();
+				CSel.BackToLogin ();
+//				Destroy (WorldConnectObject);
+				CSel.LoginStatus.text = "You have been disconnected.";
+			}
 		}
 		
 		//551
@@ -970,11 +1007,9 @@ namespace EQBrowser
 		{
 			if(AttemptingZoneConnect == false)
 			{
-				Debug.Log("CLOSE");
 				string ActiveScene = SceneManager.GetActiveScene().name;
 				if (ActiveScene == "2 North Qeynos")
 				{
-					Debug.Log("CLOSEIF");
 					SceneManager.LoadScene("1 Character creation");
 					Destroy (WorldConnectObject);
 				}
@@ -1229,7 +1264,8 @@ namespace EQBrowser
 						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;						
 					case 36:
-						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+//						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
 						break;
 					case 37:
 						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);

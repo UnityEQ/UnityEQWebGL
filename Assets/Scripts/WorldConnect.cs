@@ -45,6 +45,7 @@ namespace EQBrowser {
 		public bool Connected;
 		public bool AttemptingZoneConnect;
 		public bool isTyping;
+		public bool isDead;
 		public bool playerLock = true;
 		public string ourPlayerName;
 		public Int32 curZoneId = -1;
@@ -52,6 +53,7 @@ namespace EQBrowser {
 		public Int32 OurEntityID = 0;
 		public Int32 OurTargetID;
 		public WebSocket ws_;
+		public byte[] userNamePass;
 
 		delegate void OpcodeFunc (byte[] data, int datasize);
 		//Use this for initialization
@@ -150,6 +152,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("338", HandleWorldMessage_NewZone);
 			opcodeDict.Add ("546", HandleWorldMessage_ZoneServerReady);
 			opcodeDict.Add ("549", HandleWorldMessage_EmuKeepAlive);
+			opcodeDict.Add ("550", HandleWorldMessage_EmuKeepAlive);
 			opcodeDict.Add ("551", HandleWorldMessage_EmuRequestClose);
 			opcodeDict.Add ("296", HandleWorldMessage_LogOutReply);
 			opcodeDict.Add ("424", HandleWorldMessage_SendExpZonein);
@@ -171,6 +174,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("110", HandleWorldMessage_Death);
 			opcodeDict.Add ("465", HandleWorldMessage_SpawnAppearance);
 			opcodeDict.Add ("52", HandleWorldMessage_BecomeCorpse);
+			opcodeDict.Add ("544", HandleWorldMessage_ZonePlayerToBind);
 			
 
 
@@ -298,7 +302,7 @@ namespace EQBrowser {
 				string reply = ws_.RecvString ();
 				if (reply != null) {
 					
-//					Debug.Log("reply" + reply);
+					Debug.Log("reply" + reply);
 					OpcodeFromServerClass IdChecker1 = JsonUtility.FromJson<OpcodeFromServerClass> (reply);
 
 					if (IdChecker1.id != null && IdChecker1.id == "token_auth_id") {

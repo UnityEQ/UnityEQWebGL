@@ -2,7 +2,6 @@
 using System.Collections;
 using EQBrowser;
 
-
 	public class NPCController : MonoBehaviour 
 	{
 		public int RaceID = 0;
@@ -27,7 +26,7 @@ using EQBrowser;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
 		private bool grounded = false;
-
+		
 //-x,z,y 		
 		public float movetoX;// x coord
 		public float movetoY;// y coord
@@ -40,6 +39,7 @@ using EQBrowser;
 		public float deltaH;// z coord
 		
 		public float stepFinal;
+		public bool isTarget = false;
 		public int isWalk;
 		public int isIdle;
 		public int isDead;
@@ -73,17 +73,28 @@ using EQBrowser;
 					Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
 	
 					Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
-					if (deltaF.magnitude != 0) {
-						//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time	
-						float step = deltaF.magnitude * Time.deltaTime;
-						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
+//					if (deltaF.magnitude != 0) {
+						//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
+						float stepcounter = Vector3.Distance(this.gameObject.transform.position, targetPosition);
+//						float step = deltaF.magnitude * Time.deltaTime;
+						float step2 = stepcounter * deltaF.magnitude;
+						float step = step2 * Time.deltaTime;
+//						float step = 15.5f * Time.deltaTime;
 
+						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+
+						if(isTarget == true)
+						{
+							Debug.Log("DELTAS: " + deltaX + "," + deltaY + "," + deltaZ);
+							isTarget = false;
+						}
+						
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
-					}
+//					}
 					//heading
-//					float h = Mathf.Lerp(360,0,movetoH/255f);
-//					transform.localEulerAngles = new Vector3(0,h,0);
+					float h = Mathf.Lerp(360,0,movetoH/255f);
+					transform.localEulerAngles = new Vector3(0,h,0);
 				}
 				else
 				{

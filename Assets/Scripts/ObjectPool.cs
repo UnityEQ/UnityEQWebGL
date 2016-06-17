@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
- 
+using EQBrowser; 
 public class ObjectPool : MonoBehaviour
 {
 	public List<GameObject> spawnlist;
