@@ -52,6 +52,7 @@ namespace EQBrowser {
 		public Int32 curInstanceId = -1;
 		public Int32 OurEntityID = 0;
 		public Int32 OurTargetID;
+		public Int32 OurTargetLootID;
 		public WebSocket ws_;
 		public byte[] userNamePass;
 
@@ -175,6 +176,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("465", HandleWorldMessage_SpawnAppearance);
 			opcodeDict.Add ("52", HandleWorldMessage_BecomeCorpse);
 			opcodeDict.Add ("544", HandleWorldMessage_ZonePlayerToBind);
+			opcodeDict.Add ("257", HandleWorldMessage_ItemPacket);
 			
 
 
@@ -302,7 +304,7 @@ namespace EQBrowser {
 				string reply = ws_.RecvString ();
 				if (reply != null) {
 					
-					Debug.Log("reply" + reply);
+//					Debug.Log("reply" + reply);
 					OpcodeFromServerClass IdChecker1 = JsonUtility.FromJson<OpcodeFromServerClass> (reply);
 
 					if (IdChecker1.id != null && IdChecker1.id == "token_auth_id") {
@@ -328,8 +330,8 @@ namespace EQBrowser {
 				if (ws_.Error != null) {
 					LogError ("Error: " + ws_.Error);
 					ws_ = null;
-					ws_.Close ();
 					SceneManager.LoadScene("1 Character creation");
+					Destroy (WorldConnectObject);
 				}
 			}
 		}

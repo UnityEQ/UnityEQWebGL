@@ -111,7 +111,7 @@ public class ThirdPersonCamera : MonoBehaviour
 						if(temp.GetComponent<NPCController>().isDead == 1)
 						{
 							Debug.Log("ISDEADLOOT");
-							WorldConnection.DoLootRequest(target);
+							WorldConnection.DoLoot(target);
 						}
 						else
 						{

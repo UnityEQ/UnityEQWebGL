@@ -177,7 +177,7 @@ public class UIScripts : MonoBehaviour {
 
 	public void HelpClick(string param2)
 	{
-		
+		WorldConnection2.DoEndLoot();
 	}
 
 	public void CampClick(string param2)
@@ -272,6 +272,10 @@ public class UIScripts : MonoBehaviour {
 	{
 		if (Input.GetKeyDown("1"))
 		AttackClick("hotkey1");
+	
+		if(Input.GetKeyDown(KeyCode.I))
+		InventoryClick("clack");
+	
 	}
 }
 }

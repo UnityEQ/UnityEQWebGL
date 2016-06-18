@@ -91,7 +91,6 @@ namespace EQBrowser
 		
 		if(Input.GetKeyDown(KeyCode.F10))
 		{
-			Debug.Log("OIMG");
 			Screen.fullScreen = !Screen.fullScreen;
 		}
 		
@@ -106,16 +105,17 @@ namespace EQBrowser
 				ToggleChatOn();
 			}
 		}
-
-
-			if (this.anim.GetCurrentAnimatorStateInfo (0).IsName ("CastHeal")) {
-				Casting = true;
-				moveStatus = "CastHeal";
-				UIScripts.CastButton = false;
-			} else {
-				Casting = false;
-			}
-
+		
+		if (this.anim.GetCurrentAnimatorStateInfo (0).IsName ("CastHeal")) 
+		{
+			Casting = true;
+			moveStatus = "CastHeal";
+			UIScripts.CastButton = false;
+		} 
+		else 
+		{
+			Casting = false;
+		}
 			//Set idel animation 
 			isWalking = true;
 			
