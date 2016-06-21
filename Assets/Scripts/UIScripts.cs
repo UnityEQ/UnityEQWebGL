@@ -273,7 +273,7 @@ public class UIScripts : MonoBehaviour {
 		if (Input.GetKeyDown("1"))
 		AttackClick("hotkey1");
 	
-		if(Input.GetKeyDown(KeyCode.I))
+		if(Input.GetKeyDown(KeyCode.I) && WorldConnection2.isTyping == false)
 		InventoryClick("clack");
 	
 	}

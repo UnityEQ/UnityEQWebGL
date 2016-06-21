@@ -201,6 +201,7 @@ namespace EQBrowser
 			float z = us.transform.position.y;
 
 			float h = Mathf.Lerp(255,0,us.transform.eulerAngles.y/360f);
+			var controller = us.GetComponent<CharacterController>(); 
 			//float x = 234;
 			//float y = 11;
 			//float z = 2;
@@ -214,13 +215,12 @@ namespace EQBrowser
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(x), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(y), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(z), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(-controller.velocity.x), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.z), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.y), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.magnitude), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(h), 0), ref PositionUpdateRequest, ref position);
-
 			if(playerLock == false)
 			{
 				GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);
@@ -988,6 +988,7 @@ namespace EQBrowser
 			float y = us.transform.position.z;
 			float z = us.transform.position.y;
 			float h = us.transform.rotation.y;
+			var controller = us.GetComponent<CharacterController>(); 
 			//float x = 234;
 			//float y = 11;
 			//float z = 2;
@@ -1000,11 +1001,11 @@ namespace EQBrowser
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(x), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(y), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(z), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(-controller.velocity.x), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.z), 0), ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.y), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
-			WriteInt32(0, ref PositionUpdateRequest, ref position);
+			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(controller.velocity.magnitude), 0), ref PositionUpdateRequest, ref position);
 			WriteInt32(BitConverter.ToInt32(BitConverter.GetBytes(h), 0), ref PositionUpdateRequest, ref position);
 
 			GenerateAndSendWorldPacket (PositionUpdateRequest.Length, 87 /* OP_ClientUpdate */, 2, curInstanceId, PositionUpdateRequest);

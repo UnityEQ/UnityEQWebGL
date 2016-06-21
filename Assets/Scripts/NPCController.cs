@@ -74,21 +74,22 @@ using EQBrowser;
 	
 					Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
 //					if (deltaF.magnitude != 0) {
-						//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
-						float stepcounter = Vector3.Distance(this.gameObject.transform.position, targetPosition);
 //						float step = deltaF.magnitude * Time.deltaTime;
+//						float step = 15.5f;
+
+//					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
+					if(NPC == 1)
+					{
+						float stepcounter = Vector3.Distance(this.gameObject.transform.position, targetPosition);
 						float step2 = stepcounter * deltaF.magnitude;
 						float step = step2 * Time.deltaTime;
-//						float step = 15.5f * Time.deltaTime;
-
 						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+					}
+					else
+					{
+						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
+					}
 
-						if(isTarget == true)
-						{
-							Debug.Log("DELTAS: " + deltaX + "," + deltaY + "," + deltaZ);
-							isTarget = false;
-						}
-						
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
 //					}

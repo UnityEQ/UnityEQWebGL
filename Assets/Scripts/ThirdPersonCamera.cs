@@ -108,15 +108,15 @@ public class ThirdPersonCamera : MonoBehaviour
 					GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == target).SingleOrDefault();
 					if(temp != null)
 					{
-						if(temp.GetComponent<NPCController>().isDead == 1)
-						{
+//						if(temp.GetComponent<NPCController>().isDead == 1)
+//						{
 							Debug.Log("ISDEADLOOT");
 							WorldConnection.DoLoot(target);
-						}
-						else
-						{
+//						}
+//						else
+//						{
 							Debug.Log("ISNOTDEADCONSIDER");
-						}
+//						}
 					}
 				}
 			}

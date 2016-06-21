@@ -302,6 +302,7 @@ namespace EQBrowser
 			
 			//Get CharacterController 
 			controller = GetComponent<CharacterController>(); 
+			
 			//Move Charactercontroller and check if grounded 
 			if(WorldConnection.isTyping == false)
 			{
