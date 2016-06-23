@@ -80,9 +80,14 @@ using EQBrowser;
 //					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 					if(NPC == 1)
 					{
+//				        Vector3 horizontalVelocity = controller.velocity;
+//						horizontalVelocity = new Vector3(deltaX, 0, deltaZ);
+//						float horizontalSpeed = horizontalVelocity.magnitude * Time.deltaTime;
+		
 						float stepcounter = Vector3.Distance(this.gameObject.transform.position, targetPosition);
 						float step2 = stepcounter * deltaF.magnitude;
 						float step = step2 * Time.deltaTime;
+						
 						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
 					}
 					else

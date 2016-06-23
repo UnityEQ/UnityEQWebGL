@@ -20,11 +20,12 @@ namespace EQBrowser {
 		public GameObject CharSelect;
 		public GameObject CharSelectCamera;
 		public GameObject UIScriptsObject;
-		public UIScripts UIScript;
 		public GameObject GameCamera;
 		public GameObject ChatText;
 		public GameObject EqemuConnectObject;
+		public UIScripts UIScript;
 		public CharacterSelect CSel;
+		public LootScript LootS;
 		public Text ChatText2;
 		public GameObject NullGameObject;
 		public int isAttacking;
@@ -177,6 +178,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("52", HandleWorldMessage_BecomeCorpse);
 			opcodeDict.Add ("544", HandleWorldMessage_ZonePlayerToBind);
 			opcodeDict.Add ("257", HandleWorldMessage_ItemPacket);
+			opcodeDict.Add ("327", HandleWorldMessage_MoneyOnCorpse);
 			
 
 
@@ -301,6 +303,7 @@ namespace EQBrowser {
 
 			//Establish a world connection.
 			if (ws_ != null) {
+				
 				string reply = ws_.RecvString ();
 				if (reply != null) {
 					

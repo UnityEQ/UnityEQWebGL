@@ -3,6 +3,14 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+using System.Collections.Generic;
+using System.Text;
+using System;
+using System.IO;
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.InteropServices;
+using UnityEngine.SceneManagement;
 
 namespace EQBrowser
 {
@@ -34,6 +42,8 @@ public class UIScripts : MonoBehaviour {
 	public GameObject SocialPanel;
 
 	public GameObject Inventory;
+	public GameObject LootBox;
+	public GameObject LootDone;
 	public GameObject Sit;
 	public GameObject Stand;
 	public GameObject Help;
@@ -77,6 +87,8 @@ public class UIScripts : MonoBehaviour {
 	public Text inventorySilver;
 	public Text inventoryCopper;
 	
+	public List<GameObject> slotList;
+	
 	
 	public WorldConnect WorldConnection2;
 	
@@ -103,6 +115,7 @@ public class UIScripts : MonoBehaviour {
 		Sit.GetComponent<Button>().onClick.AddListener(delegate { SitClick (param2); });
 		Stand.GetComponent<Button>().onClick.AddListener(delegate { StandClick (param2); });
 		Help.GetComponent<Button>().onClick.AddListener(delegate { HelpClick (param2); });
+		LootDone.GetComponent<Button>().onClick.AddListener(delegate { LootDoneClick (param2); });
 		Camp.GetComponent<Button>().onClick.AddListener(delegate { CampClick (param2); });
 		SpellGem1.GetComponent<Button>().onClick.AddListener(delegate { SpellGem1Click (param2); });
 		SpellGem2.GetComponent<Button>().onClick.AddListener(delegate { SpellGem2Click (param2); });
@@ -175,6 +188,12 @@ public class UIScripts : MonoBehaviour {
 		Sit.SetActive(true);
 	}
 
+	public void LootDoneClick(string param2)
+	{
+		WorldConnection2.DoEndLoot();
+		LootBox.SetActive(false);
+	}
+	
 	public void HelpClick(string param2)
 	{
 		WorldConnection2.DoEndLoot();
@@ -270,7 +289,7 @@ public class UIScripts : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		if (Input.GetKeyDown("1"))
+		if (Input.GetKeyDown("1") && WorldConnection2.isTyping == false)
 		AttackClick("hotkey1");
 	
 		if(Input.GetKeyDown(KeyCode.I) && WorldConnection2.isTyping == false)

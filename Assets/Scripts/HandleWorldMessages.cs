@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
+using UnityEditor;
 
 
 namespace EQBrowser
@@ -34,7 +35,7 @@ namespace EQBrowser
 		byte[] ChannelMessageRequest = new byte[RequestSize];
 		Int32 position = 0;
 		
-		WriteFixedLengthString("", ref ChannelMessageRequest, ref position, 64);
+		WriteFixedLengthString(OurTargetID.ToString(), ref ChannelMessageRequest, ref position, 64);
 		WriteFixedLengthString(name, ref ChannelMessageRequest, ref position, 64);
 		WriteInt32(0, ref ChannelMessageRequest, ref position);
 		WriteInt32(channel, ref ChannelMessageRequest, ref position);
@@ -122,9 +123,16 @@ namespace EQBrowser
 			Int32 position = 0;
 			WriteInt32(OurTargetLootID, ref DoEndLootRequest, ref position);
 			GenerateAndSendWorldPacket (DoEndLootRequest.Length, 148 /* OP_DeleteSpawn */, 2, curInstanceId, DoEndLootRequest);
+			
 			Debug.Log("EndLoot: " + OurTargetLootID);
 			OurTargetLootID = 0;
-//			DoLootComplete();
+			
+			Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/InventoryEmpty.png", typeof(Texture2D));
+			foreach (GameObject lootItem in UIScript.slotList)
+			{
+				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
+				temp.GetComponent<RawImage>().texture = itemIcon;
+			}			
 		}
 		
 		public void DoLootComplete()
@@ -361,9 +369,34 @@ namespace EQBrowser
 		public void HandleWorldMessage_ItemPacket(byte[] data, int datasize)
 		{
 			Int32 position = 0;
-			Int16 packetType = ReadInt16(data, ref position);
+			byte packetType = ReadInt8(data, ref position);
 			Int16 slotId = ReadInt16(data, ref position);
-			Debug.Log("SLOTID: " + slotId);
+			string RestOfItem = ReadFixedLengthString(data, ref position, datasize - 3);
+			string[] words = RestOfItem.Split('|');
+			string slotid = "0";
+			GameObject temp = null;
+			if(packetType == 102)
+			{
+			Int32 i = 0;
+				foreach (string word in words)
+				{
+					i++;
+					Debug.Log("i: " + i + "word: " + word);
+					if(i == 3){slotid = word;}
+					if(i == 13){
+						string itemName = word;
+						Debug.Log(slotid);
+						temp = UIScript.slotList.Where(obj => obj.name == slotid).SingleOrDefault();
+						temp.GetComponent<LootScript>().name = itemName;
+					}
+					if(i == 23){
+						string iconId = word;
+						Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/item_" + iconId + ".png", typeof(Texture2D));
+						temp.GetComponent<RawImage>().texture = itemIcon;
+
+					}
+				}
+			}
 		}
 		
 		public void HandleWorldMessage_SpawnAppearance(byte[] data, int datasize)
@@ -394,13 +427,13 @@ namespace EQBrowser
 
 		public void HandleWorldMessage_BecomeCorpse(byte[] data, int datasize)
 		{
-//			DoEmuRequestClose();
 			UIScript.LosePanel.SetActive(true);
 			UIScript.LeftPanel.SetActive(false);
 			UIScript.CenterPanel.SetActive(false);
 			UIScript.RightPanel.SetActive(false);
 			Debug.Log("BECOMECORPSE");
 			isDead = true;
+			DoEmuRequestClose();
 		}
 		public void HandleWorldMessage_Death(byte[] data, int datasize)
 		{
@@ -1016,7 +1049,24 @@ namespace EQBrowser
 			byte[] KeepAlive = null;
 			GenerateAndSendWorldPacket (0, 550 /* OP_EmuKeepAlive */, curZoneId, curInstanceId, KeepAlive);
 		}
-		
+	
+		public void HandleWorldMessage_MoneyOnCorpse(byte[] data, int datasize)
+		{
+				Int32 position = 0;
+				byte response = ReadInt8(data, ref position);
+				byte unk1 = ReadInt8(data, ref position);
+				byte unk2 = ReadInt8(data, ref position);
+				byte unk3 = ReadInt8(data, ref position);
+				Int32 platinum = ReadInt32(data, ref position);
+				Int32 gold = ReadInt32(data, ref position);
+				Int32 silver = ReadInt32(data, ref position);
+				Int32 copper = ReadInt32(data, ref position);
+				
+				if(response == 0){ChatText2.text += (Environment.NewLine + "Someone else is looting this corpse");};
+				if(response == 1){UIScript.LootBox.SetActive (true);};
+				if(response == 2){ChatText2.text += (Environment.NewLine + "You may not loot this corpse at this time.");};
+
+		}
 		
 		//296
 		public void HandleWorldMessage_LogOutReply(byte[] data, int datasize)
@@ -1035,7 +1085,6 @@ namespace EQBrowser
 		//551
 		public void HandleWorldMessage_EmuRequestClose(byte[] data, int datasize)
 		{
-			DoEmuRequestClose();
 			
 			if(AttemptingZoneConnect == false)
 			{
