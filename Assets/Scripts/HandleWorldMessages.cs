@@ -26,6 +26,35 @@ namespace EQBrowser
 			GenerateAndSendWorldPacket (0, 551 /* OP_EmuRequestClose */, 2, curInstanceId, EmuRequestClose);
 		}
 		
+		public void DoMoveItem()
+		{
+			byte[] MoveItemRequest = new byte[12];
+			Int32 position = 0;
+			
+			WriteInt32(22, ref MoveItemRequest, ref position);//from_slot
+			WriteInt32(30, ref MoveItemRequest, ref position);//to_slot
+			WriteInt32(1, ref MoveItemRequest, ref position);//number_in_stack
+				
+			GenerateAndSendWorldPacket (MoveItemRequest.Length, 332 /* OP_Moveitem */, 2, curInstanceId, MoveItemRequest);
+		}
+		
+		public void DoLootItem(int slotId)
+		{
+			DoClientUpdate();
+			Debug.Log("LOOTINGITEM");
+			byte[] LootRequest = new byte[16];
+			Int32 position = 0;
+
+			WriteInt32(OurTargetLootID, ref LootRequest, ref position);
+			WriteInt32(OurEntityID, ref LootRequest, ref position);
+			WriteInt16((short)slotId, ref LootRequest, ref position);
+			WriteInt8(121, ref LootRequest, ref position);
+			WriteInt32(0, ref LootRequest, ref position); //autoloot
+			
+			GenerateAndSendWorldPacket (LootRequest.Length, 299 /* OP_LootItem */, curZoneId, curInstanceId, LootRequest);
+		
+		}
+		
 		public void DoChannelMessage(string name, int channel, string message)
 		{
 			
@@ -115,6 +144,7 @@ namespace EQBrowser
 			WriteInt32(OurTargetLootID, ref DoLootRequest, ref position);
 			GenerateAndSendWorldPacket (DoLootRequest.Length, 300 /* OP_DeleteSpawn */, 2, curInstanceId, DoLootRequest);
 			Debug.Log("Looting: " + OurTargetLootID);
+			UIScript.InventoryClick("clack");
 		}
 		
 		public void DoEndLoot()
@@ -126,13 +156,16 @@ namespace EQBrowser
 			
 			Debug.Log("EndLoot: " + OurTargetLootID);
 			OurTargetLootID = 0;
+			UIScript.InventoryClick("clack");
 			
-			Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/InventoryEmpty.png", typeof(Texture2D));
+//			Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/InventoryEmpty.png", typeof(Texture2D));
 			foreach (GameObject lootItem in UIScript.slotList)
 			{
 				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
-				temp.GetComponent<RawImage>().texture = itemIcon;
-			}			
+				temp.SetActive(false);
+				temp.GetComponent<RawImage>().texture = null;
+				temp.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+			}
 		}
 		
 		public void DoLootComplete()
@@ -382,7 +415,14 @@ namespace EQBrowser
 				{
 					i++;
 					Debug.Log("i: " + i + "word: " + word);
-					if(i == 3){slotid = word;}
+					if(i == 3)
+					{
+						slotid = word;
+						int slotInt = int.Parse(word);
+
+						temp = UIScript.slotList.Where(obj => obj.name == slotid).SingleOrDefault();
+						temp.GetComponent<LootScript>().slotId = slotInt;
+					}
 					if(i == 13){
 						string itemName = word;
 						Debug.Log(slotid);
@@ -392,7 +432,9 @@ namespace EQBrowser
 					if(i == 23){
 						string iconId = word;
 						Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/item_" + iconId + ".png", typeof(Texture2D));
+						temp.SetActive(true);
 						temp.GetComponent<RawImage>().texture = itemIcon;
+						temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
 
 					}
 				}
