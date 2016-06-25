@@ -8,7 +8,6 @@ using System;
 using System.Linq;
 using UnityEngine.UI;
 using System.Text.RegularExpressions;
-using UnityEditor;
 
 
 namespace EQBrowser
@@ -431,7 +430,7 @@ namespace EQBrowser
 					}
 					if(i == 23){
 						string iconId = word;
-						Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/item_" + iconId + ".png", typeof(Texture2D));
+						Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + iconId, typeof(Texture2D));
 						temp.SetActive(true);
 						temp.GetComponent<RawImage>().texture = itemIcon;
 						temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);

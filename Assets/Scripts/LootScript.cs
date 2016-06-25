@@ -20,10 +20,15 @@ public class LootScript : MonoBehaviour {
 	
 	public void LootClick()
 	{
-		WorldConnection2.DoLootItem(slotId);
-		this.gameObject.SetActive(false);
-		this.gameObject.GetComponent<RawImage>().texture = null;
-		this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+		if(name != "")
+		{
+			WorldConnection2.DoLootItem(slotId);
+			this.gameObject.SetActive(false);
+			this.gameObject.GetComponent<RawImage>().texture = null;
+			this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+			this.name = "";
+			this.slotId = 0;
+		}
 	}
 	// Use this for initialization
 	void Start () {
