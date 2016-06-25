@@ -395,7 +395,16 @@ namespace EQBrowser
 			string ChannelMessage = ReadFixedLengthString(data, ref position, ChannelVarLength);
 //			Debug.Log("formatmessagestring: " + stringID);
 //			Debug.Log("formatmessagetype: " + type);
-//			Debug.Log("formatmessagetype: " + ChannelMessage);
+			Debug.Log("formatmessagetype: " + ChannelMessage);
+		}
+		
+		public void HandleWorldMessage_WorldMOTD(byte[] data, int datasize)
+		{
+			Int32 position = 0;
+			Int32 WorldMOTDLength = datasize - position;
+			string ChannelMessage = ReadFixedLengthString(data, ref position, WorldMOTDLength);
+			string MessageFinal = Regex.Replace(ChannelMessage, "[\0]", "");
+			ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>MESSAGE OF THE DAY: </b></color>" + "<color=#ffa500ff><b>" + MessageFinal + "</b></color>");
 		}
 
 		public void HandleWorldMessage_ItemPacket(byte[] data, int datasize)
@@ -455,15 +464,18 @@ namespace EQBrowser
 			Int32 position = 0;
 			Int32 exp = ReadInt32(data, ref position);
 			Int32 aaxp = ReadInt32(data, ref position);
-			
-			if(exp > 0)
+			if(initXP == true)
 			{
-				ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You gained experience!</b></color>");
+				if(exp > 0)
+				{
+					ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You gained experience!</b></color>");
+				}
+				else
+				{
+					ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You lost experience!</b></color>");
+				}
 			}
-			else
-			{
-				ChatText2.text += (Environment.NewLine + "<color=#ffa500ff><b>You lost experience!</b></color>");
-			}
+			initXP = true;
 		}
 
 		public void HandleWorldMessage_BecomeCorpse(byte[] data, int datasize)
@@ -1379,6 +1391,10 @@ namespace EQBrowser
 
 				switch (race)
 				{
+					case 1:
+						if(NPC == 0){ObjectPool.instance.GetObjectForType("elf",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
+						else{ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
+						break;
 					case 22:
 						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;

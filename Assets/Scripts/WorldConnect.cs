@@ -47,6 +47,7 @@ namespace EQBrowser {
 		public bool AttemptingZoneConnect;
 		public bool isTyping;
 		public bool isDead;
+		public bool initXP = false;
 		public bool playerLock = true;
 		public string ourPlayerName;
 		public Int32 curZoneId = -1;
@@ -179,6 +180,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("544", HandleWorldMessage_ZonePlayerToBind);
 			opcodeDict.Add ("257", HandleWorldMessage_ItemPacket);
 			opcodeDict.Add ("327", HandleWorldMessage_MoneyOnCorpse);
+			opcodeDict.Add ("329", HandleWorldMessage_WorldMOTD);
 			
 
 
