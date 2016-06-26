@@ -55,6 +55,7 @@ namespace EQBrowser {
 		public Int32 OurEntityID = 0;
 		public Int32 OurTargetID;
 		public Int32 OurTargetLootID;
+		public Int32 cursorIconId;
 		public WebSocket ws_;
 		public byte[] userNamePass;
 
@@ -181,6 +182,7 @@ namespace EQBrowser {
 			opcodeDict.Add ("257", HandleWorldMessage_ItemPacket);
 			opcodeDict.Add ("327", HandleWorldMessage_MoneyOnCorpse);
 			opcodeDict.Add ("329", HandleWorldMessage_WorldMOTD);
+			opcodeDict.Add ("72", HandleWorldMessage_ItemPacket);
 			
 
 

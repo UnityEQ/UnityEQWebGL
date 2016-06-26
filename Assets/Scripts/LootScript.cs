@@ -12,17 +12,20 @@ public class LootScript : MonoBehaviour {
 	public WorldConnect WorldConnection2;
 	public string name;
 	public int slotId;
+	public int iconId;
+	public bool lootedMe = false;
 
 	public void setupBtn()
 	{
-		GetComponent<Button>().onClick.AddListener(delegate { LootClick(); });
+		GetComponent<Button>().onClick.AddListener(delegate { LootClick(slotId); });
 	}
 	
-	public void LootClick()
+	public void LootClick(int slotId2)
 	{
-		if(name != "")
+		if(name != "" && slotId2 == slotId)
 		{
 			WorldConnection2.DoLootItem(slotId);
+			lootedMe = true;
 			this.gameObject.SetActive(false);
 			this.gameObject.GetComponent<RawImage>().texture = null;
 			this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);

@@ -88,7 +88,7 @@ public class UIScripts : MonoBehaviour {
 	public Text inventoryCopper;
 	
 	public List<GameObject> slotList;
-	public List<GameObject> InvslotList;
+	public List<GameObject> bagList;
 	
 	
 	public WorldConnect WorldConnection2;

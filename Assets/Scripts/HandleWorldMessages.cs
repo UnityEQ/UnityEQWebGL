@@ -416,37 +416,125 @@ namespace EQBrowser
 			string[] words = RestOfItem.Split('|');
 			string slotid = "0";
 			GameObject temp = null;
-			if(packetType == 102)
+			//ItemPacketLoot= 0x66
+			switch(packetType)
 			{
-			Int32 i = 0;
+//			if(packetType == 102)
+//			{
+			case 102:
+			Int32 i1 = 0;
 				foreach (string word in words)
 				{
-					i++;
-					Debug.Log("i: " + i + "word: " + word);
-					if(i == 3)
+					i1++;
+//					Debug.Log("i: " + i1 + "word: " + word);
+					if(i1 == 3)
 					{
 						slotid = word;
 						int slotInt = int.Parse(word);
-
-						temp = UIScript.slotList.Where(obj => obj.name == slotid).SingleOrDefault();
+						int slotOffset = slotInt - 22;
+						temp = UIScript.slotList[slotOffset];
 						temp.GetComponent<LootScript>().slotId = slotInt;
 					}
-					if(i == 13){
+					if(i1 == 13){
 						string itemName = word;
-						Debug.Log(slotid);
-						temp = UIScript.slotList.Where(obj => obj.name == slotid).SingleOrDefault();
+						int slotInt = int.Parse(slotid);
+						int slotOffset = slotInt - 22;
+						temp = UIScript.slotList[slotOffset];
 						temp.GetComponent<LootScript>().name = itemName;
 					}
-					if(i == 23){
+					if(i1 == 23){
 						string iconId = word;
 						Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + iconId, typeof(Texture2D));
+						int slotInt = int.Parse(slotid);
+						int iconInt = int.Parse(iconId);
+						int slotOffset = slotInt - 22;
+						temp = UIScript.slotList[slotOffset];
+						temp.GetComponent<LootScript>().iconId = iconInt;
 						temp.SetActive(true);
 						temp.GetComponent<RawImage>().texture = itemIcon;
 						temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
 
 					}
 				}
+//			}
+			break;
+			//ItemPacketTrade= 0x67
+//			if(packetType == 103)
+//			{
+			case 103:
+			Int32 i2 = 0;
+				foreach (string word in words)
+				{
+					i2++;
+//					Debug.Log("i: " + i2 + "word: " + word);
+					if(i2 == 3)
+					{
+						slotid = word;
+					}
+					if(i2 == 23)
+					{
+						string iconId = word;
+						cursorIconId = int.Parse(iconId);
+					}
+				}
+//			}
+			break;
+			//ItemPacketCharInventory= 0x69
+//			if(packetType == 105)
+//			{
+			default:
+			Int32 i3 = 0;
+				foreach (string word in words)
+				{
+					i3++;
+//					Debug.Log("i: " + i3 + "word: " + word);
+					if(i3 == 179){i3 = 0;}
+					if(i3 == 2)
+					{
+						slotid = word;
+						int slotInt = int.Parse(word);
+						Debug.Log("slotid: " + slotid);
+						if(slotInt > 21 && slotInt < 30)
+						{
+							int slotOffset = slotInt - 22;
+							temp = UIScript.bagList[slotOffset];
+							temp.GetComponent<BagScript>().slotId = slotInt;
+						}
+						
+					}
+					if(i3 == 13)
+					{
+						string itemName = word;
+						int slotInt = int.Parse(slotid);
+						if(slotInt > 21 && slotInt < 30)
+						{
+							int slotOffset = slotInt - 22;
+							temp = UIScript.bagList[slotOffset];
+							temp.GetComponent<BagScript>().name = itemName;
+						}	
+					}
+					if(i3 == 22)
+					{
+						string iconId = word;
+						Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + iconId, typeof(Texture2D));
+						int slotInt = int.Parse(slotid);
+						int iconInt = int.Parse(iconId);
+						if(slotInt == 30){cursorIconId = iconInt;}
+						if(slotInt > 21 && slotInt < 30)
+						{
+							int slotOffset = slotInt - 22;
+							temp = UIScript.bagList[slotOffset];
+							temp.GetComponent<BagScript>().iconId = iconInt;
+							temp.SetActive(true);
+							temp.GetComponent<RawImage>().texture = itemIcon;
+							temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
+						}	
+					}
+				}
+//			}
+			break;
 			}
+		//end				
 		}
 		
 		public void HandleWorldMessage_SpawnAppearance(byte[] data, int datasize)
