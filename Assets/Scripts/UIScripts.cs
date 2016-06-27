@@ -89,6 +89,7 @@ public class UIScripts : MonoBehaviour {
 	
 	public List<GameObject> slotList;
 	public List<GameObject> bagList;
+	public List<GameObject> equipList;
 	
 	
 	public WorldConnect WorldConnection2;

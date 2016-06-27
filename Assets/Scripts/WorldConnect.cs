@@ -25,7 +25,7 @@ namespace EQBrowser {
 		public GameObject EqemuConnectObject;
 		public UIScripts UIScript;
 		public CharacterSelect CSel;
-		public LootScript LootS;
+//		public LootScript LootS;
 		public Text ChatText2;
 		public GameObject NullGameObject;
 		public int isAttacking;
@@ -55,7 +55,9 @@ namespace EQBrowser {
 		public Int32 OurEntityID = 0;
 		public Int32 OurTargetID;
 		public Int32 OurTargetLootID;
-		public Int32 cursorIconId;
+		public string cursorItemName;
+		public Int32 cursorIconId = 0;
+		public Int32 cursorSlotId = 0;
 		public WebSocket ws_;
 		public byte[] userNamePass;
 

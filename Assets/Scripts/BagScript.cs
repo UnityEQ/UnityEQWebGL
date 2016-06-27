@@ -21,14 +21,34 @@ public class BagScript : MonoBehaviour {
 	
 	public void BagClick(int slotId2)
 	{
-		if(name != "" && slotId2 == slotId)
+		if(this.name != "" && WorldConnection2.cursorIconId == 0 && slotId2 == slotId)
 		{
-//			WorldConnection2.DoLootItem(slotId);
-			this.gameObject.SetActive(false);
+			WorldConnection2.DoMoveItem(slotId);
+//			this.gameObject.SetActive(false);
 			this.gameObject.GetComponent<RawImage>().texture = null;
 			this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+			WorldConnection2.cursorIconId = iconId;
+			WorldConnection2.cursorItemName = name;
+			WorldConnection2.cursorSlotId = slotId;
 			this.name = "";
 			this.slotId = 0;
+			this.iconId = 0;
+		}
+		if(this.name == "" && WorldConnection2.cursorIconId > 0 && slotId2 == slotId)
+		{
+			int nameParse = int.Parse(this.gameObject.name);
+			WorldConnection2.DoMoveItem(nameParse);
+			Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + WorldConnection2.cursorIconId, typeof(Texture2D));
+			this.gameObject.GetComponent<BagScript>().iconId = WorldConnection2.cursorIconId;
+//			this.gameObject.SetActive(true);
+			this.gameObject.GetComponent<RawImage>().texture = itemIcon;
+			this.gameObject.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
+			this.name = WorldConnection2.cursorItemName;
+			this.slotId = WorldConnection2.cursorSlotId;
+			this.iconId = WorldConnection2.cursorIconId;
+			WorldConnection2.cursorIconId = 0;
+			WorldConnection2.cursorItemName = "";
+			WorldConnection2.cursorSlotId = 0;
 		}
 	}
 	// Use this for initialization

@@ -25,18 +25,25 @@ namespace EQBrowser
 			GenerateAndSendWorldPacket (0, 551 /* OP_EmuRequestClose */, 2, curInstanceId, EmuRequestClose);
 		}
 		
-		public void DoMoveItem()
+		public void DoMoveItem(int slotId)
 		{
 			byte[] MoveItemRequest = new byte[12];
 			Int32 position = 0;
 			
-			WriteInt32(22, ref MoveItemRequest, ref position);//from_slot
-			WriteInt32(30, ref MoveItemRequest, ref position);//to_slot
-			WriteInt32(1, ref MoveItemRequest, ref position);//number_in_stack
-				
+			if(cursorIconId == 0)
+			{
+				WriteInt32(slotId, ref MoveItemRequest, ref position);//from_slot
+				WriteInt32(30, ref MoveItemRequest, ref position);//to_slot
+			}
+			if(cursorIconId > 0)
+			{
+				WriteInt32(30, ref MoveItemRequest, ref position);//from_slot
+				WriteInt32(slotId, ref MoveItemRequest, ref position);//to_slot
+			}
+			WriteInt32(0, ref MoveItemRequest, ref position);//number_in_stack
 			GenerateAndSendWorldPacket (MoveItemRequest.Length, 332 /* OP_Moveitem */, 2, curInstanceId, MoveItemRequest);
 		}
-		
+	
 		public void DoLootItem(int slotId)
 		{
 			DoClientUpdate();
@@ -419,8 +426,7 @@ namespace EQBrowser
 			//ItemPacketLoot= 0x66
 			switch(packetType)
 			{
-//			if(packetType == 102)
-//			{
+
 			case 102:
 			Int32 i1 = 0;
 				foreach (string word in words)
@@ -456,11 +462,9 @@ namespace EQBrowser
 
 					}
 				}
-//			}
+
 			break;
 			//ItemPacketTrade= 0x67
-//			if(packetType == 103)
-//			{
 			case 103:
 			Int32 i2 = 0;
 				foreach (string word in words)
@@ -470,18 +474,16 @@ namespace EQBrowser
 					if(i2 == 3)
 					{
 						slotid = word;
+
 					}
-					if(i2 == 23)
+					if(i2 == 23 && int.Parse(slotid) == 30)
 					{
 						string iconId = word;
 						cursorIconId = int.Parse(iconId);
 					}
 				}
-//			}
 			break;
 			//ItemPacketCharInventory= 0x69
-//			if(packetType == 105)
-//			{
 			default:
 			Int32 i3 = 0;
 				foreach (string word in words)
@@ -494,6 +496,12 @@ namespace EQBrowser
 						slotid = word;
 						int slotInt = int.Parse(word);
 						Debug.Log("slotid: " + slotid);
+						if(slotInt > 0 && slotInt < 22)
+						{
+							int slotOffset = slotInt - 1;
+							temp = UIScript.equipList[slotOffset];
+							temp.GetComponent<EquipScript>().slotId = slotInt;
+						}
 						if(slotInt > 21 && slotInt < 30)
 						{
 							int slotOffset = slotInt - 22;
@@ -506,6 +514,12 @@ namespace EQBrowser
 					{
 						string itemName = word;
 						int slotInt = int.Parse(slotid);
+						if(slotInt > 0 && slotInt < 22)
+						{
+							int slotOffset = slotInt - 1;
+							temp = UIScript.equipList[slotOffset];
+							temp.GetComponent<EquipScript>().name = itemName;
+						}	
 						if(slotInt > 21 && slotInt < 30)
 						{
 							int slotOffset = slotInt - 22;
@@ -520,6 +534,15 @@ namespace EQBrowser
 						int slotInt = int.Parse(slotid);
 						int iconInt = int.Parse(iconId);
 						if(slotInt == 30){cursorIconId = iconInt;}
+						if(slotInt > 0 && slotInt < 22)
+						{
+							int slotOffset = slotInt - 1;
+							temp = UIScript.equipList[slotOffset];
+							temp.GetComponent<EquipScript>().iconId = iconInt;
+							temp.SetActive(true);
+							temp.GetComponent<RawImage>().texture = itemIcon;
+							temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
+						}
 						if(slotInt > 21 && slotInt < 30)
 						{
 							int slotOffset = slotInt - 22;
@@ -531,7 +554,6 @@ namespace EQBrowser
 						}	
 					}
 				}
-//			}
 			break;
 			}
 		//end				
