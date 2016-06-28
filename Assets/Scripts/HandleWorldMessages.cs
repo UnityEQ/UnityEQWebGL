@@ -48,6 +48,7 @@ namespace EQBrowser
 		{
 			DoClientUpdate();
 			Debug.Log("LOOTINGITEM");
+			cursorSlotId = 30;
 			byte[] LootRequest = new byte[16];
 			Int32 position = 0;
 

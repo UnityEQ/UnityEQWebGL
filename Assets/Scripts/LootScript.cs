@@ -26,6 +26,11 @@ public class LootScript : MonoBehaviour {
 		{
 			WorldConnection2.DoLootItem(slotId);
 			lootedMe = true;
+			
+			WorldConnection2.cursorIconId = iconId;
+			WorldConnection2.cursorItemName = name;
+			WorldConnection2.cursorSlotId = int.Parse(this.gameObject.name);
+			
 			this.gameObject.SetActive(false);
 			this.gameObject.GetComponent<RawImage>().texture = null;
 			this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
