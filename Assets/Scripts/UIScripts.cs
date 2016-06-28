@@ -194,6 +194,7 @@ public class UIScripts : MonoBehaviour {
 	{
 		WorldConnection2.DoEndLoot();
 		LootBox.SetActive(false);
+		WorldConnection2.isLooting = false;
 	}
 	
 	public void HelpClick(string param2)

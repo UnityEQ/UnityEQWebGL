@@ -24,6 +24,7 @@ public class BagScript : MonoBehaviour {
 	{
 		if(this.name != "" && WorldConnection2.cursorIconId == 0)
 		{
+			Debug.Log("if1");
 			WorldConnection2.DoMoveItem(slotId);
 			this.gameObject.GetComponent<RawImage>().texture = null;
 			this.gameObject.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
@@ -36,13 +37,14 @@ public class BagScript : MonoBehaviour {
 		}
 		else if(this.name != "" && WorldConnection2.cursorIconId > 0)
 		{
+			Debug.Log("if2");
 			WorldConnection2.DoMoveItem(slotId);
 	
 			string tempName = WorldConnection2.cursorItemName;
 			int tempslotId = WorldConnection2.cursorSlotId;
 			int tempiconId = WorldConnection2.cursorIconId;
 			
-			Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + WorldConnection2.cursorIconId, typeof(Texture2D));
+			Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + tempiconId, typeof(Texture2D));
 			this.gameObject.GetComponent<RawImage>().texture = itemIcon;
 			this.gameObject.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
 
@@ -52,12 +54,13 @@ public class BagScript : MonoBehaviour {
 			WorldConnection2.cursorSlotId = int.Parse(this.gameObject.name);
 			
 			this.name = tempName;
-			this.slotId = tempslotId;
+			this.slotId = int.Parse(this.gameObject.name);
 			this.iconId = tempiconId;
 			
 		}
 		else if(this.name == "" && WorldConnection2.cursorIconId > 0)
 		{
+			Debug.Log("if3");
 			int nameParse = int.Parse(this.gameObject.name);
 			WorldConnection2.DoMoveItem(nameParse);
 			Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + WorldConnection2.cursorIconId, typeof(Texture2D));

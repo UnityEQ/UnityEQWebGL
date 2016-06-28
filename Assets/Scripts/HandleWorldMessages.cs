@@ -34,11 +34,13 @@ namespace EQBrowser
 			{
 				WriteInt32(slotId, ref MoveItemRequest, ref position);//from_slot
 				WriteInt32(30, ref MoveItemRequest, ref position);//to_slot
+				Debug.Log("MoveItem: " + slotId + "to: 30");
 			}
 			if(cursorIconId > 0)
 			{
 				WriteInt32(30, ref MoveItemRequest, ref position);//from_slot
 				WriteInt32(slotId, ref MoveItemRequest, ref position);//to_slot
+				Debug.Log("MoveItem: 30" + "to: " + slotId);
 			}
 			WriteInt32(0, ref MoveItemRequest, ref position);//number_in_stack
 			GenerateAndSendWorldPacket (MoveItemRequest.Length, 332 /* OP_Moveitem */, 2, curInstanceId, MoveItemRequest);
@@ -49,6 +51,7 @@ namespace EQBrowser
 			DoClientUpdate();
 			Debug.Log("LOOTINGITEM");
 			cursorSlotId = 30;
+			isLooting = true;
 			byte[] LootRequest = new byte[16];
 			Int32 position = 0;
 
@@ -467,26 +470,30 @@ namespace EQBrowser
 			break;
 			//ItemPacketTrade= 0x67
 			case 103:
-			Int32 i2 = 0;
-				foreach (string word in words)
+				Int32 i2 = 0;
+				if(isLooting == true)
 				{
-					i2++;
-//					Debug.Log("i: " + i2 + "word: " + word);
-					if(i2 == 3)
+					foreach (string word in words)
 					{
-						slotid = word;
-
-					}
-					if(i2 == 23 && int.Parse(slotid) == 30)
-					{
-						string iconId = word;
-						cursorIconId = int.Parse(iconId);
+						i2++;
+//						Debug.Log("i: " + i2 + "word: " + word);
+						if(i2 == 3)
+						{
+							slotid = word;
+	
+						}
+						if(i2 == 23 && int.Parse(slotid) == 30)
+						{
+							string iconId = word;
+							Debug.Log("CURSORICON");
+							cursorIconId = int.Parse(iconId);
+						}
 					}
 				}
 			break;
 			//ItemPacketCharInventory= 0x69
 			default:
-			Int32 i3 = 0;
+				Int32 i3 = 0;
 				foreach (string word in words)
 				{
 					i3++;
@@ -496,7 +503,8 @@ namespace EQBrowser
 					{
 						slotid = word;
 						int slotInt = int.Parse(word);
-						Debug.Log("slotid: " + slotid);
+//						Debug.Log("slotid: " + slotid);
+						if(slotInt == 30){cursorSlotId = slotInt;}
 						if(slotInt > 0 && slotInt < 22)
 						{
 							int slotOffset = slotInt - 1;
@@ -515,6 +523,7 @@ namespace EQBrowser
 					{
 						string itemName = word;
 						int slotInt = int.Parse(slotid);
+						if(slotInt == 30){cursorItemName = itemName;}
 						if(slotInt > 0 && slotInt < 22)
 						{
 							int slotOffset = slotInt - 1;

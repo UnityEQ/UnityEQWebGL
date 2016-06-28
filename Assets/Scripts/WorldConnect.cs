@@ -46,6 +46,7 @@ namespace EQBrowser {
 		public bool Connected;
 		public bool AttemptingZoneConnect;
 		public bool isTyping;
+		public bool isLooting;
 		public bool isDead;
 		public bool initXP = false;
 		public bool playerLock = true;
