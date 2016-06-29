@@ -8,7 +8,6 @@ using System.Text;
 using System;
 using System.IO;
 using System.Net;
-using System.Net.Sockets;
 using System.Runtime.InteropServices;
 using UnityEngine.SceneManagement;
 
@@ -49,6 +48,7 @@ public class UIScripts : MonoBehaviour {
 	public GameObject Help;
 	public GameObject Camp;
 	public GameObject InventoryWindow;
+	public GameObject MoveInventoryWindow;
 	public GameObject SpellGem1;
 	public GameObject SpellGem2;
 	public GameObject SpellGem3;
@@ -93,6 +93,8 @@ public class UIScripts : MonoBehaviour {
 	
 	
 	public WorldConnect WorldConnection2;
+	public Draggable draggable;
+	
 	
 	public static bool CastButton = false;
 	
@@ -172,6 +174,7 @@ public class UIScripts : MonoBehaviour {
 		else 
 		{
 			InventoryWindow.SetActive (false);
+			MoveInventoryWindow.GetComponent<Draggable>().Reset(InventoryWindow);
 			InventoryText.color = Color.white;
 		}
 	}
@@ -289,6 +292,7 @@ public class UIScripts : MonoBehaviour {
 		TargetBox.SetActive(false);
 	}
 	
+		
 	// Update is called once per frame
 	void Update () 
 	{
@@ -297,6 +301,7 @@ public class UIScripts : MonoBehaviour {
 	
 		if(Input.GetKeyDown(KeyCode.I) && WorldConnection2.isTyping == false)
 		InventoryClick("clack");
+	
 	
 	}
 }
