@@ -113,7 +113,8 @@ namespace EQBrowser
 			int targetInt = int.Parse(targetID);
 			OurTargetID = targetInt;
 				
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == targetID).SingleOrDefault();
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == targetID).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == targetID); 
 			if(temp != null)
 			{
 				string targetName = temp.GetComponent<NPCController>().name;
@@ -171,7 +172,8 @@ namespace EQBrowser
 //			Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/InventoryEmpty.png", typeof(Texture2D));
 			foreach (GameObject lootItem in UIScript.slotList)
 			{
-				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
+//				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
+				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == lootItem.name); 
 				temp.SetActive(false);
 				temp.GetComponent<RawImage>().texture = null;
 				temp.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
@@ -619,7 +621,9 @@ namespace EQBrowser
 			Int32 attackskillId = ReadInt32(data, ref position);
 			Int32 damage = ReadInt32(data, ref position);
 			
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawnId.ToString());
+
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().isDead = 1;
@@ -669,7 +673,8 @@ namespace EQBrowser
 			Int16 spawnId = ReadInt16(data, ref position); //hp percent
 			byte hp = ReadInt8(data, ref position);
 
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawnId.ToString());
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().curHp = hp;// Player's Name
@@ -694,7 +699,8 @@ namespace EQBrowser
 		
 			if(target == OurEntityID)
 			{
-				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
+//				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
+				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == source.ToString());
 				string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
 				string sourceClean = Regex.Replace(sourceName, "[0-9]", "");
 				string sourceName2 = Regex.Replace(sourceClean, "[_]", " ");
@@ -717,7 +723,8 @@ namespace EQBrowser
 			
 			if(source == OurEntityID)
 			{
-				GameObject temp2 = ObjectPool.instance.spawnlist.Where(obj => obj.name == target.ToString()).SingleOrDefault();
+//				GameObject temp2 = ObjectPool.instance.spawnlist.Where(obj => obj.name == target.ToString()).SingleOrDefault();
+				GameObject temp2 = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == target.ToString());
 				string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
 				string targetClean = Regex.Replace(targetName, "[0-9]", "");
 				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
@@ -801,7 +808,8 @@ namespace EQBrowser
 			Int32 position = 0;
 			Int32 spawn_id = ReadInt32(data, ref position);
 //			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());
 			if(temp != null)
 			{
 					string PrefabName = temp.GetComponent<NPCController>().prefabName;			
@@ -852,7 +860,10 @@ namespace EQBrowser
 			Int32 animationspeed = ReadInt32(data, ref position);
 			float rotation = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
+			
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());
+//			GameObject temp = ObjectPool.instance.spawndict[spawn_id];
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().movetoX = -x;// Player's Name
@@ -879,7 +890,8 @@ namespace EQBrowser
 			Int32 state = ReadInt32(data, ref position);
 			Debug.Log("StateAdd: Spawnid: " + spawnId + " state: " + state);
 
-			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
+			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawnId.ToString()); 
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().animationState = state;// Player's Name

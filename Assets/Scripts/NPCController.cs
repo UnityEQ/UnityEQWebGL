@@ -25,7 +25,7 @@ using EQBrowser;
 		private CharacterController controller;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
-		private bool grounded = false;
+		public bool isGrounded = false;
 		
 //-x,z,y 		
 		public float movetoX;// x coord
@@ -46,6 +46,14 @@ using EQBrowser;
 		public int isPunch;
 		public int isHurt;
 		
+		public float magicNumber = 1.0f;
+		public Vector3 moveVector;
+		
+		
+		void Start()
+		{
+			y = y + 1.0f;
+		}
 		void Update () 
 		{ 
 			if(NPC == 2 || isDead == 1)
@@ -54,14 +62,19 @@ using EQBrowser;
 			}
 			else
 			{
-				CharacterController controller = GetComponent<CharacterController>();
+				CharacterController controller = this.GetComponent<CharacterController>();
 				//Apply gravity 
 				moveDirection.y -= gravity * Time.deltaTime; 
 				//Get CharacterController 
-				controller = GetComponent<CharacterController>(); 
 				//Move Charactercontroller and check if grounded 
-				grounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
+
+				if (!controller.isGrounded)
+				{
+					Debug.Log("NOT GROUNDED" + spawnId);
+					isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
+				}
 				
+		
 				//wander
 				if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
 				{
@@ -70,7 +83,7 @@ using EQBrowser;
 						walkNow();
 					}
 					
-					Vector3 targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
+					Vector3 targetPosition = new Vector3 (movetoX,y,movetoZ);
 	
 					Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
 //					if (deltaF.magnitude != 0) {

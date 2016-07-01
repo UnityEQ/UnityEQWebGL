@@ -5,6 +5,7 @@ using EQBrowser;
 public class ObjectPool : MonoBehaviour
 {
 	public List<GameObject> spawnlist;
+	public Dictionary<int,GameObject> poop;
 
     public static ObjectPool instance;
    
@@ -125,6 +126,7 @@ public class ObjectPool : MonoBehaviour
 					pooledObject.GetComponent<NPCController>().gender = gender;// Gender (0=male, 1=female)
 					
                    spawnlist.Add(pooledObject);
+//					poop.Add(spawnId, pooledObject);
                     return pooledObject;
                    
                 } else if(!onlyPooled) {
