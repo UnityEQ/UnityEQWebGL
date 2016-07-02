@@ -174,9 +174,12 @@ namespace EQBrowser
 			{
 //				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
 				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == lootItem.name); 
-				temp.SetActive(false);
-				temp.GetComponent<RawImage>().texture = null;
-				temp.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+				if(temp != null)
+				{
+					temp.SetActive(false);
+					temp.GetComponent<RawImage>().texture = null;
+					temp.GetComponent<RawImage>().color = new Color(0f, 0f, 0f, 0f);
+				}
 			}
 		}
 		
@@ -1538,7 +1541,8 @@ namespace EQBrowser
 						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
 						break;
 					case 37:
-						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+//						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
 						break;							
 					case 39:
 						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);

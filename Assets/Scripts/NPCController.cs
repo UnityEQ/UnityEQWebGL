@@ -25,6 +25,7 @@ using EQBrowser;
 		private CharacterController controller;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
+		private Vector3 moveDirectionup = new Vector3(0, 1, 0);
 		public bool isGrounded = false;
 		
 //-x,z,y 		
@@ -49,13 +50,23 @@ using EQBrowser;
 		public float magicNumber = 1.0f;
 		public Vector3 moveVector;
 		
+		public Camera GameCamera;
+		public bool screenBool;
+//		private Transform myTransform;	
+
 		
+	
 		void Start()
 		{
 			y = y + 1.0f;
 		}
 		void Update () 
 		{ 
+			Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
+			bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+			if(onScreen == true & screenBool != true){transform.GetChild(0).gameObject.SetActive(true);screenBool = true;}
+			if(onScreen == false & screenBool != false){transform.GetChild(0).gameObject.SetActive(false);screenBool = false;}
+			
 			if(NPC == 2 || isDead == 1)
 			{
 				deadNow();
