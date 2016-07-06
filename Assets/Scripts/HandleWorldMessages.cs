@@ -508,7 +508,7 @@ namespace EQBrowser
 					{
 						slotid = word;
 						int slotInt = int.Parse(word);
-//						Debug.Log("slotid: " + slotid);
+						Debug.Log("slotid: " + slotid);
 						if(slotInt == 30){cursorSlotId = slotInt;}
 						if(slotInt > 0 && slotInt < 22)
 						{
@@ -528,6 +528,7 @@ namespace EQBrowser
 					{
 						string itemName = word;
 						int slotInt = int.Parse(slotid);
+						Debug.Log("itemName: " + itemName);
 						if(slotInt == 30){cursorItemName = itemName;}
 						if(slotInt > 0 && slotInt < 22)
 						{
@@ -631,7 +632,8 @@ namespace EQBrowser
 			{
 				temp.GetComponent<NPCController>().isDead = 1;
 			}
-			
+
+		
 			if(spawnId == OurTargetID)
 			{
 				DoTarget("0");
@@ -646,6 +648,26 @@ namespace EQBrowser
 					string targetName2 = Regex.Replace(targetClean, "[_]", " ");
 					string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 					ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
+	
+					int pv = temp.GetComponent<NPCController>().NPC;
+					
+					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Victim", 1);}
+					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Victim", 1);}
+				}
+			}
+			if(spawnId == OurEntityID)
+			{
+				GameObject temp2 = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == killerId.ToString());
+				if(temp2 != null)
+				{
+					string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
+					string targetClean = Regex.Replace(targetName, "[0-9]", "");
+					string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+					string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+					ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + targetName3 + " hits" + " YOU for " + damage + " points of damage.</b></color>");
+					int pv = temp2.GetComponent<NPCController>().NPC;
+					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Killer", 1);}
+					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Killer", 1);}
 				}
 			}
 			
@@ -1121,7 +1143,11 @@ namespace EQBrowser
 			
 			GenerateAndSendWorldPacket (0, 403 /* OP_ReqNewZone */, curZoneId, curInstanceId, NewZoneRequest);
 			
-			
+			if(platinum > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Platinum", platinum);}
+			if(gold > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Gold", gold);}
+			if(silver > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Silver", silver);}
+			if(copper > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Copper", copper);}
+
 		}
 		//338
 		public void HandleWorldMessage_NewZone(byte[] data, int datasize)
@@ -1250,8 +1276,18 @@ namespace EQBrowser
 				Int32 silver = ReadInt32(data, ref position);
 				Int32 copper = ReadInt32(data, ref position);
 				
+				int monies = platinum + gold + silver + copper;
+				
 				if(response == 0){ChatText2.text += (Environment.NewLine + "Someone else is looting this corpse");};
-				if(response == 1){UIScript.LootBox.SetActive (true);};
+				if(response == 1){
+					UIScript.LootBox.SetActive (true);
+					
+					if(monies > 0){ChatText2.text += (Environment.NewLine + "You looted: " + platinum + "pp, " + gold + "gp, " + silver + "sp, " + copper + "sp, ");}
+					if(platinum > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Platinum", platinum);}
+					if(gold > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Gold", gold);}
+					if(silver > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Silver", silver);}
+					if(copper > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Copper", copper);}
+				};
 				if(response == 2){ChatText2.text += (Environment.NewLine + "You may not loot this corpse at this time.");};
 
 		}

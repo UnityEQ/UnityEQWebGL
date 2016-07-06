@@ -50,8 +50,8 @@ using EQBrowser;
 		public float magicNumber = 1.0f;
 		public Vector3 moveVector;
 		
-		public Camera GameCamera;
-		public bool screenBool;
+//		public Camera GameCamera;
+//		public bool screenBool;
 //		private Transform myTransform;	
 
 		
@@ -62,10 +62,7 @@ using EQBrowser;
 		}
 		void Update () 
 		{ 
-			Vector3 screenPoint = Camera.main.WorldToViewportPoint(transform.position);
-			bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
-			if(onScreen == true & screenBool != true){transform.GetChild(0).gameObject.SetActive(true);screenBool = true;}
-			if(onScreen == false & screenBool != false){transform.GetChild(0).gameObject.SetActive(false);screenBool = false;}
+		
 			
 			if(NPC == 2 || isDead == 1)
 			{
