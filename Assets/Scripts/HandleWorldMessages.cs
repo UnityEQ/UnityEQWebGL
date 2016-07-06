@@ -1281,12 +1281,36 @@ namespace EQBrowser
 				if(response == 0){ChatText2.text += (Environment.NewLine + "Someone else is looting this corpse");};
 				if(response == 1){
 					UIScript.LootBox.SetActive (true);
-					
+	
 					if(monies > 0){ChatText2.text += (Environment.NewLine + "You looted: " + platinum + "pp, " + gold + "gp, " + silver + "sp, " + copper + "sp, ");}
-					if(platinum > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Platinum", platinum);}
-					if(gold > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Gold", gold);}
-					if(silver > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Silver", silver);}
-					if(copper > 0){googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Copper", copper);}
+					if(platinum > 0)
+					{
+						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Platinum", platinum);
+						int platInt = int.Parse(UIScript.inventoryPlatinum.text);
+						int platSum = platInt + platinum; 
+						UIScript.inventoryPlatinum.text = platSum.ToString();
+					}
+					if(gold > 0)
+					{
+						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Gold", gold);
+						int goldInt = int.Parse(UIScript.inventoryGold.text);
+						int goldSum = goldInt + gold; 
+						UIScript.inventoryGold.text = goldSum.ToString();
+					}
+					if(silver > 0)
+					{
+						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Silver", silver);
+						int silverInt = int.Parse(UIScript.inventorySilver.text);
+						int silverSum = silverInt + silver; 
+						UIScript.inventorySilver.text = silverSum.ToString();
+					}
+					if(copper > 0)
+					{
+						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Copper", copper);
+						int copperInt = int.Parse(UIScript.inventoryCopper.text);
+						int copperSum = copperInt + copper; 
+						UIScript.inventoryCopper.text = copperSum.ToString();
+					}
 				};
 				if(response == 2){ChatText2.text += (Environment.NewLine + "You may not loot this corpse at this time.");};
 
@@ -1365,7 +1389,35 @@ namespace EQBrowser
 				WriteInt32(0, ref CharCreateRequest, ref pos); //Drakkin Tattoo
 				WriteInt32(0, ref CharCreateRequest, ref pos); //Drakkin Details
 				WriteInt32(1, ref CharCreateRequest, ref pos); //Tutorial is selected?
-				GenerateAndSendWorldPacket (CharCreateRequest.Length, 70 /* OP_CharacterCreate */, -1, -1, CharCreateRequest);		
+				GenerateAndSendWorldPacket (CharCreateRequest.Length, 70 /* OP_CharacterCreate */, -1, -1, CharCreateRequest);
+
+				string TidyName = CSel.TidyCase(CSel.CreationName.text);
+				googleAnalytics.LogEvent("CharCreate", "Name", TidyName, 1);
+				
+				string classSelect = "";
+				switch(CSel._ClassSelection)
+				{
+					case 1:
+						classSelect = "Warrior";
+						break;
+					
+					default:
+						break;
+				}
+				googleAnalytics.LogEvent("CharCreate", "Class", classSelect, 1);
+				
+				string raceSelect = "";
+				switch(CSel._RaceSelection)
+				{
+					case 1:
+						raceSelect = "Human";
+						break;
+					
+					default:
+						break;
+				}
+				googleAnalytics.LogEvent("CharCreate", "Race", raceSelect, 1);
+
 			}
 			else
 			{
@@ -1375,6 +1427,8 @@ namespace EQBrowser
 			CSel.CCPanel0.SetActive (false);
 			CSel.CreationStatus.color = Color.yellow;
 			CSel.CreationStatus.text = "Name not valid, try again";
+			string TidyName = CSel.TidyCase(CSel.CreationName.text);
+			googleAnalytics.LogEvent("CharCreate", "Name_Fail", TidyName, 1);
 
 			}
 
