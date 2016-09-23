@@ -137,10 +137,10 @@ namespace EQBrowser
 			{
 				UIScript.TargetBox.SetActive(false);
 			}
-			byte[] DeleteSpawnRequest = new byte[4];
+			byte[] TargetMouseRequest = new byte[4];
 			Int32 position = 0;
-			WriteInt8((byte)targetInt, ref DeleteSpawnRequest, ref position);
-			GenerateAndSendWorldPacket (DeleteSpawnRequest.Length, 478 /* OP_DeleteSpawn */, 2, curInstanceId, DeleteSpawnRequest);
+			WriteInt32 (targetInt, ref TargetMouseRequest, ref position);
+			GenerateAndSendWorldPacket (TargetMouseRequest.Length, 478 /* OP_TargetMouse */, 2, curInstanceId, TargetMouseRequest);
 
 
 		}
@@ -699,7 +699,8 @@ namespace EQBrowser
 			byte hp = ReadInt8(data, ref position);
 
 //			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawnId.ToString()).SingleOrDefault();
-			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawnId.ToString());
+			GameObject temp = null;
+			if(isDead == false){temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawnId.ToString());}
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().curHp = hp;// Player's Name
@@ -834,7 +835,8 @@ namespace EQBrowser
 			Int32 spawn_id = ReadInt32(data, ref position);
 //			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
 //			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
-			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());
+			GameObject temp = null;
+			if(isDead == false){temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());}
 			if(temp != null)
 			{
 					string PrefabName = temp.GetComponent<NPCController>().prefabName;			
@@ -886,8 +888,8 @@ namespace EQBrowser
 			float rotation = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			
 			
-//			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
-			GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());
+			GameObject temp = null;
+			if(isDead == false){temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());}
 //			GameObject temp = ObjectPool.instance.spawndict[spawn_id];
 			if(temp != null)
 			{
