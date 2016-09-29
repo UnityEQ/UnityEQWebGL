@@ -631,10 +631,11 @@ public class CharacterSelect : MonoBehaviour {
 	public void Next1Click(string param)
 	{
 		//		Debug.Log("foo " + param);
-		CCPanel1.SetActive(false);	
+		CCPanel1.SetActive(true);	
 		CCPanel2.SetActive(false);	
-		CCPanel3.SetActive(true);
+		CCPanel3.SetActive(false);
 		CCPanel0.SetActive(false);
+		WorldConnection.DoNameApproval();
 	}
 	public void Back2Click(string param)
 	{

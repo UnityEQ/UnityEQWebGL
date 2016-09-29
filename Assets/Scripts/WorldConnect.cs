@@ -25,7 +25,7 @@ namespace EQBrowser {
 		public GameObject EqemuConnectObject;
 		public UIScripts UIScript;
 		public CharacterSelect CSel;
-		public GoogleAnalyticsV4 googleAnalytics;
+//		public GoogleAnalyticsV4 googleAnalytics;
 //		public LootScript LootS;
 		public Text ChatText2;
 		public GameObject NullGameObject;
@@ -150,7 +150,7 @@ namespace EQBrowser {
 				
 		void Start()
 	    {
-			googleAnalytics.StartSession();
+//			googleAnalytics.StartSession();
 			instance = this;
 
 			opcodeDict = new Dictionary<string, OpcodeFunc>();//for testing

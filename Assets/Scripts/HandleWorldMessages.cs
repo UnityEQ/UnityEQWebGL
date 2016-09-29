@@ -120,7 +120,10 @@ namespace EQBrowser
 				string targetName = temp.GetComponent<NPCController>().name;
 				int curhp = temp.GetComponent<NPCController>().curHp;
 				int maxhp = temp.GetComponent<NPCController>().maxHp;
+				
 				temp.GetComponent<NPCController>().isTarget = true;
+				
+				int isDead = temp.GetComponent<NPCController>().isDead;
 	
 				string targetClean = Regex.Replace(targetName, "[0-9]", "");
 				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
@@ -128,10 +131,15 @@ namespace EQBrowser
 				UIScript.TargetBox.SetActive(true);
 				UIScript.TargetName.text = targetName3;
 	
-				float hpPercent = ((float)curhp/(float)maxhp)*100;
-				UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
-				UIScript.TargetHPText.text = ((int)hpPercent + "%");
-				
+				if(isDead == 0)
+				{
+					float hpPercent = ((float)curhp/(float)maxhp)*100;
+					UIScript.TargetHP.sizeDelta = new Vector2( (int)hpPercent, 10);
+					UIScript.TargetHPText.text = ((int)hpPercent + "%");
+				}
+				else
+				{
+				}
 			}
 			else
 			{
@@ -631,6 +639,7 @@ namespace EQBrowser
 			if(temp != null)
 			{
 				temp.GetComponent<NPCController>().isDead = 1;
+				temp.GetComponent<NPCController>().name = temp.GetComponent<NPCController>().name + "'s corpse";
 			}
 
 		
@@ -651,8 +660,8 @@ namespace EQBrowser
 	
 					int pv = temp.GetComponent<NPCController>().NPC;
 					
-					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Victim", 1);}
-					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Victim", 1);}
+//					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Victim", 1);}
+//					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Killer", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Victim", 1);}
 				}
 			}
 			if(spawnId == OurEntityID)
@@ -666,8 +675,8 @@ namespace EQBrowser
 					string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 					ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + targetName3 + " hits" + " YOU for " + damage + " points of damage.</b></color>");
 					int pv = temp2.GetComponent<NPCController>().NPC;
-					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Killer", 1);}
-					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Killer", 1);}
+//					if(pv == 0){googleAnalytics.LogEvent("PvP-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvP-Death", targetName3, "Killer", 1);}
+//					if(pv == 1){googleAnalytics.LogEvent("PvE-Death", ourPlayerName, "Victim", 1);googleAnalytics.LogEvent("PvE-Death", targetName3, "Killer", 1);}
 				}
 			}
 			
@@ -897,7 +906,7 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().movetoY = z;// Player's Name
 				temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
 				temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
-			
+				
 				if(deltaX != 0){temp.GetComponent<NPCController>().deltaX = -deltaX;};
 				if(deltaY != 0){temp.GetComponent<NPCController>().deltaY = deltaZ;};
 				if(deltaZ != 0){temp.GetComponent<NPCController>().deltaZ = deltaY;};
@@ -1145,10 +1154,10 @@ namespace EQBrowser
 			
 			GenerateAndSendWorldPacket (0, 403 /* OP_ReqNewZone */, curZoneId, curInstanceId, NewZoneRequest);
 			
-			if(platinum > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Platinum", platinum);}
-			if(gold > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Gold", gold);}
-			if(silver > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Silver", silver);}
-			if(copper > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Copper", copper);}
+//			if(platinum > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Platinum", platinum);}
+//			if(gold > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Gold", gold);}
+//			if(silver > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Silver", silver);}
+//			if(copper > 0){googleAnalytics.LogEvent("Currency_PP-Inventory", ourPlayerName, "Copper", copper);}
 
 		}
 		//338
@@ -1287,28 +1296,28 @@ namespace EQBrowser
 					if(monies > 0){ChatText2.text += (Environment.NewLine + "You looted: " + platinum + "pp, " + gold + "gp, " + silver + "sp, " + copper + "sp, ");}
 					if(platinum > 0)
 					{
-						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Platinum", platinum);
+//						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Platinum", platinum);
 						int platInt = int.Parse(UIScript.inventoryPlatinum.text);
 						int platSum = platInt + platinum; 
 						UIScript.inventoryPlatinum.text = platSum.ToString();
 					}
 					if(gold > 0)
 					{
-						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Gold", gold);
+//						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Gold", gold);
 						int goldInt = int.Parse(UIScript.inventoryGold.text);
 						int goldSum = goldInt + gold; 
 						UIScript.inventoryGold.text = goldSum.ToString();
 					}
 					if(silver > 0)
 					{
-						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Silver", silver);
+//						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Silver", silver);
 						int silverInt = int.Parse(UIScript.inventorySilver.text);
 						int silverSum = silverInt + silver; 
 						UIScript.inventorySilver.text = silverSum.ToString();
 					}
 					if(copper > 0)
 					{
-						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Copper", copper);
+//						googleAnalytics.LogEvent("Currency_Corpse", ourPlayerName, "Copper", copper);
 						int copperInt = int.Parse(UIScript.inventoryCopper.text);
 						int copperSum = copperInt + copper; 
 						UIScript.inventoryCopper.text = copperSum.ToString();
@@ -1394,7 +1403,7 @@ namespace EQBrowser
 				GenerateAndSendWorldPacket (CharCreateRequest.Length, 70 /* OP_CharacterCreate */, -1, -1, CharCreateRequest);
 
 				string TidyName = CSel.TidyCase(CSel.CreationName.text);
-				googleAnalytics.LogEvent("CharCreate", "Name", TidyName, 1);
+//				googleAnalytics.LogEvent("CharCreate", "Name", TidyName, 1);
 				
 				string classSelect = "";
 				switch(CSel._ClassSelection)
@@ -1406,7 +1415,7 @@ namespace EQBrowser
 					default:
 						break;
 				}
-				googleAnalytics.LogEvent("CharCreate", "Class", classSelect, 1);
+//				googleAnalytics.LogEvent("CharCreate", "Class", classSelect, 1);
 				
 				string raceSelect = "";
 				switch(CSel._RaceSelection)
@@ -1418,7 +1427,7 @@ namespace EQBrowser
 					default:
 						break;
 				}
-				googleAnalytics.LogEvent("CharCreate", "Race", raceSelect, 1);
+//				googleAnalytics.LogEvent("CharCreate", "Race", raceSelect, 1);
 
 			}
 			else
@@ -1430,7 +1439,7 @@ namespace EQBrowser
 			CSel.CreationStatus.color = Color.yellow;
 			CSel.CreationStatus.text = "Name not valid, try again";
 			string TidyName = CSel.TidyCase(CSel.CreationName.text);
-			googleAnalytics.LogEvent("CharCreate", "Name_Fail", TidyName, 1);
+//			googleAnalytics.LogEvent("CharCreate", "Name_Fail", TidyName, 1);
 
 			}
 
