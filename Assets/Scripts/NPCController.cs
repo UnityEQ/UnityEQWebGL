@@ -20,7 +20,8 @@ using EQBrowser;
 		public int maxHp = 0;// Current hp %%% wrong
 		public byte level = 0;// Spawn Level
 		public byte gender = 0;// Gender (0=male, 1=female)
-		public int animationState = 0;//animation
+		public int animationState;//animation
+		
 
 		private CharacterController controller;
 		private float gravity = 20.0f;
@@ -33,26 +34,25 @@ using EQBrowser;
 		public float movetoY;// y coord
 		public float movetoZ;// z coord
 		public float movetoH;// z coord
+		public int animationspeed;
 //-x,z,y 		
 		public float deltaX;// x coord
 		public float deltaY;// y coord
 		public float deltaZ;// z coord
 		public float deltaH;// z coord
 		
-		public float stepFinal;
+		public float step;
 		public bool isTarget = false;
 		public int isWalk;
 		public int isIdle;
 		public int isDead;
 		public int isPunch;
 		public int isHurt;
+	
 		
 		public float magicNumber = 1.0f;
 		public Vector3 moveVector;
 		
-//		public Camera GameCamera;
-//		public bool screenBool;
-//		private Transform myTransform;	
 
 		
 	
@@ -70,10 +70,10 @@ using EQBrowser;
 			}
 			else
 			{
+				//Get CharacterController 
 				CharacterController controller = this.GetComponent<CharacterController>();
 				//Apply gravity 
 				moveDirection.y -= gravity * Time.deltaTime; 
-				//Get CharacterController 
 				//Move Charactercontroller and check if grounded 
 
 				if (!controller.isGrounded)
@@ -84,7 +84,8 @@ using EQBrowser;
 				
 		
 				//wander
-				if (movetoX != 0 && movetoY != 0 && movetoZ != 0 && movetoH != 0)
+				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+				if (deltaF.magnitude != 0)
 				{
 					if(isWalk == 0)
 					{
@@ -93,41 +94,33 @@ using EQBrowser;
 					
 					Vector3 targetPosition = new Vector3 (movetoX,y,movetoZ);
 	
-					Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
-//					if (deltaF.magnitude != 0) {
-//						float step = deltaF.magnitude * Time.deltaTime;
-//						float step = 15.5f;
 
 //					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 					if(NPC == 1)
 					{
-//				        Vector3 horizontalVelocity = controller.velocity;
-//						horizontalVelocity = new Vector3(deltaX, 0, deltaZ);
-//						float horizontalSpeed = horizontalVelocity.magnitude * Time.deltaTime;
-		
-						float stepcounter = Vector3.Distance(this.gameObject.transform.position, targetPosition);
-						float step2 = stepcounter * deltaF.magnitude;
-						float step = step2 * Time.deltaTime;
+						step = (animationspeed - deltaF.magnitude) * Time.deltaTime;
 						
-						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
 					}
 					else
 					{
-						transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
+						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
 					}
 
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
-//					}
+
 					//heading
 					float h = Mathf.Lerp(360,0,movetoH/255f);
 					transform.localEulerAngles = new Vector3(0,h,0);
 				}
 				else
 				{
-					if(isIdle == 0)
+					if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 					{
+						
 						idleNow();
+						this.transform.position = new Vector3(movetoX, movetoY, movetoZ);
 					}
 				}
 			}

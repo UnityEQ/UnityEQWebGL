@@ -270,7 +270,7 @@ namespace EQBrowser
 			//float y = 11;
 			//float z = 2;
 			//float h = 122;
-
+//			Debug.Log("CUpdate: " + x + "," + y + "," + z);
 
 			byte[] PositionUpdateRequest = new byte[38];
 			Int32 position = 0;
@@ -735,6 +735,7 @@ namespace EQBrowser
 			if(target == OurEntityID)
 			{
 //				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
+				DoClientUpdate();
 				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == source.ToString());
 				string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
 				string sourceClean = Regex.Replace(sourceName, "[0-9]", "");
@@ -906,13 +907,11 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().movetoY = z;// Player's Name
 				temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
 				temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
-				
-				if(deltaX != 0){temp.GetComponent<NPCController>().deltaX = -deltaX;};
-				if(deltaY != 0){temp.GetComponent<NPCController>().deltaY = deltaZ;};
-				if(deltaZ != 0){temp.GetComponent<NPCController>().deltaZ = deltaY;};
+				temp.GetComponent<NPCController>().animationspeed = animationspeed;// animationspeed
+				temp.GetComponent<NPCController>().deltaX = -deltaX;
+				temp.GetComponent<NPCController>().deltaY = deltaZ;
+				temp.GetComponent<NPCController>().deltaZ = deltaY;
 				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
-//				if(spawn_id == OurTargetID)
-//				Debug.Log("Client Update: spawnid: " + spawn_id + " x: " + x + " y: " + y + " z: " + z + " dx: " + deltaX + " dy: " + deltaY + " dz: " + deltaZ);
 			}
 			
 			
