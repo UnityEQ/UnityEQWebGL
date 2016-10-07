@@ -23,7 +23,7 @@ using EQBrowser;
 		public int animationState;//animation
 		
 
-		private CharacterController controller;
+		public CharacterController controller;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
 		private Vector3 moveDirectionup = new Vector3(0, 1, 0);
@@ -52,18 +52,16 @@ using EQBrowser;
 		
 		public float magicNumber = 1.0f;
 		public Vector3 moveVector;
-		
-
-		
+		public Vector3 targetPosition;
+		public Vector3 deltaPosition;
+		public Vector3 overPosition;
 	
 		void Start()
 		{
 			y = y + 1.0f;
 		}
 		void Update () 
-		{ 
-		
-			
+		{
 			if(NPC == 2 || isDead == 1)
 			{
 				deadNow();
@@ -75,13 +73,18 @@ using EQBrowser;
 				//Apply gravity 
 				moveDirection.y -= gravity * Time.deltaTime; 
 				//Move Charactercontroller and check if grounded 
+				
+				//heading
+				float h = Mathf.Lerp(360,0,movetoH/255f);
+				transform.localEulerAngles = new Vector3(0,h,0);
 
 				if (!controller.isGrounded)
 				{
 					Debug.Log("NOT GROUNDED" + spawnId);
 					isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
 				}
-				
+
+				deltaPosition = new Vector3 (deltaX,0f,deltaZ);
 		
 				//wander
 				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
@@ -92,33 +95,46 @@ using EQBrowser;
 						walkNow();
 					}
 					
-					Vector3 targetPosition = new Vector3 (movetoX,y,movetoZ);
-	
+//					targetPosition = new Vector3 (movetoX,y,movetoZ);
 
 //					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 					if(NPC == 1)
 					{
 						step = (animationspeed - deltaF.magnitude) * Time.deltaTime;
 						
-						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+
+						if(this.transform.position.x != movetoX && this.transform.position.z != movetoZ)
+						{
+							
+							targetPosition = new Vector3 (movetoX,y,movetoZ);
+							this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+						}
+						else
+						{
+							//this is in between client_updates where the deltas are not yet 0 and the NPC is not yet idle.
+
+							movetoX = movetoX + deltaX;
+							movetoZ = movetoZ + deltaZ;
+							
+							//this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+							
+						}
+						
 					}
 					else
 					{
+
 						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
 					}
 
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
 
-					//heading
-					float h = Mathf.Lerp(360,0,movetoH/255f);
-					transform.localEulerAngles = new Vector3(0,h,0);
 				}
 				else
 				{
 					if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 					{
-						
 						idleNow();
 						this.transform.position = new Vector3(movetoX, movetoY, movetoZ);
 					}
