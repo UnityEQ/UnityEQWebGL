@@ -912,6 +912,7 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().deltaY = deltaZ;
 				temp.GetComponent<NPCController>().deltaZ = deltaY;
 				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
+				temp.GetComponent<NPCController>().clientUpdate = true;
 			}
 			
 			
@@ -1627,31 +1628,31 @@ namespace EQBrowser
 				switch (race)
 				{
 					case 1:
-						if(NPC == 0){ObjectPool.instance.GetObjectForType("elf",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
-						else{ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
+						if(NPC == 0){ObjectPool.instance.GetObjectForType("elf",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);}
+						else{ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);}
 						break;
 					case 22:
-						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);
 						break;
 					case 34:
-						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);
 						break;						
 					case 36:
 //						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);						
 						break;
 					case 37:
 //						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);						
 						break;							
 					case 39:
-						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);
 						break;
 					case 60:
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);
 						break;
 					default:
-						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender,runspeed);
 						break;
 				}
 			}

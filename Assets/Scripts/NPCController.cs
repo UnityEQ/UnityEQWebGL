@@ -48,6 +48,8 @@ using EQBrowser;
 		public int isDead;
 		public int isPunch;
 		public int isHurt;
+		public bool clientUpdate;
+		public float runspeed;
 	
 		
 		public float magicNumber = 1.0f;
@@ -55,6 +57,8 @@ using EQBrowser;
 		public Vector3 targetPosition;
 		public Vector3 deltaPosition;
 		public Vector3 overPosition;
+		public Vector3 deltaF;
+		public float mag;
 	
 		void Start()
 		{
@@ -87,9 +91,11 @@ using EQBrowser;
 				deltaPosition = new Vector3 (deltaX,0f,deltaZ);
 		
 				//wander
-				Vector3 deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+				deltaF = new Vector3 (deltaX,deltaY,deltaZ);
 				if (deltaF.magnitude != 0)
 				{
+					mag = deltaF.magnitude * Time.deltaTime;
+					
 					if(isWalk == 0)
 					{
 						walkNow();
@@ -100,25 +106,17 @@ using EQBrowser;
 //					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 					if(NPC == 1)
 					{
-						step = (animationspeed - deltaF.magnitude) * Time.deltaTime;
-						
+						step = (deltaF.magnitude * 5f) * Time.deltaTime;
 
-						if(this.transform.position.x != movetoX && this.transform.position.z != movetoZ)
-						{
+						if(this.transform.position.x == movetoX && this.transform.position.z == movetoZ){
+							clientUpdate = false;}
 							
-							targetPosition = new Vector3 (movetoX,y,movetoZ);
-							this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
-						}
-						else
-						{
-							//this is in between client_updates where the deltas are not yet 0 and the NPC is not yet idle.
-
-							movetoX = movetoX + deltaX;
-							movetoZ = movetoZ + deltaZ;
+						if(clientUpdate == true){
+							targetPosition = new Vector3 (movetoX,this.transform.position.y,movetoZ);}
+						if(clientUpdate == false){
+							targetPosition += new Vector3 (deltaX,0f,deltaZ);}
 							
-							//this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
-							
-						}
+						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
 						
 					}
 					else
@@ -136,7 +134,7 @@ using EQBrowser;
 					if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 					{
 						idleNow();
-						this.transform.position = new Vector3(movetoX, movetoY, movetoZ);
+						this.transform.position = new Vector3(movetoX, this.transform.position.y, movetoZ);
 					}
 				}
 			}

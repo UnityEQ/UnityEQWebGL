@@ -87,7 +87,7 @@ public class ObjectPool : MonoBehaviour
     /// If true, it will only return an object if there is one currently pooled.
     /// </param>
 
-    public GameObject GetObjectForType ( string objectType , bool onlyPooled, float x, float y, float z, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte maxHp, byte level, byte gender )
+    public GameObject GetObjectForType ( string objectType , bool onlyPooled, float x, float y, float z, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte maxHp, byte level, byte gender, float runspeed )
     {
         for(int i=0; i<objectPrefabs.Length; i++)
         {
@@ -124,6 +124,7 @@ public class ObjectPool : MonoBehaviour
 					pooledObject.GetComponent<NPCController>().maxHp = maxHp;// Current hp %%% wrong
 					pooledObject.GetComponent<NPCController>().level = level;// Spawn Level
 					pooledObject.GetComponent<NPCController>().gender = gender;// Gender (0=male, 1=female)
+					pooledObject.GetComponent<NPCController>().runspeed = runspeed;
 					
                    spawnlist.Add(pooledObject);
 //					poop.Add(spawnId, pooledObject);
