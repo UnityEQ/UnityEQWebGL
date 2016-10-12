@@ -1,4 +1,4 @@
-﻿using UnityEngine	;
+﻿using UnityEngine;
 using System.Collections;
 using EQBrowser;
 
@@ -59,8 +59,7 @@ using EQBrowser;
 		public RaycastHit hit;
 		public float verticalspeed;
 		public float fixnum;
-		public float poop;
-
+		public float ycalc;
 	
 		void Start()
 		{
@@ -76,24 +75,20 @@ using EQBrowser;
 			}
 			else
 			{
-				//Get CharacterController 
-				//Apply gravity 
-				moveDirection.y -= gravity;
 				//Move Charactercontroller and check if grounded 
+				moveDirection.y -= gravity;
+				moveDirection.x = this.transform.position.x;
+				moveDirection.z = this.transform.position.z;
+				if (!controller.isGrounded)
+				{
+//					Debug.Log("NOT GROUNDED" + spawnId);
+//					isGrounded = ((controller.Move(Vector3.up * Time.deltaTime)) & CollisionFlags.Below) != 0;
+					if(this.transform.position.y < -500){fixit();}
+				}
 				
 				//heading
 				float h = Mathf.Lerp(360,0,movetoH/255f);
 				transform.localEulerAngles = new Vector3(0,h,0);
-
-				if (!controller.isGrounded)
-				{
-					Debug.Log("NOT GROUNDED" + spawnId);
-					//isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
-					isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0;
-					if(this.transform.position.y < -500){fixit();}
-				}
-				
-
 
 				deltaPosition = new Vector3 (deltaX,0f,deltaZ);
 		
@@ -116,19 +111,23 @@ using EQBrowser;
 							clientUpdate = false;}
 							
 						if(clientUpdate == true){
-							poop = movetoY + y;
-//							if(movetoY > y){poop = movetoY + y;}else{poop = this.transform.position.y;}
-							targetPosition = new Vector3 (movetoX,poop,movetoZ);
+							//initial movement
+							ycalc = movetoY - deltaY;
+							if (!controller.isGrounded){ycalc += 1;}
+							targetPosition = new Vector3 (movetoX,ycalc,movetoZ);
 							}
 						if(clientUpdate == false){
+							//continuing to move in between updates
 							targetPosition += new Vector3 (deltaX,0f,deltaZ);}
 							
+						//move now	
 						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
 					}
 					else
 					{
 						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
 					}
+						//draw pretty lines of pathing
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
 				}
@@ -136,8 +135,17 @@ using EQBrowser;
 				{
 					if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 					{
+						//final position update
 						idleNow();
-						this.transform.position = new Vector3(movetoX, this.transform.position.y, movetoZ);
+						ycalc = this.transform.position.y;
+//						if (!controller.isGrounded){ycalc += 1;}
+						this.transform.position = new Vector3(movetoX, ycalc, movetoZ);
+
+					}
+					else
+					{
+						//FOR  Y ADJUSTMENTS IF UNDER OR BENEATH WORLD WHEN NOT MOVING AND NO POSITION UPDATES FROM SERVER
+
 
 					}
 				}
@@ -147,15 +155,9 @@ using EQBrowser;
 		
 		public void fixit()
 		{
-		
-//			RaycastHit hit;
-//			if (Physics.Raycast(this.transform.position, -Vector3.up, out hit, 1 << LayerMask.NameToLayer("Terrain")))
-//			{
-				Debug.Log("hisda");
-				fixnum += 10;
-				this.transform.position = new Vector3(movetoX, y + fixnum, movetoZ);
-//			}
-
+			Debug.Log("hisda");
+			fixnum += 10;
+			this.transform.position = new Vector3(movetoX, y + fixnum, movetoZ);
 		}
 //trigger animations
 		public void walkNow()
