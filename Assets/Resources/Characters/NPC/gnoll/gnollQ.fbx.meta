@@ -1,0 +1,1254 @@
+fileFormatVersion: 2
+guid: a5258159f7ba7d94fa28f3b4c3334b2a
+timeCreated: 1476258207
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: AB
+    100002: BI_L
+    100004: BI_R
+    100006: BO_L
+    100008: BO_R
+    100010: CA_L
+    100012: CA_R
+    100014: CH
+    100016: DMSPRITEDEF
+    100018: EA_L
+    100020: EA_R
+    100022: FI_L
+    100024: FI_R
+    100026: FO_L
+    100028: FO_R
+    100030: GNN
+    100032: GNN_ACTORDEF
+    100034: //RootNode
+    100036: HE
+    100038: HE00_DMSPRITEDEF
+    100040: HEAD_POINT
+    100042: JAW
+    100044: L_POINT
+    100046: NE
+    100048: PE
+    100050: R_POINT
+    100052: TH_L
+    100054: TH_R
+    100056: TO_L
+    100058: TO_R
+    100060: U3DMesh
+    100062: ZX_GNN_ACTORDEF_T2
+    400000: AB
+    400002: BI_L
+    400004: BI_R
+    400006: BO_L
+    400008: BO_R
+    400010: CA_L
+    400012: CA_R
+    400014: CH
+    400016: DMSPRITEDEF
+    400018: EA_L
+    400020: EA_R
+    400022: FI_L
+    400024: FI_R
+    400026: FO_L
+    400028: FO_R
+    400030: GNN
+    400032: GNN_ACTORDEF
+    400034: //RootNode
+    400036: HE
+    400038: HE00_DMSPRITEDEF
+    400040: HEAD_POINT
+    400042: JAW
+    400044: L_POINT
+    400046: NE
+    400048: PE
+    400050: R_POINT
+    400052: TH_L
+    400054: TH_R
+    400056: TO_L
+    400058: TO_R
+    400060: U3DMesh
+    400062: ZX_GNN_ACTORDEF_T2
+    4300000: U3DMesh
+    7400000: Melee1H
+    7400002: Ranged
+    7400004: SwimAttack
+    7400006: Hurt_01
+    7400008: Dead
+    7400010: Walk
+    7400012: Run
+    7400014: Idle_01
+    7400016: Idle
+    7400018: Turn
+    7400020: Swim
+    7400022: CastDamage
+    9500000: //RootNode
+    13700000: U3DMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Melee1H
+      takeName: Melee1H
+      firstFrame: 0
+      lastFrame: 33
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Ranged
+      takeName: Ranged
+      firstFrame: 0
+      lastFrame: 27
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SwimAttack
+      takeName: SwimAttack
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hurt_01
+      takeName: Hurt_01
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: 0
+      lastFrame: 114
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_01
+      takeName: Idle_01
+      firstFrame: 0
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 66
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Turn
+      takeName: Turn
+      firstFrame: 0
+      lastFrame: 21
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Swim
+      takeName: Swim
+      firstFrame: 0
+      lastFrame: 57
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: CastDamage
+      takeName: CastDamage
+      firstFrame: 0
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_L/FO_L/FI_L/L_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/BI_R/FO_R/FI_R/R_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/EA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/AB/CH/NE/HE/JAW
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: ZX_GNN_ACTORDEF_T2/GNN_ACTORDEF/HE00_DMSPRITEDEF/GNN/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

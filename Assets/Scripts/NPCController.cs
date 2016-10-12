@@ -26,7 +26,7 @@ using EQBrowser;
 		public CharacterController controller;
 		private float gravity = 20.0f;
 		private Vector3 moveDirection = Vector3.zero;
-		private Vector3 moveDirectionup = new Vector3(0, 1, 0);
+
 		public bool isGrounded = false;
 		
 //-x,z,y 		
@@ -42,27 +42,31 @@ using EQBrowser;
 		public float deltaH;// z coord
 		
 		public float step;
-		public bool isTarget = false;
+
+		public bool isTarget;
 		public int isWalk;
 		public int isIdle;
 		public int isDead;
 		public int isPunch;
 		public int isHurt;
 		public bool clientUpdate;
-		public float runspeed;
 	
-		
-		public float magicNumber = 1.0f;
-		public Vector3 moveVector;
 		public Vector3 targetPosition;
 		public Vector3 deltaPosition;
-		public Vector3 overPosition;
 		public Vector3 deltaF;
-		public float mag;
+
+
+		public RaycastHit hit;
+		public float verticalspeed;
+		public float fixnum;
+		public float poop;
+
 	
 		void Start()
 		{
-			y = y + 1.0f;
+			controller = this.GetComponent<CharacterController>();
+			this.transform.position = new Vector3(x, y, z);
+
 		}
 		void Update () 
 		{
@@ -73,9 +77,8 @@ using EQBrowser;
 			else
 			{
 				//Get CharacterController 
-				CharacterController controller = this.GetComponent<CharacterController>();
 				//Apply gravity 
-				moveDirection.y -= gravity * Time.deltaTime; 
+				moveDirection.y -= gravity;
 				//Move Charactercontroller and check if grounded 
 				
 				//heading
@@ -85,8 +88,12 @@ using EQBrowser;
 				if (!controller.isGrounded)
 				{
 					Debug.Log("NOT GROUNDED" + spawnId);
-					isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
+					//isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0; 
+					isGrounded = ((controller.Move(moveDirection * Time.deltaTime)) & CollisionFlags.Below) != 0;
+					if(this.transform.position.y < -500){fixit();}
 				}
+				
+
 
 				deltaPosition = new Vector3 (deltaX,0f,deltaZ);
 		
@@ -94,14 +101,11 @@ using EQBrowser;
 				deltaF = new Vector3 (deltaX,deltaY,deltaZ);
 				if (deltaF.magnitude != 0)
 				{
-					mag = deltaF.magnitude * Time.deltaTime;
-					
+				
 					if(isWalk == 0)
 					{
 						walkNow();
 					}
-					
-//					targetPosition = new Vector3 (movetoX,y,movetoZ);
 
 //					step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 					if(NPC == 1)
@@ -112,22 +116,21 @@ using EQBrowser;
 							clientUpdate = false;}
 							
 						if(clientUpdate == true){
-							targetPosition = new Vector3 (movetoX,this.transform.position.y,movetoZ);}
+							poop = movetoY + y;
+//							if(movetoY > y){poop = movetoY + y;}else{poop = this.transform.position.y;}
+							targetPosition = new Vector3 (movetoX,poop,movetoZ);
+							}
 						if(clientUpdate == false){
 							targetPosition += new Vector3 (deltaX,0f,deltaZ);}
 							
 						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
-						
 					}
 					else
 					{
-
 						this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
 					}
-
 //						Debug.DrawRay (this.gameObject.transform.position, (this.gameObject.transform.position - targetPosition), Color.green);
 						Debug.DrawRay (this.gameObject.transform.position, (targetPosition - this.gameObject.transform.position), Color.green);
-
 				}
 				else
 				{
@@ -135,11 +138,25 @@ using EQBrowser;
 					{
 						idleNow();
 						this.transform.position = new Vector3(movetoX, this.transform.position.y, movetoZ);
+
 					}
 				}
 			}
 		}
 
+		
+		public void fixit()
+		{
+		
+//			RaycastHit hit;
+//			if (Physics.Raycast(this.transform.position, -Vector3.up, out hit, 1 << LayerMask.NameToLayer("Terrain")))
+//			{
+				Debug.Log("hisda");
+				fixnum += 10;
+				this.transform.position = new Vector3(movetoX, y + fixnum, movetoZ);
+//			}
+
+		}
 //trigger animations
 		public void walkNow()
 		{
