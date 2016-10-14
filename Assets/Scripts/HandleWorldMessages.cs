@@ -109,6 +109,13 @@ namespace EQBrowser
 		
 		public void DoTarget(string targetID)
 		{
+//			int OurTargetInt = int.Parse(OurTargetID);
+			if(OurTargetID > 0)
+			{
+				GameObject temp2 = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == OurTargetID.ToString()); 
+				temp2.GetComponent<NPCController>().isTarget = false;
+			}
+
 			Debug.Log("targetID: " + targetID);
 			int targetInt = int.Parse(targetID);
 			OurTargetID = targetInt;

@@ -1,0 +1,757 @@
+fileFormatVersion: 2
+guid: feeb4489777537249833442cdbc50c68
+timeCreated: 1476313698
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BI_L
+    100002: BI_R
+    100004: BO_L
+    100006: BO_R
+    100008: CA_L
+    100010: CA_R
+    100012: CH
+    100014: DMSPRITEDEF
+    100016: FI_L
+    100018: FI_L2
+    100020: FI_R
+    100022: FI_R2
+    100024: FO_L
+    100026: FO_R
+    100028: HE
+    100030: HE00_DMSPRITEDEF
+    100032: HEAD_POINT
+    100034: L_POINT
+    100036: Main
+    100038: NE
+    100040: PE
+    100042: R_POINT
+    100044: SHIELD_POINT
+    100046: SKE_ACTORDEF
+    100048: //RootNode
+    100050: TH_L
+    100052: TH_R
+    100054: TO_L
+    100056: TO_R
+    100058: U3DMesh
+    400000: BI_L
+    400002: BI_R
+    400004: BO_L
+    400006: BO_R
+    400008: CA_L
+    400010: CA_R
+    400012: CH
+    400014: DMSPRITEDEF
+    400016: FI_L
+    400018: FI_L2
+    400020: FI_R
+    400022: FI_R2
+    400024: FO_L
+    400026: FO_R
+    400028: HE
+    400030: HE00_DMSPRITEDEF
+    400032: HEAD_POINT
+    400034: L_POINT
+    400036: Main
+    400038: NE
+    400040: PE
+    400042: R_POINT
+    400044: SHIELD_POINT
+    400046: SKE_ACTORDEF
+    400048: //RootNode
+    400050: TH_L
+    400052: TH_R
+    400054: TO_L
+    400056: TO_R
+    400058: U3DMesh
+    4300000: U3DMesh
+    7400000: Dead
+    7400002: Walk
+    7400004: Run
+    7400006: Idle_01
+    7400008: Idle
+    7400010: Sit
+    7400012: Turn
+    9500000: //RootNode
+    13700000: U3DMesh
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Dead
+      takeName: Dead
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 36
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle_01
+      takeName: Idle_01
+      firstFrame: 0
+      lastFrame: 105
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Idle
+      firstFrame: 0
+      lastFrame: 147
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Sit
+      takeName: Sit
+      firstFrame: 0
+      lastFrame: 54
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Turn
+      takeName: Turn
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: SKE_ACTORDEF
+        weight: 1
+      - path: SKE_ACTORDEF/DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/FI_L/FI_L2/L_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_L/FO_L/SHIELD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/BI_R/FO_R/FI_R/FI_R2/R_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/CH/NE/HE/HEAD_POINT
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_L/CA_L/BO_L/TO_L
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R
+        weight: 1
+      - path: SKE_ACTORDEF/HE00_DMSPRITEDEF/Main/PE/TH_R/CA_R/BO_R/TO_R
+        weight: 1
+      - path: U3DMesh
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

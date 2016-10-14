@@ -90,7 +90,10 @@ public class ThirdPersonCamera : MonoBehaviour
 			{
 				if ((!EventSystem.current.IsPointerOverGameObject()) && (hit.collider.tag=="Targetable"))
 				{
-						WorldConnection.DoTarget(hit.collider.name);
+						
+						string target = hit.transform.root.name;
+						Debug.Log("targetid: " + target);
+						WorldConnection.DoTarget(target);
 				}
 			}
 		}
@@ -103,7 +106,8 @@ public class ThirdPersonCamera : MonoBehaviour
 			{
 				if ((!EventSystem.current.IsPointerOverGameObject()) && (hit.collider.tag=="Targetable"))
 				{
-					string target = hit.collider.name;
+
+					string target = hit.transform.root.name;
 					GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == target).SingleOrDefault();
 					if(temp != null)
 					{

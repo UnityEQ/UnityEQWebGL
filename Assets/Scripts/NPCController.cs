@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Text.RegularExpressions;
 using EQBrowser;
 
 public class NPCController : MonoBehaviour 
@@ -8,7 +14,7 @@ public class NPCController : MonoBehaviour
 	public int spawnId = 0;
 	public int corpseId = 0;
 	public string name = "";// Player's Name
-	public string prefabName = "";// Player's prefab Name
+	public string prefabName = "GnollPrefab";// Player's prefab Name
 	public float x = 0;// x coord
 	public float y = 0;// y coord
 	public float z = 0;// z coord
@@ -32,7 +38,8 @@ public class NPCController : MonoBehaviour
 	private float gravity = 1.0f;
 	public bool isGrounded = false;
 
-	public bool isTarget;
+	public bool isTarget = false;
+	public bool colorActivate = false;
 	public int isWalk;
 	public int isIdle;
 	public int isDead;
@@ -53,21 +60,61 @@ public class NPCController : MonoBehaviour
 
 	public float fixnum;
 	public float ycalc;
+	
+	public GameObject NameObject;
+	
 
 	void Start()
 	{
+//		if(prefabName == "GnollPrefab")
+//		{
+			//clean name
+			string targetName = name;
+			string targetClean = Regex.Replace(targetName, "[0-9]", "");
+			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+			//generate name above head				
+			NameObject.GetComponent<TextMesh>().text = targetName3;
+//		}
 		controller = this.GetComponent<CharacterController>();
+
 		this.transform.position = new Vector3(x, y, z);
 	}
 	void Update () 
 	{
+//		if(prefabName == "GnollPrefab")
+//		{
+			//make overhead names face camera
+			NameObject.transform.LookAt(2 * NameObject.transform.position - Camera.main.transform.position);
+			//change color if targetted
+			Renderer rend = NameObject.GetComponent<Renderer>();
+			rend.material.color = Color.red;
+			
+			if(isTarget == true && colorActivate == false)
+			{
+				rend.material.color = Color.green;
+			}
+			if(isTarget == false && colorActivate == true)
+			{
+				rend.material.color = Color.red;
+			}
+//		}
+		
 		if(NPC == 2 || isDead == 1){deadNow();}
 		else
 		{
 			//Touching ground
-			if ((controller.collisionFlags & CollisionFlags.Below)!=0)
+					if ((controller.collisionFlags & CollisionFlags.Below)!=0)
 			{
-//				y = this.transform.position.y;
+				y = this.transform.position.y;
+			}
+			if (controller.collisionFlags == CollisionFlags.Above)
+			{
+//				y += 1;
+			}
+			if (controller.collisionFlags == CollisionFlags.None)
+			{
+//				y -= 1;
 			}
 			//deep underneath world
 			if (!controller.isGrounded)
@@ -95,10 +142,8 @@ public class NPCController : MonoBehaviour
 					if(clientUpdate == true)
 					{
 						//initial movement
-						if(deltaY != 0){ycalc = movetoY - deltaY;}
-						else{ycalc = this.transform.position.y;}
-						//if (!controller.isGrounded){ycalc += 1;}
-						if (controller.collisionFlags != CollisionFlags.Below){ycalc += 1;}
+						ycalc = movetoY - deltaY;
+//						y = ycalc - y + ycalc; 
 						targetPosition = new Vector3 (movetoX,ycalc,movetoZ);
 					}
 					//if waiting on update from server, move along the delta positions
@@ -187,5 +232,6 @@ public class NPCController : MonoBehaviour
 		isDead = 1;
 		isHurt = 0;
 		GetComponent<Animator>().Play("Dead");
+		name = NameObject.GetComponent<TextMesh>().text + "'s corpse";
 	}
 }
