@@ -187,8 +187,8 @@ namespace EQBrowser
 //			Texture2D itemIcon = (Texture2D) AssetDatabase.LoadAssetAtPath("Assets/Resources/Icons/InventoryEmpty.png", typeof(Texture2D));
 			foreach (GameObject lootItem in UIScript.slotList)
 			{
-//				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
-				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == lootItem.name); 
+				GameObject temp = UIScript.slotList.Where(obj => obj.name == lootItem.name).SingleOrDefault();
+//				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == lootItem.name); 
 				if(temp != null)
 				{
 					temp.SetActive(false);

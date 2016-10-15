@@ -66,8 +66,6 @@ public class NPCController : MonoBehaviour
 
 	void Start()
 	{
-//		if(prefabName == "GnollPrefab")
-//		{
 			//clean name
 			string targetName = name;
 			string targetClean = Regex.Replace(targetName, "[0-9]", "");
@@ -75,15 +73,12 @@ public class NPCController : MonoBehaviour
 			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 			//generate name above head				
 			NameObject.GetComponent<TextMesh>().text = targetName3;
-//		}
 		controller = this.GetComponent<CharacterController>();
 
 		this.transform.position = new Vector3(x, y, z);
 	}
 	void Update () 
 	{
-//		if(prefabName == "GnollPrefab")
-//		{
 			//make overhead names face camera
 			NameObject.transform.LookAt(2 * NameObject.transform.position - Camera.main.transform.position);
 			//change color if targetted
@@ -98,7 +93,6 @@ public class NPCController : MonoBehaviour
 			{
 				rend.material.color = Color.red;
 			}
-//		}
 		
 		if(NPC == 2 || isDead == 1){deadNow();}
 		else
