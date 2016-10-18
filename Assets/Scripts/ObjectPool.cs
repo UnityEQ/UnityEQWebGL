@@ -107,7 +107,8 @@ public class ObjectPool : MonoBehaviour
 					float h = Mathf.Lerp(360,0,heading/255f);
 //					pooledObject.transform.eulerAngles.y = h;
 					pooledObject.transform.localEulerAngles = new Vector3(0,h,0);
-					pooledObject.transform.localScale = new Vector3((size / 4f), (size / 4f), (size / 4f));
+					if(NPC == 0){size = 1.4f;pooledObject.transform.localScale = new Vector3(size, size, size);}
+					if(NPC == 1){pooledObject.transform.localScale = new Vector3((size / 4f), (size / 4f), (size / 4f));}
 					pooledObject.name = spawnId.ToString();
 					pooledObject.GetComponent<NPCController>().RaceID = race;
 					pooledObject.GetComponent<NPCController>().spawnId = spawnId;

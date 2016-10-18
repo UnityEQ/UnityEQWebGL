@@ -60,6 +60,7 @@ public class NPCController : MonoBehaviour
 
 	public float fixnum;
 	public float ycalc;
+	public float offset;
 	
 	public GameObject NameObject;
 	
@@ -73,9 +74,9 @@ public class NPCController : MonoBehaviour
 			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 			//generate name above head				
 			NameObject.GetComponent<TextMesh>().text = targetName3;
-		controller = this.GetComponent<CharacterController>();
+			controller = this.GetComponent<CharacterController>();
 
-		this.transform.position = new Vector3(x, y, z);
+			this.transform.position = new Vector3(x, y, z);
 	}
 	void Update () 
 	{
@@ -98,9 +99,9 @@ public class NPCController : MonoBehaviour
 		else
 		{
 			//Touching ground
-					if ((controller.collisionFlags & CollisionFlags.Below)!=0)
+			if ((controller.collisionFlags & CollisionFlags.Below)!=0)
 			{
-				y = this.transform.position.y;
+				offset = this.transform.position.y;
 			}
 			if (controller.collisionFlags == CollisionFlags.Above)
 			{
@@ -115,12 +116,17 @@ public class NPCController : MonoBehaviour
 			{
 				if(this.transform.position.y < -500){fixit();}
 			}
+			if (controller.isGrounded)
+			{
+				
+			}
 
 			//heading
 			float h = Mathf.Lerp(360,0,movetoH/255f);
 			transform.localEulerAngles = new Vector3(0,h,0);
 			//set delta vector
 			deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+
 
 			//wandering
 			if (deltaF.magnitude != 0)
@@ -129,7 +135,7 @@ public class NPCController : MonoBehaviour
 				//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 				if(NPC == 1)
 				{
-					step = (deltaF.magnitude * 5f) * Time.deltaTime;
+					step = (deltaF.magnitude * 10f) * Time.deltaTime;
 					//sets clientupdate flag to false when an npc is autorunning, waiting for another clientupdate packet
 					if(this.transform.position.x == movetoX && this.transform.position.z == movetoZ){clientUpdate = false;}
 					//if new update from server, move there
@@ -137,7 +143,7 @@ public class NPCController : MonoBehaviour
 					{
 						//initial movement
 						ycalc = movetoY - deltaY;
-//						y = ycalc - y + ycalc; 
+//						offset = movetoY - deltaY;
 						targetPosition = new Vector3 (movetoX,ycalc,movetoZ);
 					}
 					//if waiting on update from server, move along the delta positions
@@ -152,6 +158,7 @@ public class NPCController : MonoBehaviour
 				}
 				else
 				{
+					targetPosition = new Vector3 (movetoX,movetoY,movetoZ);
 					this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, 1);
 				}
 			
@@ -165,7 +172,7 @@ public class NPCController : MonoBehaviour
 				if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 				{
 					idleNow();
-					ycalc = this.transform.position.y;
+					ycalc = movetoY;
 					this.transform.position = new Vector3(movetoX, ycalc, movetoZ);
 				}
 				else
