@@ -135,7 +135,7 @@ public class NPCController : MonoBehaviour
 				//step = delta time x speed. The server is calculating the speed which is represented as the magnitude of vector x y z. Translate the game object by those deltas multiplied by delta time
 				if(NPC == 1)
 				{
-					step = (deltaF.magnitude * 10f) * Time.deltaTime;
+					step = deltaF.magnitude * 10f;
 					//sets clientupdate flag to false when an npc is autorunning, waiting for another clientupdate packet
 					if(this.transform.position.x == movetoX && this.transform.position.z == movetoZ){clientUpdate = false;}
 					//if new update from server, move there
@@ -153,7 +153,7 @@ public class NPCController : MonoBehaviour
 						targetPosition += new Vector3 (deltaX,0f,deltaZ);
 					}
 					//move now
-					this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step);
+					this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step * Time.deltaTime);
 				//if this a player not an npc
 				}
 				else

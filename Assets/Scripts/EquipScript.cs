@@ -22,6 +22,7 @@ public class EquipScript : MonoBehaviour {
 	
 	public void EquipClick(int slotId2)
 	{
+		//click on an item and move it to cursor
 		if(this.name != "" && WorldConnection2.cursorIconId == 0)
 		{
 			Debug.Log("if1");
@@ -35,6 +36,7 @@ public class EquipScript : MonoBehaviour {
 			this.slotId = 0;
 			this.iconId = 0;
 		}
+		//holding an item, clicking on another item and swapping their slots
 		else if(this.name != "" && WorldConnection2.cursorIconId > 0)
 		{
 			Debug.Log("if2");
@@ -58,6 +60,7 @@ public class EquipScript : MonoBehaviour {
 			this.iconId = tempiconId;
 			
 		}
+		//holding an item, moving it to an empty slot
 		else if(this.name == "" && WorldConnection2.cursorIconId > 0)
 		{
 			Debug.Log("if3");

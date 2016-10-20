@@ -50,6 +50,24 @@ public class ThirdPersonCamera : MonoBehaviour
 	float targetLastRot;
 
 	bool m_isLocked = true;
+	
+	public bool doCursorUpdate = false;
+//    public CursorMode cursorMode = CursorMode.ForceSoftware;
+    public Vector2 hotSpot = Vector2.zero;
+	public Texture2D cursorTexture;
+	public int currentCursor = 0;
+
+	
+	
+	public void CursorUpdate()
+	{
+		if(WorldConnection.cursorIconId == 0){Cursor.SetCursor(null, Vector2.zero, CursorMode.ForceSoftware);}
+		else{
+				cursorTexture = (Texture2D) Resources.Load("Icons/item_" + WorldConnection.cursorIconId, typeof(Texture2D));
+				Cursor.SetCursor(cursorTexture, hotSpot, CursorMode.ForceSoftware);
+			}
+			currentCursor = WorldConnection.cursorIconId;		
+	}
 
 	void FindHeadTarget()
 	{
@@ -69,6 +87,8 @@ public class ThirdPersonCamera : MonoBehaviour
 
 	void Update()
 	{
+		if(WorldConnection.cursorIconId != currentCursor){CursorUpdate();}
+		
 		if (Input.GetKey(KeyCode.PageUp))
 		{
 			y += -1;
