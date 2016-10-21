@@ -80,6 +80,7 @@ public class ThirdPersonCamera : MonoBehaviour
 	void Start () 
 	{
 		FindHeadTarget();
+
 	}
 
 

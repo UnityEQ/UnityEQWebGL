@@ -7,10 +7,12 @@ public class SkyboxRotate : MonoBehaviour {
 	public Skybox sky;
 	void Start() {
 		sky = GetComponent<Skybox> ();
+
 	}
 	void Update () {
 		rot += 1 * Time.deltaTime;
 		rot %= 360;
 		sky.material.SetFloat ("_Rotation", rot);
+
 	}
 }

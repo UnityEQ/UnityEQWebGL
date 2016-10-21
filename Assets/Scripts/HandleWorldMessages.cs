@@ -109,6 +109,7 @@ namespace EQBrowser
 		
 		public void DoTarget(string targetID)
 		{
+			
 //			int OurTargetInt = int.Parse(OurTargetID);
 			if(OurTargetID > 0)
 			{
@@ -1175,9 +1176,50 @@ namespace EQBrowser
 
 			string CharName = ReadFixedLengthString(data, ref position, 64);
 			string ZoneName = ReadFixedLengthString(data, ref position, 32);
-//			SceneManagerObj.zoneName = ZoneName;
-
-
+			string ZoneLongName = ReadFixedLengthString(data, ref position, 278);
+			byte ztype = ReadInt8 (data, ref position); 
+			byte fogRed = ReadInt8 (data, ref position); 
+			byte fogGreen = ReadInt8 (data, ref position); 
+			byte fogBlue = ReadInt8 (data, ref position); 
+			byte unknown323 = ReadInt8 (data, ref position); 
+			byte fog_minclip = ReadInt8 (data, ref position);
+			byte fog_maxclip = ReadInt8 (data, ref position);
+			float gravity = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			byte time_type = ReadInt8 (data, ref position);
+			byte rain_chance = ReadInt8 (data, ref position);
+			byte rain_duration = ReadInt8 (data, ref position);
+			byte snow_chance = ReadInt8 (data, ref position);
+			byte snow_duration = ReadInt8 (data, ref position);
+			string unknown360 = ReadFixedLengthString(data, ref position, 33);
+			byte sky = ReadInt8 (data, ref position); // Sky Type
+			string unknown331 = ReadFixedLengthString(data, ref position, 13);
+			float zone_exp_multiplier = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float safe_y = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float safe_x = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float safe_z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float max_z = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			float underworld = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0); // Underworld, min z (Not Sure?)
+			float minclip = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0); // Minimum View Distance
+			float maxclip = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0); // Maximum View DIstance	
+			string unknown_end = ReadFixedLengthString(data, ref position, 84); 
+			string zone_shortname2 = ReadFixedLengthString(data, ref position, 68);
+			string unknown672 = ReadFixedLengthString(data, ref position, 12);
+			Int32 zone_id = ReadInt16(data, ref position);
+			Int32 zone_instance = ReadInt16(data, ref position);
+			Int32 unknown688 = ReadInt32(data, ref position);
+			byte unk692 = ReadInt8 (data, ref position); // Sky Type
+			float fogdensity = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
+			
+			Debug.Log("fmin: " + rain_chance);
+			RenderSettings.fogMode = FogMode.Exponential;
+//			RenderSettings.fogStartDistance = 200;
+//			RenderSettings.fogEndDistance = fog_maxclip + 0.01f;
+			RenderSettings.fogDensity = .0013f;
+//			Color32 c = new Color32(fogRed,fogGreen,fogBlue, 255);
+			Color32 c = new Color32(0,0,0, 255);
+			RenderSettings.fogColor = c;
+//			Camera.main.farClipPlane = maxclip;
+			RenderSettings.fog = true;
  			GenerateAndSendWorldPacket (0, 402 /* OP_ReqClientSpawn */, curZoneId, curInstanceId, ReqClientSpawn);
 		}
 
