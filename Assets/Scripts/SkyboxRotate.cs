@@ -10,9 +10,9 @@ public class SkyboxRotate : MonoBehaviour {
 
 	}
 	void Update () {
-		rot += 1 * Time.deltaTime;
-		rot %= 360;
-		sky.material.SetFloat ("_Rotation", rot);
+//		rot += 1 * Time.deltaTime;
+//		rot %= 360;
+//		sky.material.SetFloat ("_Rotation", rot);
 
 	}
 }

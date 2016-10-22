@@ -544,7 +544,7 @@ namespace EQBrowser
 					{
 						string itemName = word;
 						int slotInt = int.Parse(slotid);
-						Debug.Log("itemName: " + itemName);
+//						Debug.Log("itemName: " + itemName);
 						if(slotInt == 30){cursorItemName = itemName;}
 						if(slotInt > 0 && slotInt < 22)
 						{

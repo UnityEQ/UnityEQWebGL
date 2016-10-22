@@ -17,7 +17,7 @@ public class BagScript : MonoBehaviour {
 	public void setupBtn()
 	{
 		GetComponent<Button>().onClick.AddListener(delegate { BagClick(int.Parse(this.gameObject.name)); });
-		Debug.Log("thisgameobjectname:" + int.Parse(this.gameObject.name));
+//		Debug.Log("thisgameobjectname:" + int.Parse(this.gameObject.name));
 	}
 	
 	public void BagClick(int slotId2)
@@ -60,7 +60,7 @@ public class BagScript : MonoBehaviour {
 		}
 		else if(this.name == "" && WorldConnection2.cursorIconId > 0)
 		{
-			Debug.Log("if3");
+			Debug.Log("BAGSCRIPT");
 			int nameParse = int.Parse(this.gameObject.name);
 			WorldConnection2.DoMoveItem(nameParse);
 			Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + WorldConnection2.cursorIconId, typeof(Texture2D));
