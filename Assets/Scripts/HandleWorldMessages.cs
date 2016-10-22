@@ -1210,16 +1210,16 @@ namespace EQBrowser
 			byte unk692 = ReadInt8 (data, ref position); // Sky Type
 			float fogdensity = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);
 			
-			Debug.Log("fmin: " + rain_chance);
-			RenderSettings.fogMode = FogMode.Exponential;
+
+//			RenderSettings.fogMode = FogMode.Exponential;
 //			RenderSettings.fogStartDistance = 200;
 //			RenderSettings.fogEndDistance = fog_maxclip + 0.01f;
-			RenderSettings.fogDensity = .0013f;
+//			RenderSettings.fogDensity = .009f;
 //			Color32 c = new Color32(fogRed,fogGreen,fogBlue, 255);
-			Color32 c = new Color32(0,0,0, 255);
-			RenderSettings.fogColor = c;
+//			Color32 c = new Color32(0,0,0, 255);
+//			RenderSettings.fogColor = c;
 //			Camera.main.farClipPlane = maxclip;
-			RenderSettings.fog = true;
+//			RenderSettings.fog = true;
  			GenerateAndSendWorldPacket (0, 402 /* OP_ReqClientSpawn */, curZoneId, curInstanceId, ReqClientSpawn);
 		}
 
