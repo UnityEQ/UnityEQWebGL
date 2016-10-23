@@ -14,7 +14,7 @@ public class NPCController : MonoBehaviour
 	public int spawnId = 0;
 	public int corpseId = 0;
 	public string name = "";// Player's Name
-	public string prefabName = "GnollPrefab";// Player's prefab Name
+	public string prefabName;// Player's prefab Name
 	public float x = 0;// x coord
 	public float y = 0;// y coord
 	public float z = 0;// z coord
@@ -61,74 +61,70 @@ public class NPCController : MonoBehaviour
 	public float fixnum;
 	public float ycalc;
 	public float offset;
+	public Renderer rend;
 	
 	public GameObject NameObject;
+	public bool updateHeading;
+	public bool updateDeltas;
 	
 
 	void Start()
 	{
-			//clean name
-			string targetName = name;
-			string targetClean = Regex.Replace(targetName, "[0-9]", "");
-			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
-			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
-			//generate name above head				
-			NameObject.GetComponent<TextMesh>().text = targetName3;
-			controller = this.GetComponent<CharacterController>();
-
-			this.transform.position = new Vector3(x, y, z);
+		//clean name for overhead name
+		string targetName = name;
+		string targetClean = Regex.Replace(targetName, "[0-9]", "");
+		string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+		string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+		//generate name above head				
+		NameObject.GetComponent<TextMesh>().text = targetName3;
+		//define character controller
+		controller = this.GetComponent<CharacterController>();
+		//place NPCs via ZoneSpawns packet var
+		this.transform.position = new Vector3(x, y, z);
+		//define overhead name object
+		rend = NameObject.GetComponent<Renderer>();
+		rend.material.color = Color.red;
 	}
 	void Update () 
 	{
-			//make overhead names face camera
+		//overhead names face player
+		if(Camera.main.velocity != new Vector3(0,0,0) || this.controller.velocity != new Vector3(0,0,0))
+		{
 			NameObject.transform.LookAt(2 * NameObject.transform.position - Camera.main.transform.position);
-			//change color if targetted
-			Renderer rend = NameObject.GetComponent<Renderer>();
+		}
+		//green name when targetted
+		if(isTarget == true && colorActivate == false)
+		{
+			rend.material.color = Color.green;
+			colorActivate = true;
+		}
+		//red name when targetted
+		if(isTarget == false && colorActivate == true)
+		{
 			rend.material.color = Color.red;
-			
-			if(isTarget == true && colorActivate == false)
-			{
-				rend.material.color = Color.green;
-			}
-			if(isTarget == false && colorActivate == true)
-			{
-				rend.material.color = Color.red;
-			}
+			colorActivate = false;
+		}
+		//update heading from clientupdate packet
+		if(updateHeading == true)
+		{
+			float h = Mathf.Lerp(360,0,movetoH/255f);
+			transform.localEulerAngles = new Vector3(0,h,0);
+			updateHeading = false;
+		}
+		//update deltas from clientupdate packet
+		if(updateDeltas == true)
+		{
+			deltaF = new Vector3 (deltaX,deltaY,deltaZ);
+			updateDeltas = false;
+		}
 		
+		// TODO-performance: Only do this when the NPC hp changes (specifically it decreases)
 		if(NPC == 2 || isDead == 1){deadNow();}
 		else
 		{
-			//Touching ground
-			if ((controller.collisionFlags & CollisionFlags.Below)!=0)
-			{
-				offset = this.transform.position.y;
-			}
-			if (controller.collisionFlags == CollisionFlags.Above)
-			{
-//				y += 1;
-			}
-			if (controller.collisionFlags == CollisionFlags.None)
-			{
-//				y -= 1;
-			}
-			//deep underneath world
-			if (!controller.isGrounded)
-			{
-				if(this.transform.position.y < -500){fixit();}
-			}
-			if (controller.isGrounded)
-			{
-				
-			}
-
-			//heading
-			float h = Mathf.Lerp(360,0,movetoH/255f);
-			transform.localEulerAngles = new Vector3(0,h,0);
-			//set delta vector
-			deltaF = new Vector3 (deltaX,deltaY,deltaZ);
-
 
 			//wandering
+			// TODO-performance: When a update arrives store whether or not the NPC is moving. Calculating magnitude involves sqrt 
 			if (deltaF.magnitude != 0)
 			{
 				if(isWalk == 0){walkNow();}
@@ -150,12 +146,13 @@ public class NPCController : MonoBehaviour
 					if(clientUpdate == false)
 					{
 						//continuing to move in between updates
+						// TODO-performance: Store this when the pos packet arrives
 						targetPosition += new Vector3 (deltaX,0f,deltaZ);
 					}
 					//move now
 					this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step * Time.deltaTime);
-				//if this a player not an npc
 				}
+				//if this a player not an npc
 				else
 				{
 					targetPosition = new Vector3 (movetoX,movetoY,movetoZ);

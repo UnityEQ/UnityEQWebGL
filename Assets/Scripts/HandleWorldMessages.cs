@@ -914,11 +914,21 @@ namespace EQBrowser
 				temp.GetComponent<NPCController>().movetoX = -x;// Player's Name
 				temp.GetComponent<NPCController>().movetoY = z;// Player's Name
 				temp.GetComponent<NPCController>().movetoZ = y;// Player's Name
-				temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
+				if(temp.GetComponent<NPCController>().movetoH != rotation)
+				{
+					temp.GetComponent<NPCController>().movetoH = rotation;// Player's Name
+					temp.GetComponent<NPCController>().updateHeading = true;
+				}
 				temp.GetComponent<NPCController>().animationspeed = animationspeed;// animationspeed
-				temp.GetComponent<NPCController>().deltaX = -deltaX;
-				temp.GetComponent<NPCController>().deltaY = deltaZ;
-				temp.GetComponent<NPCController>().deltaZ = deltaY;
+				
+				if(temp.GetComponent<NPCController>().deltaX != -deltaX || temp.GetComponent<NPCController>().deltaY != deltaZ || temp.GetComponent<NPCController>().deltaZ != deltaY)
+				{
+					temp.GetComponent<NPCController>().deltaX = -deltaX;
+					temp.GetComponent<NPCController>().deltaY = deltaZ;
+					temp.GetComponent<NPCController>().deltaZ = deltaY;
+					temp.GetComponent<NPCController>().updateDeltas = true;
+				}
+				
 				temp.GetComponent<NPCController>().deltaH = deltaH;// Player's Name
 				temp.GetComponent<NPCController>().clientUpdate = true;
 			}
