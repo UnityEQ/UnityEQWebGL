@@ -104,7 +104,7 @@ namespace EQBrowser
 
 		    byte[] ZoneChangeRequest = new byte[88];
 		    int position = 0;
-			
+			curZoneId = zoneId;
 		    WriteFixedLengthString(name, ref ZoneChangeRequest, ref position,  64); //charname
 		    WriteInt16(zoneId, ref ZoneChangeRequest, ref position);//zoneID
 		    WriteInt16(0, ref ZoneChangeRequest, ref position);//instanceId
@@ -113,9 +113,8 @@ namespace EQBrowser
 		    WriteInt32(0, ref ZoneChangeRequest, ref position); //z
 		    WriteInt32(zoneReason, ref ZoneChangeRequest, ref position); //zone reason
 		    WriteInt32(1, ref ZoneChangeRequest, ref position); //success
-//joinkles3
-			GenerateAndSendWorldPacket (ZoneChangeRequest.Length, 539 /* OP_ZoneChange */, 2, curInstanceId, ZoneChangeRequest);
-//		    GenerateAndSendWorldPacket (ZoneChangeRequest.Length, 539 /* OP_ZoneChange */, curZoneId, curInstanceId, ZoneChangeRequest);
+
+			GenerateAndSendWorldPacket (ZoneChangeRequest.Length, 539 /* OP_ZoneChange */, curZoneId, curInstanceId, ZoneChangeRequest);
         }
 		
 		public void DoTarget(string targetID)
