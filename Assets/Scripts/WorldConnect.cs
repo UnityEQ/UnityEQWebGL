@@ -15,7 +15,7 @@ namespace EQBrowser {
 
 	public partial class WorldConnect : MonoBehaviour
 	{  
-		private static WorldConnect instance;
+		public static WorldConnect instance;
 		public GameObject WorldConnectObject;
 		public GameObject CharSelect;
 		public GameObject CharSelectCamera;
@@ -30,7 +30,6 @@ namespace EQBrowser {
 		public Text ChatText2;
 		public GameObject NullGameObject;
 		public int isAttacking;
-
 		
 		public void Awake() 
 		{
@@ -62,8 +61,10 @@ namespace EQBrowser {
 		public Int32 cursorSlotId = 0;
 		public WebSocket ws_;
 		public byte[] userNamePass;
+        public string ourUsername;
+        public string ourPassword;
 
-		delegate void OpcodeFunc (byte[] data, int datasize);
+		delegate void OpcodeFunc (byte[] data, int datasize, bool fromWorld);
 		//Use this for initialization
 		
 		public Byte ReadInt8(byte[] data, ref Int32 position)
@@ -189,13 +190,14 @@ namespace EQBrowser {
 			opcodeDict.Add ("327", HandleWorldMessage_MoneyOnCorpse);
 			opcodeDict.Add ("329", HandleWorldMessage_WorldMOTD);
 			opcodeDict.Add ("72", HandleWorldMessage_ItemPacket);
-			
+            opcodeDict.Add("151", HandleWorldMessage_EnterWorld);
 
 
-			//Auto-Connect to Salty Server
-//			StartCoroutine(ConnectToWebSocketServer("158.69.221.200", "aksdjlka23ij3l1j23lk1j23j123jkjql", "XLOGINX", "XPASSWORDX"));
 
-	    }
+            //Auto-Connect to Salty Server
+            //			StartCoroutine(ConnectToWebSocketServer("158.69.221.200", "aksdjlka23ij3l1j23lk1j23j123jkjql", "XLOGINX", "XPASSWORDX"));
+
+        }
 
 	    public class Auth
 	    {
@@ -256,14 +258,11 @@ namespace EQBrowser {
 			string authoutput =  JsonUtility.ToJson(auth1);
 			ws_.SendString(authoutput);
 			Debug.Log("SendAuth: " + authoutput);
-			
-			//for testing, build username portion
-			byte[] userNamePass = new byte[64];
-			Buffer.BlockCopy(Encoding.UTF8.GetBytes(username), 0, userNamePass, 0, username.Length);
-			Buffer.BlockCopy(Encoding.UTF8.GetBytes(password), 0, userNamePass, username.Length + 1, Encoding.UTF8.GetBytes(password).Length);
-			byte[] Zoning = new byte[1];
-			Zoning[0] = 0;
-			GenerateAndSendWorldPacket (65, 427, -1, -1, userNamePass, Zoning);
+
+            ourUsername = username;
+            ourPassword = password;
+
+            DoSendLoginInfo(ourUsername, ourPassword, 0);
 			
 			Connected = true;
 			yield return 0;
@@ -336,7 +335,7 @@ namespace EQBrowser {
 							int length = 0;
 							if(RawData != null)
 								length = RawData.Length;
-							opcodeDict[RawOp](RawData, length);
+							opcodeDict[RawOp](RawData, length, IdChecker1.zoneid == "-1" ? true : false);
 						}
 					}
 				}

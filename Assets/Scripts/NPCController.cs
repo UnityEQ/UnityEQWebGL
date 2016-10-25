@@ -15,10 +15,10 @@ public class NPCController : MonoBehaviour
 	public int corpseId = 0;
 	public string name = "";// Player's Name
 	public string prefabName;// Player's prefab Name
-	public float x = 0;// x coord
-	public float y = 0;// y coord
-	public float z = 0;// z coord
-	public float heading = 0;// heading
+	public float x;// x coord
+	public float y;// y coord
+	public float z;// z coord
+	public float heading;// heading
 
 	public float step;
 	public Vector3 targetPosition;
@@ -66,27 +66,41 @@ public class NPCController : MonoBehaviour
 	public GameObject NameObject;
 	public bool updateHeading;
 	public bool updateDeltas;
+	public bool playerRespawn = false;
+	public string targetName = "";
 	
 
 	void Start()
 	{
 		//clean name for overhead name
-		string targetName = name;
+		targetName = name;
 		string targetClean = Regex.Replace(targetName, "[0-9]", "");
 		string targetName2 = Regex.Replace(targetClean, "[_]", " ");
 		string targetName3 = Regex.Replace(targetName2, "[\0]", "");
 		//generate name above head				
-		NameObject.GetComponent<TextMesh>().text = targetName3;
+		this.NameObject.GetComponent<TextMesh>().text = targetName3;
 		//define character controller
 		controller = this.GetComponent<CharacterController>();
 		//place NPCs via ZoneSpawns packet var
 		this.transform.position = new Vector3(x, y, z);
 		//define overhead name object
-		rend = NameObject.GetComponent<Renderer>();
+		rend = this.NameObject.GetComponent<Renderer>();
 		rend.material.color = Color.red;
 	}
 	void Update () 
 	{
+		if(targetName == "")
+		{
+		//clean name for overhead name
+		targetName = name;
+		string targetClean = Regex.Replace(targetName, "[0-9]", "");
+		string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+		string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+		//generate name above head				
+		this.NameObject.GetComponent<TextMesh>().text = targetName3;
+		}
+		//if player respawned, reset NPC name Vars in Start
+//		if(playerRespawn == true){Start();playerRespawn = false;Debug.Log("POOPY2");}
 		//overhead names face player
 		if(Camera.main.velocity != new Vector3(0,0,0) || this.controller.velocity != new Vector3(0,0,0))
 		{

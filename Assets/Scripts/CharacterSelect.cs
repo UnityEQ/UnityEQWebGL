@@ -366,8 +366,9 @@ public class CharacterSelect : MonoBehaviour {
 		//		Debug.Log("foo " + param);
 		SaltyServerText.color = Color.red;
 		Server2ServerText.color = Color.black;
-		HostNameInput.text = "158.69.221.200:80";
+//		HostNameInput.text = "127.0.0.1:52685";
 //		HostNameInput.text = "68.83.231.103:52685";
+		HostNameInput.text = "158.69.221.200:80";
 		
 		#if UNITY_EDITOR
 			//for dev quick login
@@ -456,35 +457,35 @@ public class CharacterSelect : MonoBehaviour {
 		switch (CharSelected)
 		{
 			case 1:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton1Text.text);
 				break;
 			case 2:
-				WorldConnection.curZoneId = 2;
+				//.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton2Text.text);
 				break;
 			case 3:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton3Text.text);
 				break;
 			case 4:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton4Text.text);
 				break;
 			case 5:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton5Text.text);
 				break;
 			case 6:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton6Text.text);
 				break;
 			case 7:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton7Text.text);
 				break;
 			case 8:
-				WorldConnection.curZoneId = 2;
+				//WorldConnection.curZoneId = 2;
 				WorldConnection.DoEnterWorld(CButton8Text.text);
 				break;
 			default:

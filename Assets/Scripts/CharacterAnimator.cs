@@ -88,7 +88,8 @@ namespace EQBrowser
 		//Every Frame 
 		void Update () 
 		{ 
-		
+if(WorldConnection.playerLock != true)
+{	
 		if(Input.GetKeyDown(KeyCode.F10))
 		{
 			Screen.fullScreen = !Screen.fullScreen;
@@ -320,4 +321,5 @@ namespace EQBrowser
 		} 
 		
 	} 
+}
 }
