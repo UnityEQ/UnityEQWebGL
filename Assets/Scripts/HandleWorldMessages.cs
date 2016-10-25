@@ -310,7 +310,7 @@ namespace EQBrowser
 		}
 		
 		/* UI Events Below */
-		public void DoEnterWorld(string name)
+		public void DoEnterWorld(string name, int zoneId)
 		{
 			ourPlayerName = name;
 			if (CSel == null)
@@ -319,7 +319,7 @@ namespace EQBrowser
             AttemptingZoneConnect = true;
             DoDeleteSpawn(OurEntityID);
             DoSceneUnload();
-//            curZoneId = -1;
+            curZoneId = zoneId;
             curInstanceId = -1;
 //            DoSendLoginInfo(ourUsername, ourPassword, 1);
 			byte[] EnterWorldRequest = new byte[72];
@@ -462,7 +462,7 @@ namespace EQBrowser
             if (name.Length > 2)
             {
 //joinkles
-              DoEnterWorld(name);
+              DoEnterWorld(name,curZoneId);
 //			DoSendLoginInfo(ourUsername, ourPassword, 1);
 //				DoZoneEntry();
             }
@@ -986,7 +986,7 @@ namespace EQBrowser
             AttemptingZoneConnect = true;
             DoDeleteSpawn(OurEntityID);
             DoSceneUnload();
-            curZoneId = -1;
+//            curZoneId = -1;
             curInstanceId = -1;
             DoSendLoginInfo(ourUsername, ourPassword, 1);
         }

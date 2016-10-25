@@ -477,36 +477,36 @@ public class CharacterSelect : MonoBehaviour {
 		switch (CharSelected)
 		{
 			case 1:
-				WorldConnection.curZoneId = WorldConnection.char0zone;
-				WorldConnection.DoEnterWorld(CButton1Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char0zone;
+				WorldConnection.DoEnterWorld(CButton1Text.text, WorldConnection.char0zone);
 				break;
 			case 2:
-				WorldConnection.curZoneId = WorldConnection.char1zone;
-				WorldConnection.DoEnterWorld(CButton2Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char1zone;
+				WorldConnection.DoEnterWorld(CButton2Text.text, WorldConnection.char1zone);
 				break;
 			case 3:
-				WorldConnection.curZoneId = WorldConnection.char2zone;
-				WorldConnection.DoEnterWorld(CButton3Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char2zone;
+				WorldConnection.DoEnterWorld(CButton3Text.text, WorldConnection.char2zone);
 				break;
 			case 4:
-				WorldConnection.curZoneId = WorldConnection.char3zone;
-				WorldConnection.DoEnterWorld(CButton4Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char3zone;
+				WorldConnection.DoEnterWorld(CButton4Text.text, WorldConnection.char3zone);
 				break;
 			case 5:
-				WorldConnection.curZoneId = WorldConnection.char4zone;
-				WorldConnection.DoEnterWorld(CButton5Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char4zone;
+				WorldConnection.DoEnterWorld(CButton5Text.text, WorldConnection.char4zone);
 				break;
 			case 6:
-				WorldConnection.curZoneId = WorldConnection.char5zone;
-				WorldConnection.DoEnterWorld(CButton6Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char5zone;
+				WorldConnection.DoEnterWorld(CButton6Text.text, WorldConnection.char5zone);
 				break;
 			case 7:
-				WorldConnection.curZoneId = WorldConnection.char6zone;
-				WorldConnection.DoEnterWorld(CButton7Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char6zone;
+				WorldConnection.DoEnterWorld(CButton7Text.text, WorldConnection.char6zone);
 				break;
 			case 8:
-				WorldConnection.curZoneId = WorldConnection.char7zone;
-				WorldConnection.DoEnterWorld(CButton8Text.text);
+//				WorldConnection.curZoneId = WorldConnection.char7zone;
+				WorldConnection.DoEnterWorld(CButton8Text.text, WorldConnection.char7zone);
 				break;
 			default:
 				break;
