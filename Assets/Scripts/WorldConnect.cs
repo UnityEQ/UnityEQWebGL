@@ -63,6 +63,15 @@ namespace EQBrowser {
 		public byte[] userNamePass;
         public string ourUsername;
         public string ourPassword;
+		
+		public int char0zone;
+		public int char1zone;
+		public int char2zone;
+		public int char3zone;
+		public int char4zone;
+		public int char5zone;
+		public int char6zone;
+		public int char7zone;
 
 		delegate void OpcodeFunc (byte[] data, int datasize, bool fromWorld);
 		//Use this for initialization

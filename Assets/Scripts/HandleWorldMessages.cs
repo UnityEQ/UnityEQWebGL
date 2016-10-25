@@ -319,10 +319,9 @@ namespace EQBrowser
             AttemptingZoneConnect = true;
             DoDeleteSpawn(OurEntityID);
             DoSceneUnload();
-            curZoneId = -1;
+//            curZoneId = -1;
             curInstanceId = -1;
 //            DoSendLoginInfo(ourUsername, ourPassword, 1);
-//joinkles
 			byte[] EnterWorldRequest = new byte[72];
 			int position = 0;
 
@@ -834,7 +833,8 @@ namespace EQBrowser
 
 //joinkles
 //            curZoneId = zone_id;
-			curZoneId = 2;
+//			curZoneId = 2;
+			Debug.Log("CURZONE" + curZoneId);
             curInstanceId = -1;
             DoSceneLoad(curZoneId);
             CharSelectCamera.SetActive(false);
@@ -989,8 +989,6 @@ namespace EQBrowser
             curZoneId = -1;
             curInstanceId = -1;
             DoSendLoginInfo(ourUsername, ourPassword, 1);
-			
-//joinkles2
         }
 		
 		
@@ -1658,6 +1656,7 @@ namespace EQBrowser
 				if(_class > 0)
 				{
 					CSel.UpdateCharButtonText(curSelIndex, name);
+					CSel.UpdateCharButtonZone(curSelIndex, zoneid);
 					curSelIndex++;
 				}
 
