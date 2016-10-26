@@ -14,6 +14,14 @@ namespace EQBrowser
 {
 	public partial class WorldConnect : MonoBehaviour
 	{
+		
+	void OnTriggerEnter (Collider other) 
+	{
+		Debug.Log(other + "OTHER");
+		DoZoneChange(ourPlayerName, 4, 0);
+	}
+	
+	
 		public void DoEmuKeepAlive()
 		{
 			byte[] KeepAlive = null;
@@ -104,7 +112,6 @@ namespace EQBrowser
 
 		    byte[] ZoneChangeRequest = new byte[88];
 		    int position = 0;
-			curZoneId = zoneId;
 		    WriteFixedLengthString(name, ref ZoneChangeRequest, ref position,  64); //charname
 		    WriteInt16(zoneId, ref ZoneChangeRequest, ref position);//zoneID
 		    WriteInt16(0, ref ZoneChangeRequest, ref position);//instanceId
@@ -113,8 +120,8 @@ namespace EQBrowser
 		    WriteInt32(0, ref ZoneChangeRequest, ref position); //z
 		    WriteInt32(zoneReason, ref ZoneChangeRequest, ref position); //zone reason
 		    WriteInt32(1, ref ZoneChangeRequest, ref position); //success
-
 			GenerateAndSendWorldPacket (ZoneChangeRequest.Length, 539 /* OP_ZoneChange */, curZoneId, curInstanceId, ZoneChangeRequest);
+			curZoneId = zoneId;
         }
 		
 		public void DoTarget(string targetID)
@@ -400,9 +407,9 @@ namespace EQBrowser
 			WriteInt32 (0, ref ZoneEntryRequest, ref pos);
 			WriteFixedLengthString(ourPlayerName, ref ZoneEntryRequest, ref pos, 64);
 			AttemptingZoneConnect = false;
-			//GenerateAndSendWorldPacket (ZoneEntryRequest.Length, 541, curZoneId, curInstanceId, ZoneEntryRequest);
+			GenerateAndSendWorldPacket (ZoneEntryRequest.Length, 541, curZoneId, curInstanceId, ZoneEntryRequest);
 //joinkles
-			GenerateAndSendWorldPacket (ZoneEntryRequest.Length, 541, 2, curInstanceId, ZoneEntryRequest);
+//			GenerateAndSendWorldPacket (ZoneEntryRequest.Length, 541, 2, curInstanceId, ZoneEntryRequest);
 		}
 		
 		//op_spawnappearance
@@ -856,6 +863,7 @@ namespace EQBrowser
 
         public void DoSceneLoad(int zoneID)
         {
+			UIScriptsObject.SetActive(true);
             GameObject temp = null;
             if (ObjectPool.instance)
             {
@@ -902,6 +910,8 @@ namespace EQBrowser
 
         public void DoSceneUnload()
         {
+			DoTarget("0");
+			UIScriptsObject.SetActive(false);
             GameObject temp = null;
             if (ObjectPool.instance)
             {

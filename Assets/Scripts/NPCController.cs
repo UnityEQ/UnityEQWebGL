@@ -102,7 +102,7 @@ public class NPCController : MonoBehaviour
 		//if player respawned, reset NPC name Vars in Start
 //		if(playerRespawn == true){Start();playerRespawn = false;Debug.Log("POOPY2");}
 		//overhead names face player
-		if(Camera.main.velocity != new Vector3(0,0,0) || this.controller.velocity != new Vector3(0,0,0))
+		if(Camera.main.velocity != new Vector3(0,0,0) || this.controller.velocity != new Vector3(0,0,0) || updateHeading == true)
 		{
 			NameObject.transform.LookAt(2 * NameObject.transform.position - Camera.main.transform.position);
 		}
