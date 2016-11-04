@@ -91,13 +91,13 @@ public class NPCController : MonoBehaviour
 	{
 		if(targetName == "")
 		{
-		//clean name for overhead name
-		targetName = name;
-		string targetClean = Regex.Replace(targetName, "[0-9]", "");
-		string targetName2 = Regex.Replace(targetClean, "[_]", " ");
-		string targetName3 = Regex.Replace(targetName2, "[\0]", "");
-		//generate name above head				
-		this.NameObject.GetComponent<TextMesh>().text = targetName3;
+			//clean name for overhead name
+			targetName = name;
+			string targetClean = Regex.Replace(targetName, "[0-9]", "");
+			string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+			string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+			//generate name above head				
+			this.NameObject.GetComponent<TextMesh>().text = targetName3;
 		}
 		//if player respawned, reset NPC name Vars in Start
 //		if(playerRespawn == true){Start();playerRespawn = false;Debug.Log("POOPY2");}

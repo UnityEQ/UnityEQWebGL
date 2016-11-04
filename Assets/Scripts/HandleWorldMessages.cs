@@ -14,13 +14,6 @@ namespace EQBrowser
 {
 	public partial class WorldConnect : MonoBehaviour
 	{
-		
-	void OnTriggerEnter (Collider other) 
-	{
-		Debug.Log(other + "OTHER");
-		DoZoneChange(ourPlayerName, 4, 0);
-	}
-	
 	
 		public void DoEmuKeepAlive()
 		{
@@ -335,7 +328,7 @@ namespace EQBrowser
 			WriteFixedLengthString(name, ref EnterWorldRequest, ref position,  64); //charname
 			WriteInt32(0, ref EnterWorldRequest, ref position); // enter tutorial
 			WriteInt32(0, ref EnterWorldRequest, ref position); // return home
-			GenerateAndSendWorldPacket (EnterWorldRequest.Length, 151 /* OP_EnterWorld */, -1, -1, EnterWorldRequest);				
+			GenerateAndSendWorldPacket (EnterWorldRequest.Length, 151 /* OP_EnterWorld */, -1, -1, EnterWorldRequest);
 		}
 
 		public void DoDeleteChar(string name)
@@ -470,6 +463,7 @@ namespace EQBrowser
             {
 //joinkles
               DoEnterWorld(name,curZoneId);
+			  Debug.Log("attempt: " + AttemptingZoneConnect);
 //			DoSendLoginInfo(ourUsername, ourPassword, 1);
 //				DoZoneEntry();
             }
@@ -778,23 +772,26 @@ namespace EQBrowser
 //				GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == source.ToString()).SingleOrDefault();
 				DoClientUpdate();
 				GameObject temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == source.ToString());
-				string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
-				string sourceClean = Regex.Replace(sourceName, "[0-9]", "");
-				string sourceName2 = Regex.Replace(sourceClean, "[_]", " ");
-				string sourceName3 = Regex.Replace(sourceName2, "[\0]", "");
-
-				switch(type)
+				if(temp != null)
 				{
-					case 4:
-						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " hits" + " YOU for " + damage + " points of damage.</b></color>");
-						break;
-					case 30:
-						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " kicks" + " YOU for " + damage + " points of damage.</b></color>");
-						break;
+					string sourceName = temp.GetComponent<NPCController>().name;// Player's Name
+					string sourceClean = Regex.Replace(sourceName, "[0-9]", "");
+					string sourceName2 = Regex.Replace(sourceClean, "[_]", " ");
+					string sourceName3 = Regex.Replace(sourceName2, "[\0]", "");
 
-					default:
-						ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " " + type + " YOU for " + damage + " points of damage.</b></color>");
-						break;
+					switch(type)
+					{
+						case 4:
+							ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " hits" + " YOU for " + damage + " points of damage.</b></color>");
+							break;
+						case 30:
+							ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " kicks" + " YOU for " + damage + " points of damage.</b></color>");
+							break;
+	
+						default:
+							ChatText2.text += (Environment.NewLine + "<color=#ff0000ff><b>" + sourceName3 + " " + type + " YOU for " + damage + " points of damage.</b></color>");
+							break;
+					}
 				}
 			}
 			
@@ -802,20 +799,23 @@ namespace EQBrowser
 			{
 //				GameObject temp2 = ObjectPool.instance.spawnlist.Where(obj => obj.name == target.ToString()).SingleOrDefault();
 				GameObject temp2 = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == target.ToString());
-				string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
-				string targetClean = Regex.Replace(targetName, "[0-9]", "");
-				string targetName2 = Regex.Replace(targetClean, "[_]", " ");
-				string targetName3 = Regex.Replace(targetName2, "[\0]", "");
-				
-				switch(type)
+				if(temp2 != null)
 				{
-					case 4:
-						ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
-						break;
-					default:
-//						ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");
-						ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
-						break;
+					string targetName = temp2.GetComponent<NPCController>().name;// Player's Name
+					string targetClean = Regex.Replace(targetName, "[0-9]", "");
+					string targetName2 = Regex.Replace(targetClean, "[_]", " ");
+					string targetName3 = Regex.Replace(targetName2, "[\0]", "");
+					
+					switch(type)
+					{
+						case 4:
+							ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
+							break;
+						default:
+	//						ChatText2.text += (Environment.NewLine + "You " + type + " " + targetName3 + " for " + damage + " points of damage.");
+							ChatText2.text += (Environment.NewLine + "You hit " + targetName3 + " for " + damage + " points of damage.");
+							break;
+					}
 				}
 			}
 		}

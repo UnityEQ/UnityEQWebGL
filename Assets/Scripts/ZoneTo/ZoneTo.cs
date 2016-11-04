@@ -9,7 +9,11 @@ public class ZoneTo : MonoBehaviour
 	public WorldConnect WorldConnection;
 	void OnTriggerEnter (Collider other) 
 	{
-		WorldConnection.DoZoneChange(WorldConnection.ourPlayerName, 4, 0);
+		if(WorldConnection.AttemptingZoneConnect == false)
+		{
+			WorldConnection.DoZoneChange(WorldConnection.ourPlayerName, 4, 0);
+			WorldConnection.AttemptingZoneConnect = true;
+		}
 	}
 }
 
