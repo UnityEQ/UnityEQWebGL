@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System;
+using System.Xml;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Text.RegularExpressions;
@@ -69,7 +70,6 @@ public class NPCController : MonoBehaviour
 	public bool playerRespawn = false;
 	public string targetName = "";
 	
-
 	void Start()
 	{
 		//clean name for overhead name
@@ -89,6 +89,8 @@ public class NPCController : MonoBehaviour
 	}
 	void Update () 
 	{
+		//gravity
+		
 		if(targetName == "")
 		{
 			//clean name for overhead name
@@ -100,7 +102,7 @@ public class NPCController : MonoBehaviour
 			this.NameObject.GetComponent<TextMesh>().text = targetName3;
 		}
 		//if player respawned, reset NPC name Vars in Start
-//		if(playerRespawn == true){Start();playerRespawn = false;Debug.Log("POOPY2");}
+		if(playerRespawn == true){Start();playerRespawn = false;}
 		//overhead names face player
 		if(Camera.main.velocity != new Vector3(0,0,0) || this.controller.velocity != new Vector3(0,0,0) || updateHeading == true)
 		{
@@ -152,19 +154,22 @@ public class NPCController : MonoBehaviour
 					if(clientUpdate == true)
 					{
 						//initial movement
-						ycalc = movetoY - deltaY;
-//						offset = movetoY - deltaY;
-						targetPosition = new Vector3 (movetoX,ycalc,movetoZ);
+						ycalc = this.gameObject.transform.position.y;
+						targetPosition.x = movetoX;
+						targetPosition.z = movetoZ;
 					}
 					//if waiting on update from server, move along the delta positions
 					if(clientUpdate == false)
 					{
 						//continuing to move in between updates
 						// TODO-performance: Store this when the pos packet arrives
-						targetPosition += new Vector3 (deltaX,0f,deltaZ);
+						targetPosition.x += deltaX;
+						targetPosition.z += deltaZ;
 					}
 					//move now
-					this.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step * Time.deltaTime);
+					raycastY();
+					targetPosition.y = this.gameObject.transform.position.y;
+					this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step * Time.deltaTime);
 				}
 				//if this a player not an npc
 				else
@@ -182,24 +187,41 @@ public class NPCController : MonoBehaviour
 			{
 				if (deltaX == 0 && deltaY == 0 && deltaZ == 0 && movetoX != 0 && movetoY != 0 && movetoZ != 0)
 				{
-					idleNow();
-					ycalc = movetoY;
-					this.transform.position = new Vector3(movetoX, ycalc, movetoZ);
+					if(isIdle == 0){idleNow();}
+					this.transform.position = new Vector3(movetoX, this.gameObject.transform.position.y, movetoZ);
+					raycastY();
 				}
 				else
 				{
+					raycastY();
 					//FOR  Y ADJUSTMENTS IF UNDER OR BENEATH WORLD WHEN NOT MOVING AND NO POSITION UPDATES FROM SERVER
 				}
 			}
 		}
 	}
-	public void fixit()
+	
+	public void raycastY()
 	{
-		Debug.Log("hisda");
-		fixnum += 5;
-		this.transform.position = new Vector3(movetoX, y + fixnum, movetoZ);
-	}
 
+		RaycastHit[] hitsDown;
+		hitsDown = Physics.RaycastAll(this.gameObject.transform.position, Vector3.down, 200.0F);
+		for (int i = 0; i < hitsDown.Length; i++) 
+		{
+			RaycastHit hitDown = hitsDown[i];
+//			Debug.Log("HITS" + hitsDown.Length);
+			if(hitsDown.Length > 1)
+			{
+				if(hitDown.distance > 3.1f && hitDown.collider.tag == "Terrain"){this.gameObject.transform.position -= new Vector3(0f,20f * Time.deltaTime,0f);}
+				if(hitDown.distance < 3f && hitDown.collider.tag == "Terrain"){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
+			}
+			else
+			{
+				this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);
+			}
+		}
+	}
+	
+	
 	public void walkNow()
 	{
 		isWalk = 1;
