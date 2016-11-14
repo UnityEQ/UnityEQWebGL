@@ -82,7 +82,7 @@ public class NPCController : MonoBehaviour
 		//define character controller
 		controller = this.GetComponent<CharacterController>();
 		//place NPCs via ZoneSpawns packet var
-		this.transform.position = new Vector3(x, y, z);
+//		this.transform.position = new Vector3(x, y + 5f, z);
 		//define overhead name object
 		rend = this.NameObject.GetComponent<Renderer>();
 		rend.material.color = Color.red;
@@ -202,7 +202,6 @@ public class NPCController : MonoBehaviour
 	
 	public void raycastY()
 	{
-
 		RaycastHit[] hitsDown;
 		hitsDown = Physics.RaycastAll(this.gameObject.transform.position, Vector3.down, 200.0F);
 		for (int i = 0; i < hitsDown.Length; i++) 
@@ -219,8 +218,8 @@ public class NPCController : MonoBehaviour
 				this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);
 			}
 		}
+		if(hitsDown.Length == 0){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
 	}
-	
 	
 	public void walkNow()
 	{
