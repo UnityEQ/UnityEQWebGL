@@ -545,52 +545,109 @@ namespace EQBrowser
 			//ItemPacketCharInventory= 0x69
 			default:
 				Int32 i3 = 0;
+				int blanks = 0;
+				bool firstRun = true;
 				foreach (string word in words)
 				{
 					i3++;
-//					Debug.Log("i: " + i3 + "word: " + word);
-					if(i3 == 179){i3 = 0;}
-					if(i3 == 2)
+					Debug.Log("i: " + i3 + "word: " + word);
+//					if(word == "\"1" || word == "\"0" || word == "0\"" || word == "\\\"0" || word == "\""){i3 = 0;}
+					//count blanks
+					if(word == ""){blanks = blanks + 1;}
+					//clear blanks
+					if(i3 == 20){blanks = 0;}
+					//clear blanks 
+					if(blanks == 8){i3 = 0;}
+					if(word == "start"){i3 = 0;}
+
+
+
+
+					if(word == "asdasd")
 					{
-						slotid = word;
-						int slotInt = int.Parse(word);
-						Debug.Log("slotid: " + slotid);
-						if(slotInt == 30){cursorSlotId = slotInt;}
-						if(slotInt > 0 && slotInt < 22)
-						{
-							int slotOffset = slotInt - 1;
-							temp = UIScript.equipList[slotOffset];
-							temp.GetComponent<EquipScript>().slotId = slotInt;
-						}
-						if(slotInt > 21 && slotInt < 30)
-						{
-							int slotOffset = slotInt - 22;
-							temp = UIScript.bagList[slotOffset];
-							temp.GetComponent<BagScript>().slotId = slotInt;
-						}
-						
-					}
-					if(i3 == 13)
-					{
-						string itemName = word;
 						int slotInt = int.Parse(slotid);
-//						Debug.Log("itemName: " + itemName);
-						if(slotInt == 30){cursorItemName = itemName;}
-						if(slotInt > 0 && slotInt < 22)
+						Debug.Log("BLANKS: " + blanks);
+						switch(slotInt)
 						{
-							int slotOffset = slotInt - 1;
-							temp = UIScript.equipList[slotOffset];
-							temp.GetComponent<EquipScript>().name = itemName;
-						}	
-						if(slotInt > 21 && slotInt < 30)
-						{
-							int slotOffset = slotInt - 22;
-							temp = UIScript.bagList[slotOffset];
-							temp.GetComponent<BagScript>().name = itemName;
-						}	
+							case 22:
+								slotInt = 251 + blanks;
+								slotid = slotInt.ToString();
+								int slotOffset = slotInt - 242;
+								temp = UIScript.bagList[slotOffset];
+								temp.GetComponent<BagScript>().slotId = slotInt;
+							break;
+							
+							default:
+								if(slotInt > 250 && slotInt < 261)
+								{
+									slotInt = slotInt + blanks + 1;
+									slotid = slotInt.ToString();
+									int slotOffset2 = slotInt - 242;
+									temp = UIScript.bagList[slotOffset2];
+									temp.GetComponent<BagScript>().slotId = slotInt;
+								}
+							break;
+						}
 					}
-					if(i3 == 22)
+					//if(i3 < 20 && blanks >= 1 && word == "0" && firstRun == false){i3=0;blanks=0;}
+//					if(i3 < 20 && blanks >= 1 && word == "\""){i3=0;blanks=0;}
+					//blanks are correct but the slotid next to the name in concole is effed
+					//.
+
+					if (i3 == 26969)
 					{
+						int number;
+						if(int.TryParse(word, out number) && number != 0)
+						{
+							slotid = word;
+							int slotInt;
+							slotInt = int.Parse(word);
+//							Debug.Log("slotid: " + slotid);
+							if(slotInt == 30){cursorSlotId = slotInt;}
+							if(slotInt > 0 && slotInt < 22)
+							{
+								int slotOffset = slotInt - 1;
+								temp = UIScript.equipList[slotOffset];
+								temp.GetComponent<EquipScript>().slotId = slotInt;
+							}
+							if(slotInt > 21 && slotInt < 30)
+							{
+								int slotOffset = slotInt - 22;
+								temp = UIScript.bagList[slotOffset];
+								temp.GetComponent<BagScript>().slotId = slotInt;
+							}
+						}
+						if(!int.TryParse(word, out number) && word != "" && word != "\"20")
+						{
+							string itemName = word;
+							int slotInt = int.Parse(slotid);
+							Debug.Log("itemName: " + itemName + ":" + slotInt);
+							if(slotInt == 30){cursorItemName = itemName;}
+							if(slotInt > 0 && slotInt < 22)
+							{
+							int slotOffset = slotInt - 1;
+								temp = UIScript.equipList[slotOffset];
+								temp.GetComponent<EquipScript>().name = itemName;
+							}	
+							if(slotInt > 21 && slotInt < 30)
+							{
+								int slotOffset = slotInt - 22;
+								temp = UIScript.bagList[slotOffset];
+								temp.GetComponent<BagScript>().name = itemName;
+							}
+							if(slotInt > 250 && slotInt < 260)
+							{
+								int slotOffset = slotInt - 242;
+								temp = UIScript.bagList[slotOffset];
+								temp.GetComponent<BagScript>().name = itemName;
+							}
+
+						}
+					}
+					if(i3 == 696911 && word != "" && word !="0")
+					{
+//						Debug.Log("ICONID: " + word);
+//						Debug.Log("SLOTID: " + slotid);
 						string iconId = word;
 						Texture2D itemIcon = (Texture2D) Resources.Load("Icons/item_" + iconId, typeof(Texture2D));
 						int slotInt = int.Parse(slotid);
@@ -613,14 +670,24 @@ namespace EQBrowser
 							temp.SetActive(true);
 							temp.GetComponent<RawImage>().texture = itemIcon;
 							temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
-						}	
+						}
+						if(slotInt > 250 && slotInt < 260)
+						{
+							int slotOffset = slotInt - 242;
+							temp = UIScript.bagList[slotOffset];
+							temp.GetComponent<BagScript>().iconId = iconInt;
+							temp.SetActive(true);
+							temp.GetComponent<RawImage>().texture = itemIcon;
+							temp.GetComponent<RawImage>().color = new Color(255f, 255f, 255f, 255f);
+						}						
 					}
+					
 				}
 			break;
 			}
 		//end				
 		}
-		
+
 		public void HandleWorldMessage_SpawnAppearance(byte[] data, int datasize, bool fromWorld)
 		{
 			Int32 position = 0;
@@ -976,6 +1043,7 @@ namespace EQBrowser
 			Int32 spawn_id = ReadInt32(data, ref position);
 //			byte decay = ReadInt8(data, ref position); // 0 = vanish immediately, 1 = 'Decay' sparklies for corpses.
 //			GameObject temp = ObjectPool.instance.spawnlist.Where(obj => obj.name == spawn_id.ToString()).SingleOrDefault();
+			if(spawn_id == OurTargetID){DoTarget("0");}
 			GameObject temp = null;
 			if(isDead == false){temp = ObjectPool.instance.spawnlist.FirstOrDefault(obj => obj.name == spawn_id.ToString());}
 			if(temp != null)
@@ -984,8 +1052,7 @@ namespace EQBrowser
 					temp.name = PrefabName;
 					Debug.Log("DELETESPAWN: " + spawn_id);
 					ObjectPool.instance.PoolObject(temp);
-					ObjectPool.instance.spawnlist.Remove(temp); 
-					
+					ObjectPool.instance.spawnlist.Remove(temp);
 			}
     
 		}

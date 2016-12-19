@@ -23,6 +23,25 @@ ModelImporter:
     100034: ZonelineToSouthQeynosAtCobbler
     100036: ZonelineToSouthQeynosAtCrows
     100038: zoneNorthQeynos
+    100040: North_Qeynos:SecretFromRogueGuild
+    100042: North_Qeynos:SecretToQeynosCatacombs
+    100044: North_Qeynos:SecretToRogueGuild
+    100046: North_Qeynos:TeleportFromTemple
+    100048: North_Qeynos:TeleportToTemple
+    100050: North_Qeynos:TrapInRogueGuild
+    100052: North_Qeynos:WaterCatacombs
+    100054: North_Qeynos:WaterCatacombs2
+    100056: North_Qeynos:Waterfalls
+    100058: North_Qeynos:WaterLake
+    100060: North_Qeynos:WaterLakeAtCrows
+    100062: North_Qeynos:WaterLakeAtTemple
+    100064: North_Qeynos:WaterTemple
+    100066: North_Qeynos:WaterZone
+    100068: North_Qeynos:WaterZonelineToQeynosCatacombs
+    100070: North_Qeynos:ZonelineToQeynosHills
+    100072: North_Qeynos:ZonelineToSouthQeynosAtCobbler
+    100074: North_Qeynos:ZonelineToSouthQeynosAtCrows
+    100076: North_Qeynos:zoneNorthQeynos
     400000: //RootNode
     400002: SecretFromRogueGuild
     400004: SecretToQeynosCatacombs
@@ -43,6 +62,25 @@ ModelImporter:
     400034: ZonelineToSouthQeynosAtCobbler
     400036: ZonelineToSouthQeynosAtCrows
     400038: zoneNorthQeynos
+    400040: North_Qeynos:SecretFromRogueGuild
+    400042: North_Qeynos:SecretToQeynosCatacombs
+    400044: North_Qeynos:SecretToRogueGuild
+    400046: North_Qeynos:TeleportFromTemple
+    400048: North_Qeynos:TeleportToTemple
+    400050: North_Qeynos:TrapInRogueGuild
+    400052: North_Qeynos:WaterCatacombs
+    400054: North_Qeynos:WaterCatacombs2
+    400056: North_Qeynos:Waterfalls
+    400058: North_Qeynos:WaterLake
+    400060: North_Qeynos:WaterLakeAtCrows
+    400062: North_Qeynos:WaterLakeAtTemple
+    400064: North_Qeynos:WaterTemple
+    400066: North_Qeynos:WaterZone
+    400068: North_Qeynos:WaterZonelineToQeynosCatacombs
+    400070: North_Qeynos:ZonelineToQeynosHills
+    400072: North_Qeynos:ZonelineToSouthQeynosAtCobbler
+    400074: North_Qeynos:ZonelineToSouthQeynosAtCrows
+    400076: North_Qeynos:zoneNorthQeynos
     2300000: SecretFromRogueGuild
     2300002: SecretToQeynosCatacombs
     2300004: SecretToRogueGuild
@@ -62,6 +100,25 @@ ModelImporter:
     2300032: ZonelineToSouthQeynosAtCobbler
     2300034: ZonelineToSouthQeynosAtCrows
     2300036: zoneNorthQeynos
+    2300038: North_Qeynos:SecretFromRogueGuild
+    2300040: North_Qeynos:SecretToQeynosCatacombs
+    2300042: North_Qeynos:SecretToRogueGuild
+    2300044: North_Qeynos:TeleportFromTemple
+    2300046: North_Qeynos:TeleportToTemple
+    2300048: North_Qeynos:TrapInRogueGuild
+    2300050: North_Qeynos:WaterCatacombs
+    2300052: North_Qeynos:WaterCatacombs2
+    2300054: North_Qeynos:Waterfalls
+    2300056: North_Qeynos:WaterLake
+    2300058: North_Qeynos:WaterLakeAtCrows
+    2300060: North_Qeynos:WaterLakeAtTemple
+    2300062: North_Qeynos:WaterTemple
+    2300064: North_Qeynos:WaterZone
+    2300066: North_Qeynos:WaterZonelineToQeynosCatacombs
+    2300068: North_Qeynos:ZonelineToQeynosHills
+    2300070: North_Qeynos:ZonelineToSouthQeynosAtCobbler
+    2300072: North_Qeynos:ZonelineToSouthQeynosAtCrows
+    2300074: North_Qeynos:zoneNorthQeynos
     3300000: SecretFromRogueGuild
     3300002: SecretToQeynosCatacombs
     3300004: SecretToRogueGuild
@@ -81,6 +138,25 @@ ModelImporter:
     3300032: ZonelineToSouthQeynosAtCobbler
     3300034: ZonelineToSouthQeynosAtCrows
     3300036: zoneNorthQeynos
+    3300038: North_Qeynos:SecretFromRogueGuild
+    3300040: North_Qeynos:SecretToQeynosCatacombs
+    3300042: North_Qeynos:SecretToRogueGuild
+    3300044: North_Qeynos:TeleportFromTemple
+    3300046: North_Qeynos:TeleportToTemple
+    3300048: North_Qeynos:TrapInRogueGuild
+    3300050: North_Qeynos:WaterCatacombs
+    3300052: North_Qeynos:WaterCatacombs2
+    3300054: North_Qeynos:Waterfalls
+    3300056: North_Qeynos:WaterLake
+    3300058: North_Qeynos:WaterLakeAtCrows
+    3300060: North_Qeynos:WaterLakeAtTemple
+    3300062: North_Qeynos:WaterTemple
+    3300064: North_Qeynos:WaterZone
+    3300066: North_Qeynos:WaterZonelineToQeynosCatacombs
+    3300068: North_Qeynos:ZonelineToQeynosHills
+    3300070: North_Qeynos:ZonelineToSouthQeynosAtCobbler
+    3300072: North_Qeynos:ZonelineToSouthQeynosAtCrows
+    3300074: North_Qeynos:zoneNorthQeynos
     4300000: TrapInRogueGuild
     4300002: WaterCatacombs2
     4300004: WaterCatacombs
@@ -100,6 +176,25 @@ ModelImporter:
     4300032: WaterLakeAtCrows
     4300034: ZonelineToQeynosHills
     4300036: zoneNorthQeynos
+    4300038: North_Qeynos:TrapInRogueGuild
+    4300040: North_Qeynos:WaterCatacombs2
+    4300042: North_Qeynos:WaterCatacombs
+    4300044: North_Qeynos:WaterTemple
+    4300046: North_Qeynos:WaterLake
+    4300048: North_Qeynos:WaterZone
+    4300050: North_Qeynos:SecretFromRogueGuild
+    4300052: North_Qeynos:SecretToRogueGuild
+    4300054: North_Qeynos:Waterfalls
+    4300056: North_Qeynos:SecretToQeynosCatacombs
+    4300058: North_Qeynos:ZonelineToSouthQeynosAtCrows
+    4300060: North_Qeynos:ZonelineToSouthQeynosAtCobbler
+    4300062: North_Qeynos:WaterLakeAtTemple
+    4300064: North_Qeynos:TeleportFromTemple
+    4300066: North_Qeynos:TeleportToTemple
+    4300068: North_Qeynos:WaterZonelineToQeynosCatacombs
+    4300070: North_Qeynos:WaterLakeAtCrows
+    4300072: North_Qeynos:ZonelineToQeynosHills
+    4300074: North_Qeynos:zoneNorthQeynos
     7400000: Default Take
     9500000: //RootNode
   materials:
@@ -148,6 +243,7 @@ ModelImporter:
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -158,7 +254,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1

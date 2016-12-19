@@ -4001,12 +4001,13 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
-    tangentImportMode: 4
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
+    serializedVersion: 2
     human:
     - boneName: Pelvis
       humanName: Hips
@@ -4154,155 +4155,155 @@ ModelImporter:
         modified: 0
     skeleton:
     - name: GLOBAL_CHR - ELF_ACTORDEF_T0_F00(Clone)
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Actor
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: DMSPRITEDEF
+      parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: HeadMain0_DMSPRITEDEF
+      parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: -0.5, y: 0.5, z: 0.5, w: 0.5}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Track
+      parentName: 
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Pelvis
+      parentName: 
       position: {x: 0.007813, y: 0, z: 3.5827155}
       rotation: {x: 0, y: 0, z: -0.70872676, w: 0.7054831}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Chest
+      parentName: 
       position: {x: 0.007813, y: -0.058594, z: 0.265625}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Biceps_L
+      parentName: 
       position: {x: -0.421875, y: 0.144531, z: 0.914063}
       rotation: {x: 0.000011029734, y: -0.0024016362, z: 0.019969186, w: 0.9997977}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Forearm_L
+      parentName: 
       position: {x: -0.804688, y: 0.09375, z: 0.011719}
       rotation: {x: -0.0005398097, y: -0.006680733, z: -0.06316304, w: 0.9979807}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Fist_L
+      parentName: 
       position: {x: -0.738281, y: -0.125, z: 0.019531}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: HandPoint_L
+      parentName: 
       position: {x: -0.160156, y: -0.003906, z: -0.007813}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: SHIELD_POINT
+      parentName: 
       position: {x: -0.25, y: -0.050781, z: 0.1875}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Biceps_R
+      parentName: 
       position: {x: 0.429688, y: 0.152344, z: 0.90625}
       rotation: {x: -0.0000087601975, y: 0.0019082844, z: -0.010040424, w: 0.9999478}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Forearm_R
+      parentName: 
       position: {x: 0.8125, y: 0.085938, z: 0.015625}
       rotation: {x: -0.00019277092, y: -0.001132479, z: 0.0578141, w: 0.9983267}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Fist_R
+      parentName: 
       position: {x: 0.734375, y: -0.125, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: HandPoint_R
+      parentName: 
       position: {x: 0.148438, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Neck
+      parentName: 
       position: {x: 0.003906, y: 0.191406, z: 1.070313}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Head
+      parentName: 
       position: {x: -0.007813, y: -0.007813, z: 0.183594}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: GUILD_POINT
+      parentName: 
       position: {x: -0.011719, y: 0.039063, z: 0.347656}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: HA
+      parentName: 
       position: {x: -0.003906, y: 0.046875, z: 0.5}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: HeadPoint
+      parentName: 
       position: {x: -0.011719, y: 0.039063, z: 0.53125}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Thight_L
+      parentName: 
       position: {x: -0.320313, y: -0.121094, z: -0.070313}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Calf_L
+      parentName: 
       position: {x: 0.125, y: 0.097656, z: -1.578125}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Boots_L
+      parentName: 
       position: {x: 0.046875, y: 0.082031, z: -1.695313}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Toes_L
+      parentName: 
       position: {x: -0.070313, y: -0.359375, z: -0.136719}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Thight_R
+      parentName: 
       position: {x: 0.34375, y: -0.121094, z: -0.074219}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Calf_R
+      parentName: 
       position: {x: -0.125, y: 0.085938, z: -1.582031}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Boots_R
+      parentName: 
       position: {x: -0.066406, y: 0.082031, z: -1.695313}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: Toes_R
+      parentName: 
       position: {x: 0.074219, y: -0.347656, z: -0.128906}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     - name: U3DMesh
+      parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-      transformModified: 1
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -4311,7 +4312,10 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 3
   humanoidOversampling: 1

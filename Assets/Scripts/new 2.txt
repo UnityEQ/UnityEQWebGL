@@ -1,0 +1,61 @@
+	public void raycastY()
+	{
+		int rayTry = 0;
+		RaycastHit[] hitsDown;
+		hitsDown = Physics.RaycastAll(this.gameObject.transform.position, Vector3.down, 20.0F);
+		for (int i = 0; i < hitsDown.Length; i++) 
+		{
+			RaycastHit hitDown = hitsDown[i];
+//			Debug.Log("HITS" + hitsDown.Length);
+			if(hitsDown.Length > 1)
+			{
+				if(hitDown.distance > 3.1f && hitDown.collider.tag == "Terrain"){this.gameObject.transform.position -= new Vector3(0f,20f * Time.deltaTime,0f);}
+				if(hitDown.distance < 3f && hitDown.collider.tag == "Terrain"){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
+			}
+			else
+			{
+//				this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);
+			}
+		}
+		if(hitsDown.Length == 1){rayTry = 1;}
+		if(rayTry == 1)
+		{
+			RaycastHit[] hitsDown2;
+			hitsDown2 = Physics.RaycastAll(this.gameObject.transform.position, Vector3.up, 20.0F);
+			for (int j = 0; j < hitsDown2.Length; j++) 
+			{
+				RaycastHit hitDown2 = hitsDown2[j];
+//				Debug.Log("HITS" + hitsDown2.Length);
+				if(hitsDown2.Length > 1)
+				{
+					if(hitDown2.distance > 3.1f && hitDown2.collider.tag == "Terrain"){this.gameObject.transform.position -= new Vector3(0f,20f * Time.deltaTime,0f);}
+					if(hitDown2.distance < 3f && hitDown2.collider.tag == "Terrain"){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
+				}
+				else
+				{
+					//this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);
+				}
+			}
+//			if(hitsDown2.Length == 0){rayTry = 2;}
+			if(rayTry == 2)
+			{
+				RaycastHit[] hitsDown3;
+				hitsDown3 = Physics.RaycastAll(this.gameObject.transform.position, Vector3.down, 200.0F);
+				for (int k = 0; k < hitsDown3.Length; k++) 
+				{
+					RaycastHit hitDown3 = hitsDown3[k];
+//					Debug.Log("HITS" + hitsDown3.Length);
+					if(hitsDown3.Length > 1)
+					{
+						if(hitDown3.distance > 3.1f && hitDown3.collider.tag == "Terrain"){this.gameObject.transform.position -= new Vector3(0f,20f * Time.deltaTime,0f);}
+						if(hitDown3.distance < 3f && hitDown3.collider.tag == "Terrain"){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
+					}
+					else
+					{
+						rayTry = 3;
+					}
+				}
+				if(hitsDown3.Length == 0 || rayTry == 3){this.gameObject.transform.position += new Vector3(0f,20f * Time.deltaTime,0f);}
+			}
+		}
+	}
