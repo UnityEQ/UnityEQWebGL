@@ -105,7 +105,7 @@ public class ObjectPool : MonoBehaviour
     /// <param name='onlyPooled'>
     /// If true, it will only return an object if there is one currently pooled.
     /// </param>
-    public GameObject GetObjectForType(string objectType, bool onlyPooled, float x, float y, float z, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte maxHp, byte level, byte gender)
+    public GameObject GetObjectForType(string objectType, bool onlyPooled, float x, float y, float z, float deltaX, float deltaY, float deltaZ, float deltaH, int spawnId, int race, string name, float heading, int deity, float size, byte NPC, byte curHp, byte maxHp, byte level, byte gender)
     {
 
         for (int i = 0; i < Entries.Length; i++)
@@ -137,6 +137,10 @@ public class ObjectPool : MonoBehaviour
                 pooledObject.GetComponent<NPCController>().x = x;// x coord
                 pooledObject.GetComponent<NPCController>().y = y;// y coord
                 pooledObject.GetComponent<NPCController>().z = z;// z coord
+                pooledObject.GetComponent<NPCController>().deltaX = deltaX;// x coord
+                pooledObject.GetComponent<NPCController>().deltaY = deltaY;// y coord
+                pooledObject.GetComponent<NPCController>().deltaZ = deltaZ;// z coord
+                pooledObject.GetComponent<NPCController>().deltaH = deltaH;// z coord
                 pooledObject.GetComponent<NPCController>().heading = heading;// heading
                 pooledObject.GetComponent<NPCController>().deity = deity;// Player's Deity
                 pooledObject.GetComponent<NPCController>().size = size;// Model size

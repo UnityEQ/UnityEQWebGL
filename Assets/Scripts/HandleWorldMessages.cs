@@ -1768,7 +1768,7 @@ namespace EQBrowser
 				float deltaY = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);// change in y
 				float deltaX = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);// change in x
 				float deltaZ = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);// change in z
-				float deltaHeading = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);// change in heading
+				float deltaH = BitConverter.ToSingle(BitConverter.GetBytes(ReadInt32(data, ref position)), 0);// change in heading
 				byte animation = ReadInt8(data, ref position);// animation
 				byte eyecolor1 = ReadInt8(data, ref position);// Player's left eye color
 				byte StandState = ReadInt8(data, ref position);// stand state for SoF+ 0x64 for normal animation
@@ -1864,34 +1864,34 @@ namespace EQBrowser
 				switch (race)
 				{
 					case 1:
-						if(NPC == 0){ObjectPool.instance.GetObjectForType("elf",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
-						else{ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
+						if(NPC == 0){ObjectPool.instance.GetObjectForType("elf",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
+						else{ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);}
 						break;
 					case 22:
-						ObjectPool.instance.GetObjectForType("BeetlePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("BeetlePrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					case 34:
-						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("BatPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;						
 					case 36:
-						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("RatPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 //						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
 						break;
 					case 37:
-						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SnakePrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 //						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);						
 						break;							
 					case 38:
-						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SpiderPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					case 39:
-						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					case 60:
-						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("SkeletonPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 					default:
-						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
+						ObjectPool.instance.GetObjectForType("GnollPrefab",true,-x,z,y,-deltaX,deltaZ,deltaY,deltaH,spawnId,race,name,heading,deity,size,NPC,curHp,max_hp,level,gender);
 						break;
 				}
 			}

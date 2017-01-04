@@ -34,7 +34,7 @@ public class NPCController : MonoBehaviour
 	public float deltaX;// x coord
 	public float deltaY;// y coord
 	public float deltaZ;// z coord
-	public float deltaH;// z coord
+	public float deltaH;// heading coord
 
 	private float gravity = 1.0f;
 	public bool isGrounded = false;
@@ -167,7 +167,7 @@ public class NPCController : MonoBehaviour
 						targetPosition.z += deltaZ;
 					}
 					//move now
-					raycastY();
+					if(NPC > 0){raycastY();}
 					targetPosition.y = this.gameObject.transform.position.y;
 					this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetPosition, step * Time.deltaTime);
 				}
@@ -189,11 +189,11 @@ public class NPCController : MonoBehaviour
 				{
 					if(isIdle == 0){idleNow();}
 					this.transform.position = new Vector3(movetoX, this.gameObject.transform.position.y, movetoZ);
-					raycastY();
+					if(NPC > 0){raycastY();}
 				}
 				else
 				{
-					raycastY();
+					if(NPC > 0){raycastY();}
 					//FOR  Y ADJUSTMENTS IF UNDER OR BENEATH WORLD WHEN NOT MOVING AND NO POSITION UPDATES FROM SERVER
 				}
 			}
