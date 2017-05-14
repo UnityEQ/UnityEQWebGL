@@ -31,8 +31,6 @@ public class ThirdPersonCamera : MonoBehaviour
 	public float distanceMin = 0f;
 	public float distanceMax = 10f;
 
-
-
 	public enum RotationAxes { MouseXAndY = 0, MouseX = 1, MouseY = 2 }
 	public RotationAxes axes = RotationAxes.MouseXAndY;
 	public float sensitivityX = 15F;
@@ -44,7 +42,7 @@ public class ThirdPersonCamera : MonoBehaviour
 	public float minimumY = -60F;
 	public float maximumY = 60F;
 	float x = 0.0f;
-	float y = 0.0f;
+	public float y = 0.0f;
 	int vDir;
 
 	float targetLastRot;

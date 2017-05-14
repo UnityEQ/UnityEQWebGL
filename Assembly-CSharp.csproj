@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\EquipScript.cs" />
      <Compile Include="Assets\Scripts\FPSDisplay.cs" />
      <Compile Include="Assets\Scripts\HandleWorldMessages.cs" />
+     <Compile Include="Assets\Scripts\JoystickScript.cs" />
      <Compile Include="Assets\Scripts\LootScript.cs" />
      <Compile Include="Assets\Scripts\NPCController.cs" />
      <Compile Include="Assets\Scripts\NetworkEntity.cs" />
@@ -67,6 +68,7 @@
      <Compile Include="Assets\Scripts\PlayerCharacterLookAPI.cs" />
      <Compile Include="Assets\Scripts\SafeSpotScript.cs" />
      <Compile Include="Assets\Scripts\SkyboxRotate.cs" />
+     <Compile Include="Assets\Scripts\SmoothFollow.cs" />
      <Compile Include="Assets\Scripts\Spinning.cs" />
      <Compile Include="Assets\Scripts\TextureAnimator.cs" />
      <Compile Include="Assets\Scripts\ThirdPersonCamera.cs" />

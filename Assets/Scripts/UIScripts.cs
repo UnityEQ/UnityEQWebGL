@@ -63,6 +63,8 @@ public class UIScripts : MonoBehaviour {
 	public GameObject ChatText;
 	public GameObject ChatTextInput;
 	
+	public GameObject JoyStickPanel;
+	
 	public Text profileName;
 	public RectTransform OurHP;
 	public Text HPText;
