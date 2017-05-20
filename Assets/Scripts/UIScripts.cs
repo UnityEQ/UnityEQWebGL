@@ -25,6 +25,9 @@ public class UIScripts : MonoBehaviour {
 	public RectTransform TargetHP;
 	public Text TargetHPText;
 	
+	public GameObject DesktopPanel;
+	public GameObject MobilePanel;
+	
 	public GameObject LosePanel;
 	public GameObject LeftPanel;
 	public GameObject CenterPanel;
@@ -41,12 +44,14 @@ public class UIScripts : MonoBehaviour {
 	public GameObject SocialPanel;
 
 	public GameObject Inventory;
+	public GameObject mInventory;
 	public GameObject LootBox;
 	public GameObject LootDone;
 	public GameObject Sit;
 	public GameObject Stand;
 	public GameObject Help;
 	public GameObject Camp;
+	public GameObject mCamp;
 	public GameObject InventoryWindow;
 	public GameObject MoveInventoryWindow;
 	public GameObject SpellGem1;
@@ -62,6 +67,11 @@ public class UIScripts : MonoBehaviour {
 	
 	public GameObject ChatText;
 	public GameObject ChatTextInput;
+	
+	public GameObject mChatBox;
+	public GameObject ExpandChatText;
+	public GameObject MinimizeChatText;
+	public GameObject ExpandChatButton;
 	
 	public GameObject JoyStickPanel;
 	
@@ -117,12 +127,15 @@ public class UIScripts : MonoBehaviour {
 		Combat.GetComponent<Button>().onClick.AddListener(delegate { CombatClick(param2); });
 		@Social.GetComponent<Button>().onClick.AddListener(delegate { SocialClick (param2); });
 
-		Inventory.GetComponent<Button>().onClick.AddListener(delegate { InventoryClick (param2); });
+		Inventory.GetComponent<Button>().onClick.AddListener(delegate { InventoryClick ("0"); });
+		mInventory.GetComponent<Button>().onClick.AddListener(delegate { InventoryClick ("1"); });
 		Sit.GetComponent<Button>().onClick.AddListener(delegate { SitClick (param2); });
 		Stand.GetComponent<Button>().onClick.AddListener(delegate { StandClick (param2); });
 		Help.GetComponent<Button>().onClick.AddListener(delegate { HelpClick (param2); });
 		LootDone.GetComponent<Button>().onClick.AddListener(delegate { LootDoneClick (param2); });
 		Camp.GetComponent<Button>().onClick.AddListener(delegate { CampClick (param2); });
+		mCamp.GetComponent<Button>().onClick.AddListener(delegate { CampClick (param2); });
+		ExpandChatButton.GetComponent<Button>().onClick.AddListener(delegate { ExpandChatButtonClick (param2); });
 		SpellGem1.GetComponent<Button>().onClick.AddListener(delegate { SpellGem1Click (param2); });
 		SpellGem2.GetComponent<Button>().onClick.AddListener(delegate { SpellGem2Click (param2); });
 		SpellGem3.GetComponent<Button>().onClick.AddListener(delegate { SpellGem3Click (param2); });
@@ -168,16 +181,55 @@ public class UIScripts : MonoBehaviour {
 
 	public void InventoryClick(string param2)
 	{
-		if (InventoryWindow.activeSelf == false) 
+		
+//		switch(int.Parse(param2))
+//		{
+//			case 0:
+				if (InventoryWindow.activeSelf == false) 
+				{
+					InventoryWindow.SetActive (true);
+					InventoryText.color = Color.green;
+				} 
+				else 
+				{
+					InventoryWindow.SetActive (false);
+					MoveInventoryWindow.GetComponent<Draggable>().Reset(InventoryWindow);
+					InventoryText.color = Color.white;
+				}
+//			break;
+			
+//			case 1:
+//				if (mInventoryWindow.activeSelf == false) 
+//				{
+//					mInventoryWindow.SetActive (true);
+//					mInventoryText.color = Color.green;
+//				} 
+//				else 
+//				{
+//					mInventoryWindow.SetActive (false);
+//					MoveInventoryWindow.GetComponent<Draggable>().Reset(InventoryWindow);
+//					mInventoryText.color = Color.white;
+//				}
+//			break;
+			
+//			default:
+//				break;
+//		}
+	}
+	
+	public void ExpandChatButtonClick(string param2)
+	{
+		if (mChatBox.activeSelf == false) 
 		{
-			InventoryWindow.SetActive (true);
-			InventoryText.color = Color.green;
+			mChatBox.SetActive (true);
+			ExpandChatText.SetActive (false);
+			MinimizeChatText.SetActive (true);
 		} 
 		else 
 		{
-			InventoryWindow.SetActive (false);
-			MoveInventoryWindow.GetComponent<Draggable>().Reset(InventoryWindow);
-			InventoryText.color = Color.white;
+			mChatBox.SetActive (false);
+			ExpandChatText.SetActive (true);
+			MinimizeChatText.SetActive (false);			
 		}
 	}
 
@@ -289,9 +341,17 @@ public class UIScripts : MonoBehaviour {
 	void Start () {
 		setupBtn2 ();
 		MainText.color = Color.green;
-		InventoryWindow.SetActive (false);
 		profileName.text = WorldConnection2.ourPlayerName;
 		TargetBox.SetActive(false);
+		
+		#if UNITY_EDITOR || UNITY_WEBGL || UNITY_STANDALONE
+			DesktopPanel.SetActive(true);
+		#endif
+		
+		#if UNITY_IOS || UNITY_ANDROID || UNITY_WP_8_1
+			MobilePanel.SetActive(true);
+		#endif
+		
 	}
 	
 		
