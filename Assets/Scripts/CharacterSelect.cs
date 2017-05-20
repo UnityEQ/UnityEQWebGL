@@ -1779,6 +1779,13 @@ public class CharacterSelect : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
+		
+		#if UNITY_IOS || UNITY_ANDROID || UNITY_WP_8_1
+			UnityEngine.UI.CanvasScaler c = GetComponent<UnityEngine.UI.CanvasScaler>();
+			c.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
+			c.referenceResolution = new Vector2(960, 540);
+		#endif
+		
 		CharLookAPI.ActiveHead = 0;
 		CharLookAPI.TextureSet = 3;
 		Debug.Log("hi");

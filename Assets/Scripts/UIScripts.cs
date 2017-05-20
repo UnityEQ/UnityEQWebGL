@@ -350,6 +350,9 @@ public class UIScripts : MonoBehaviour {
 		
 		#if UNITY_IOS || UNITY_ANDROID || UNITY_WP_8_1
 			MobilePanel.SetActive(true);
+			UnityEngine.UI.CanvasScaler c = GetComponent<UnityEngine.UI.CanvasScaler>();
+			c.uiScaleMode = UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
+			c.referenceResolution = new Vector2(960, 540);
 		#endif
 		
 	}
