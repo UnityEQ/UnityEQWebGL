@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/1 Character creation.unity
+- path: Assets/Scenes/Cinema.unity
   isLoaded: 1
   isActive: 1

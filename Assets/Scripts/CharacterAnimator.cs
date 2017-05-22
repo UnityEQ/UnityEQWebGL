@@ -42,16 +42,29 @@ namespace EQBrowser
 		private bool chatting = false;
 		public WorldConnect WorldConnection;
 		public GameObject ChatInputField;
+		public GameObject mChatInputField;
 		
 		public float distanceTravelled = 0;
 		public Vector3 lastPosition;
 
 		public float rotationTravelled = 0;
 		public Vector3 lastRotation;
+	    public TouchScreenKeyboard touchScreenKeyboard;
+		public InputField inputField;
+
 		
 		
 		void Start () 
 		{ 
+			#if UNITY_EDITOR || UNITY_WEBGL || UNITY_STANDALONE
+				inputField = ChatInputField.GetComponent<InputField>();
+				touchScreenKeyboard = TouchScreenKeyboard.Open(inputField.text, TouchScreenKeyboardType.Default);
+			#endif
+		
+			#if UNITY_IOS || UNITY_ANDROID || UNITY_WP_8_1
+				inputField = mChatInputField.GetComponent<InputField>();
+				touchScreenKeyboard = TouchScreenKeyboard.Open(inputField.text, TouchScreenKeyboardType.Default);
+			#endif
 			anim = gameObject.GetComponent<Animator>();
 			lastPosition = transform.position;
 			lastRotation = transform.eulerAngles;
@@ -61,7 +74,7 @@ namespace EQBrowser
 		public void ToggleChatOn()
 		{
 			Debug.Log("chaton");
-			InputField inputField = ChatInputField.GetComponent<InputField>();
+
 			inputField.interactable = true;
 			inputField.ActivateInputField();
 			chatting = true;
@@ -72,7 +85,6 @@ namespace EQBrowser
 		public void ToggleChatOff()
 		{
 			Debug.Log("chatoff");
-			InputField inputField = ChatInputField.GetComponent<InputField>();
 			if (inputField.text != "")
 			{
 				WorldConnection.DoChannelMessage(WorldConnection.ourPlayerName,5,inputField.text + "\0");
@@ -94,7 +106,7 @@ if(WorldConnection.playerLock != true)
 		{
 			Screen.fullScreen = !Screen.fullScreen;
 		}
-		
+
 		if (Input.GetKeyDown("return"))
 		{
 			if (chatting == true)

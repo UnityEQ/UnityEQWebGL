@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEQWebGL", "Assembly-CSharp-firstpass.csproj", "{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEQWebGL", "Assembly-CSharp.csproj", "{0803E292-06CB-5A52-E116-C64390A9021A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEQWebGL", "Assembly-CSharp-firstpass.csproj", "{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityEQWebGL", "Assembly-CSharp-Editor.csproj", "{4E602E3D-7E45-1E9F-466A-57DB41FA56E8}"
 EndProject
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0803E292-06CB-5A52-E116-C64390A9021A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0803E292-06CB-5A52-E116-C64390A9021A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0803E292-06CB-5A52-E116-C64390A9021A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0803E292-06CB-5A52-E116-C64390A9021A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CCE29E-03F7-19AC-55B7-BFE87FD76EB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4E602E3D-7E45-1E9F-466A-57DB41FA56E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4E602E3D-7E45-1E9F-466A-57DB41FA56E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E602E3D-7E45-1E9F-466A-57DB41FA56E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
